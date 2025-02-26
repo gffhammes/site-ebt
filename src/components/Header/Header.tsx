@@ -1,15 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import {
   AppBar,
-  Toolbar,
+  Box,
   Button,
   Container,
+  Toolbar,
   Typography,
-  Box,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const HeaderContainer = styled("header")({
   position: "relative",
@@ -30,10 +30,11 @@ const BackgroundImage = styled("div")({
   position: "absolute",
   top: 0,
   right: 0,
-  width: "60%", // Increased from 50% to show more of the image
+  width: "60%",
   height: "100%",
   zIndex: 0,
   "&::after": {
+    // eslint-disable-next-line quotes
     content: '""',
     position: "absolute",
     top: 0,

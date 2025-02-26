@@ -1,8 +1,8 @@
 "use client";
 
-import { Box, Container, Button, Typography } from "@mui/material";
-import Image from "next/image";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const SectionWrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),

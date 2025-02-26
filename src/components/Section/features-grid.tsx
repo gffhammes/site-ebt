@@ -1,8 +1,8 @@
 "use client";
 
-import { Grid, Box, Container, Typography } from "@mui/material";
-import Image from "next/image";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const StyledCard = styled(Box)({
   position: "relative",

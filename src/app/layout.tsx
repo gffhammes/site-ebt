@@ -1,14 +1,17 @@
+import "./globals.css";
+
+import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
-import "./globals.css";
-import { ThemeProvider } from "@mui/material";
-import theme from "../utils/theme";
 import Script from "next/script";
+
 import { WhatsAppButton } from "@/components/whatsapp-button";
+
+import theme from "../utils/theme";
 
 export const metadata: Metadata = {
   title: "EBT",
-  description: `descrição`,
+  description: "descrição",
 };
 
 export default function RootLayout({

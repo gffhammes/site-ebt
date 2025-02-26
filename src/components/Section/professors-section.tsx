@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Typography, Grid, Avatar, Box } from "@mui/material";
+import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const professors = [

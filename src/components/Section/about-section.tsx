@@ -1,8 +1,8 @@
 "use client";
 
-import { Box, Container, Typography, Grid } from "@mui/material";
-import Image from "next/image";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const StyledSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),

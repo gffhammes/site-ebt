@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Grid, Typography, Rating } from "@mui/material";
+import { Box, Container, Grid, Rating, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const testimonials = [

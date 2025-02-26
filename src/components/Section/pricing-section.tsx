@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Typography, Button, Paper } from "@mui/material";
+import { Box, Button, Container, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Check } from "lucide-react";
 import Image from "next/image";

@@ -1,47 +1,46 @@
 "use client";
 
-import type React from "react";
-import { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
-  Box,
-  Typography,
   Accordion,
-  AccordionSummary,
   AccordionDetails,
+  AccordionSummary,
+  Box,
   Button,
   Container,
+  Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import type React from "react";
+import { useState } from "react";
 
 const faqData = [
   {
     question: "Qual é a confessionalidade da Escola Bibotalk de Teologia?",
-    answer: "Resposta sobre a confessionalidade da escola...",
+    answer: "Resposta",
   },
   {
     question: "Como irei acessar a área de membros e o grupo?",
-    answer: "Informações sobre acesso à área de membros...",
+    answer: "Resposta",
   },
   {
     question: "Posso acessar de qualquer lugar?",
-    answer:
-      "Sim, você pode acessar nossa plataforma de qualquer lugar com conexão à internet.",
+    answer: "Resposta",
   },
   {
     question: "Posso assistir as aulas a qualquer momento?",
-    answer: "Sim, as aulas ficam disponíveis 24/7 na plataforma.",
+    answer: "Resposta",
   },
   {
     question: "Quanto tempo terei acesso à plataforma?",
-    answer: "Informações sobre o período de acesso...",
+    answer: "Resposta",
   },
   {
     question: "A quantos cursos eu terei acesso?",
-    answer: "Detalhes sobre o acesso aos cursos...",
+    answer: "Resposta",
   },
   {
     question: "E se eu comprar e quiser cancelar?",
-    answer: "Política de cancelamento e reembolso...",
+    answer: "Resposta",
   },
 ];
 
