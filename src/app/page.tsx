@@ -1,32 +1,31 @@
-import { Box } from "@mui/material";
-import Image from "next/image";
+import { FeaturesGrid } from "@/components/Section/features-grid";
+import { Footer } from "@/components/Footer/Footer";
+import { Header } from "@/components/Header/Header";
+import { ProfessorsSection } from "@/components/Section/professors-section";
+import { CertificateSection } from "@/components/Section/certificate-section";
+import { TestimonialsSection } from "@/components/Section/testimonials-section";
+import { PricingSection } from "@/components/Section/pricing-section";
+import { AboutSection } from "@/components/Section/about-section";
+import { FaqSection } from "@/components/Section/faq-section";
+import { MiniCoursesSection } from "@/components/Section/mini-courses-section";
+import { BibotalkSection } from "@/components/Section/bibotalk-section";
 
 export default function Home() {
   return (
     <div>
+      <Header />
       <main>
-        <Box
-          sx={{
-            height: "100vh",
-            width: "100vw",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Image
-            src="https://www.studiodireto.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_direto_preta.f833362f.png&w=3840&q=75"
-            alt="Direto."
-            height={100}
-            width={300}
-            style={{
-              objectFit: "contain",
-            }}
-          />
-        </Box>
+        <FeaturesGrid />
+        <ProfessorsSection />
+        <CertificateSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <AboutSection />
+        <FaqSection />
+        <MiniCoursesSection />
+        <BibotalkSection />
       </main>
-
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
