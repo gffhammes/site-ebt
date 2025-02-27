@@ -26,24 +26,28 @@ const theme = createTheme({
     fontFamily: montserrat.style.fontFamily,
     h1: {
       fontSize: 42,
+      fontWeight: 400,
       "@media (min-width:600px)": {
         fontSize: 62,
       },
     },
     h2: {
       fontSize: 32,
+      fontWeight: 400,
       "@media (min-width:600px)": {
         fontSize: 48,
       },
     },
     body1: {
+      fontSize: 20,
       "@media (min-width:600px)": {
-        fontSize: 20,
+        fontSize: 22,
       },
     },
     button: {
+      fontSize: 16,
       "@media (min-width:600px)": {
-        fontSize: 24,
+        fontSize: 18,
       },
     },
   },
