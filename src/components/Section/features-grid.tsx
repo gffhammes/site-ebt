@@ -95,7 +95,7 @@ const DesktopContainer = styled(Box)(({}) => ({
   position: "relative",
   overflow: "visible",
   backgroundColor: "#fff",
-  minHeight: "800px",
+  minHeight: "1300px",
   display: "flex",
   alignItems: "center",
   marginTop: "100px",
@@ -123,10 +123,9 @@ export const FeaturesGrid = () => {
       {isMobile ? (
         <Container sx={{ py: 4, px: 2 }}>
           <Box sx={{ position: "relative", overflow: "hidden" }}>
-            {/* No mobile, removemos o OrangeCircleContainer com a imagem */}
-            <OrangeCircleContainer sx={{ backgroundColor: "white" }}>
-              {/* Não exibe a imagem do círculo laranja no mobile */}
-            </OrangeCircleContainer>
+            <OrangeCircleContainer
+              sx={{ backgroundColor: "white" }}
+            ></OrangeCircleContainer>
 
             <WelcomeSection>
               <Typography
@@ -140,7 +139,7 @@ export const FeaturesGrid = () => {
                   position: "relative",
                   zIndex: 1,
                   maxWidth: "300px",
-                  color: "black", // Texto em preto no mobile
+                  color: "black",
                 }}
               >
                 Seja bem-vindo à sua nova jornada de aprendizado!
@@ -152,7 +151,7 @@ export const FeaturesGrid = () => {
                   zIndex: 1,
                   fontSize: "1rem",
                   lineHeight: 1.5,
-                  color: "black", // Texto em preto no mobile
+                  color: "black",
                 }}
               >
                 Na EBT vamos contemplar as disciplinas essenciais da Teologia
@@ -166,7 +165,7 @@ export const FeaturesGrid = () => {
                   fontSize: "1rem",
                   lineHeight: 1.5,
                   mb: 4,
-                  color: "black", // Texto em preto no mobile
+                  color: "black",
                 }}
               >
                 <Box component="span" sx={{ fontWeight: 700 }}>
@@ -174,8 +173,6 @@ export const FeaturesGrid = () => {
                 </Box>{" "}
                 Cada curso terá uma média de 10 a 20 aulas de 20min de duração.
               </Typography>
-
-              {/* Botão adicionado após o texto sobre cursos */}
               <Button
                 variant="contained"
                 color="primary"
@@ -196,7 +193,6 @@ export const FeaturesGrid = () => {
               </Button>
             </WelcomeSection>
 
-            {/* Cards abaixo dos parágrafos no mobile */}
             <Box sx={{ position: "relative", zIndex: 1 }}>
               <ScrollContainer>
                 <Box sx={{ display: "flex", gap: 2, pb: 2 }}>
@@ -229,7 +225,7 @@ export const FeaturesGrid = () => {
         </Container>
       ) : (
         <DesktopContainer>
-          <Container maxWidth="xl" sx={{ position: "relative" }}>
+          <Container maxWidth="lg" sx={{ position: "relative" }}>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6} sx={{ position: "relative" }}>
                 <OrangeCircleContainer

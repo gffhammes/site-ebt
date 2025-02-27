@@ -15,7 +15,9 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <FeaturesGrid />
+        <div>
+          <FeaturesGrid />
+        </div>
         <ProfessorsSection />
         <CertificateSection />
         <TestimonialsSection />
