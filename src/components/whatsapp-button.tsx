@@ -24,6 +24,7 @@ const FloatingButton = styled("a")(() => ({
     boxShadow: "0px 6px 14px rgba(0, 0, 0, 0.3)",
   },
   "&::before": {
+    // eslint-disable-next-line quotes
     content: '""',
     position: "absolute",
     width: "100%",

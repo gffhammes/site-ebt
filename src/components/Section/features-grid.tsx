@@ -1,20 +1,34 @@
 "use client";
 
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
-const StyledCard = styled(Box)({
+const StyledCard = styled(Box)(({ theme }) => ({
   position: "relative",
   aspectRatio: "1",
   borderRadius: "8px",
   overflow: "hidden",
   cursor: "pointer",
   transition: "transform 0.3s ease",
-  "&:hover": {
-    transform: "scale(1.02)",
+  minWidth: "280px",
+  height: "380px",
+  [theme.breakpoints.up("md")]: {
+    minWidth: "unset",
+    height: "auto",
+    "&:hover": {
+      transform: "scale(1.02)",
+    },
   },
-});
+}));
 
 const CardOverlay = styled(Box)({
   position: "absolute",
@@ -33,22 +47,59 @@ const CardOverlay = styled(Box)({
 const WelcomeSection = styled(Box)(({ theme }) => ({
   position: "relative",
   padding: theme.spacing(4),
-  color: "white",
+  color: "black",
   height: "100%",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
-  marginTop: "-100px",
+  justifyContent: "flex-start",
+
+  [theme.breakpoints.up("md")]: {
+    color: "white",
+    justifyContent: "center",
+    padding: theme.spacing(6),
+    position: "relative",
+    zIndex: 2,
+  },
 }));
 
-const OrangeCircle = styled(Box)({
+const OrangeCircleContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
-  left: "-20%",
-  top: "-20%",
-  width: "140%",
+  left: 0,
+  top: 0,
+  width: "100%",
   height: "auto",
   zIndex: -1,
+  transform: "scale(1.5)",
+
+  [theme.breakpoints.up("md")]: {
+    position: "absolute",
+    left: "-20%",
+    top: "-30%",
+    width: "120%",
+    height: "150%",
+    transform: "none",
+    zIndex: 1,
+  },
+}));
+
+const ScrollContainer = styled(Box)({
+  overflowX: "auto",
+  overflowY: "hidden",
+  WebkitOverflowScrolling: "touch",
+  "&::-webkit-scrollbar": {
+    display: "none",
+  },
+  scrollbarWidth: "none",
 });
+
+const DesktopContainer = styled(Box)(({}) => ({
+  position: "relative",
+  overflow: "hidden",
+  backgroundColor: "#fff",
+  minHeight: "800px",
+  display: "flex",
+  alignItems: "center",
+}));
 
 const modules = [
   { id: 1, title: "Módulo", description: "breve descrição breve descrição" },
@@ -58,50 +109,78 @@ const modules = [
 ];
 
 export const FeaturesGrid = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Box sx={{ position: "relative", overflow: "hidden" }}>
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={5}>
+    <Box
+      sx={{
+        position: "relative",
+        overflow: "hidden",
+        bgcolor: "background.default",
+      }}
+    >
+      {isMobile ? (
+        <Container sx={{ py: 4, px: 2 }}>
+          <Box>
             <WelcomeSection>
-              <OrangeCircle>
+              <OrangeCircleContainer>
                 <Image
                   src="/circle-orange.png"
                   alt=""
                   width={800}
-                  height={800}
+                  height={200}
                   style={{ width: "100%", height: "auto" }}
                 />
-              </OrangeCircle>
+              </OrangeCircleContainer>
               <Typography
                 variant="h4"
                 component="h2"
                 gutterBottom
-                sx={{ color: "white", mb: 3, position: "relative", zIndex: 1 }}
+                sx={{
+                  fontSize: "2rem",
+                  fontWeight: 600,
+                  mb: 3,
+                  position: "relative",
+                  zIndex: 1,
+                  maxWidth: "300px",
+                }}
               >
                 Seja bem-vindo à sua nova jornada de aprendizado!
               </Typography>
               <Typography
-                sx={{ color: "white", mb: 2, position: "relative", zIndex: 1 }}
+                sx={{
+                  mb: 2,
+                  position: "relative",
+                  zIndex: 1,
+                  fontSize: "1rem",
+                  lineHeight: 1.5,
+                }}
               >
                 Na EBT vamos contemplar as disciplinas essenciais da Teologia
                 Cristã. Nossos cursos proporcionarão uma introdução clara aos
                 principais temas dos estudos bíblico-teológicos.
               </Typography>
               <Typography
-                sx={{ color: "white", position: "relative", zIndex: 1 }}
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  fontSize: "1rem",
+                  lineHeight: 1.5,
+                  mb: 4,
+                }}
               >
-                <strong>A EBT é dividida em cursos.</strong> Cada curso terá uma
-                média de 18 a 20 aulas de 20min de duração.
+                <Box component="span" sx={{ fontWeight: 700 }}>
+                  A EBT é dividida em cursos.
+                </Box>{" "}
+                Cada curso terá uma média de 10 a 20 aulas de 20min de duração.
               </Typography>
             </WelcomeSection>
-          </Grid>
 
-          <Grid item xs={12} md={7}>
-            <Grid container spacing={2}>
-              {modules.map((module) => (
-                <Grid item xs={12} sm={6} key={module.id}>
-                  <StyledCard>
+            <ScrollContainer>
+              <Box sx={{ display: "flex", gap: 2, pb: 2 }}>
+                {modules.map((module) => (
+                  <StyledCard key={module.id}>
                     <Image
                       src="/card-grid.png"
                       alt={module.title}
@@ -121,12 +200,121 @@ export const FeaturesGrid = () => {
                       </Typography>
                     </CardOverlay>
                   </StyledCard>
+                ))}
+              </Box>
+            </ScrollContainer>
+
+            <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{
+                  borderRadius: "2rem",
+                  padding: "0.75rem 1.5rem",
+                  fontSize: "1rem",
+                  textTransform: "none",
+                  width: "100%",
+                  maxWidth: "300px",
+                }}
+              >
+                Acesse a nova turma da EBT!
+              </Button>
+            </Box>
+          </Box>
+        </Container>
+      ) : (
+        <DesktopContainer>
+          <Container maxWidth="xl" sx={{ position: "relative" }}>
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={6} sx={{ position: "relative" }}>
+                <OrangeCircleContainer>
+                  <Image
+                    src="/circle-orange.png"
+                    alt=""
+                    width={1000}
+                    height={1000}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                    priority
+                  />
+                </OrangeCircleContainer>
+                <WelcomeSection>
+                  <Typography
+                    variant="h2"
+                    component="h2"
+                    gutterBottom
+                    sx={{
+                      fontSize: "2.5rem",
+                      fontWeight: 600,
+                      mb: 3,
+                      maxWidth: "480px",
+                    }}
+                  >
+                    Seja bem-vindo à sua nova jornada de aprendizado!
+                  </Typography>
+                  <Typography
+                    sx={{
+                      mb: 2,
+                      fontSize: "1.125rem",
+                      lineHeight: 1.6,
+                      maxWidth: "480px",
+                    }}
+                  >
+                    Na EBT vamos contemplar as disciplinas essenciais da
+                    Teologia Cristã. Nossos cursos proporcionarão uma introdução
+                    clara aos principais temas dos estudos bíblico-teológicos.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "1.125rem",
+                      lineHeight: 1.6,
+                      maxWidth: "480px",
+                    }}
+                  >
+                    <Box component="span" sx={{ fontWeight: 700 }}>
+                      A EBT é dividida em cursos.
+                    </Box>{" "}
+                    Cada curso terá uma média de 18 a 20 aulas de 20min de
+                    duração.
+                  </Typography>
+                </WelcomeSection>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <Grid container spacing={3}>
+                  {modules.map((module) => (
+                    <Grid item xs={6} key={module.id}>
+                      <StyledCard>
+                        <Image
+                          src="/card-grid.png"
+                          alt={module.title}
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                        <CardOverlay>
+                          <Typography
+                            variant="h6"
+                            component="h3"
+                            sx={{ color: "white", mb: 1 }}
+                          >
+                            {module.title}
+                          </Typography>
+                          <Typography variant="body2" sx={{ color: "white" }}>
+                            {module.description}
+                          </Typography>
+                        </CardOverlay>
+                      </StyledCard>
+                    </Grid>
+                  ))}
                 </Grid>
-              ))}
+              </Grid>
             </Grid>
-          </Grid>
-        </Grid>
-      </Container>
+          </Container>
+        </DesktopContainer>
+      )}
     </Box>
   );
 };
