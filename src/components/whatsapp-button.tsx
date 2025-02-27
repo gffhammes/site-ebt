@@ -1,7 +1,7 @@
 "use client";
 
 import { styled } from "@mui/material/styles";
-import { PhoneIcon as WhatsAppIcon } from "lucide-react";
+import Image from "next/image";
 
 const FloatingButton = styled("a")(() => ({
   position: "fixed",
@@ -70,7 +70,12 @@ export const WhatsAppButton = ({
       rel="noopener noreferrer"
       aria-label="Contato via WhatsApp"
     >
-      <WhatsAppIcon size={32} />
+      <Image
+        src="/whatsapp-icon.png"
+        alt="Ícone do WhatsApp"
+        width={40}
+        height={40}
+      />
     </FloatingButton>
   );
 };
