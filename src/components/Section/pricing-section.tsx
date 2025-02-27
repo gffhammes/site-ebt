@@ -10,7 +10,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 import Image from "next/image";
 
 const PricingCard = styled(Paper)(({ theme }) => ({
@@ -94,19 +94,138 @@ const GuaranteeCard = styled(Box)(({ theme }) => ({
 }));
 
 const features = [
-  "Todos os cursos disponíveis e ilimitados",
-  "Materiais complementares",
-  "Avaliações periódicas",
-  "Acesso online e offline",
-  "Sorteios quinzenais de livros",
-  "Orientações Teológicas",
-  "Grupo exclusivo no WhatsApp",
-  "Tutor Teológico",
+  {
+    text: "Todos os cursos disponíveis e ilimitados",
+    available: true,
+  },
+  {
+    text: "Materiais complementares",
+    available: true,
+  },
+  {
+    text: "Avaliações periódicas",
+    available: true,
+  },
+  {
+    text: "Acesso online e offline",
+    available: true,
+  },
+  {
+    text: "Sorteios quinzenais de livros",
+    available: false,
+  },
+  {
+    text: "Orientações Teológicas",
+    available: false,
+  },
+  {
+    text: "Grupo exclusivo no WhatsApp",
+    available: false,
+  },
+  {
+    text: "Tutor Teológico",
+    available: false,
+  },
 ];
+
+const StyledButton = styled(Button)({
+  backgroundColor: "#00C853",
+  "&:hover": {
+    backgroundColor: "#00B34A",
+  },
+});
 
 export const PricingSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const renderPricingCard = (isAnnual = false) => (
+    <PricingCard sx={{ bgcolor: isAnnual ? "#FF5C00" : "#333333" }}>
+      {isAnnual && <RecommendedTag>RECOMENDADO</RecommendedTag>}
+      <Typography
+        variant="h6"
+        sx={{ color: "white", mb: 2, textTransform: "uppercase" }}
+      >
+        {isAnnual ? "Anual" : "Mensal"}
+      </Typography>
+      <Box sx={{ display: "flex", alignItems: "flex-start", mb: 3 }}>
+        <Typography
+          component="span"
+          sx={{ color: "white", fontSize: "1rem", mt: 1 }}
+        >
+          R$
+        </Typography>
+        <Typography
+          variant="h3"
+          sx={{
+            color: "white",
+            fontSize: { xs: "3.5rem", md: "4rem" },
+            lineHeight: 1,
+            fontWeight: 700,
+          }}
+        >
+          {isAnnual ? "997,90" : "69,90"}
+        </Typography>
+        <Typography
+          component="span"
+          sx={{ color: "white", fontSize: "1rem", mt: 1, ml: 1 }}
+        >
+          /{isAnnual ? "ano" : "mês"}
+        </Typography>
+      </Box>
+      {isAnnual && (
+        <Typography
+          sx={{
+            color: "white",
+            fontSize: "0.875rem",
+            mb: 3,
+            opacity: 0.8,
+          }}
+        >
+          + taxas hotmart
+        </Typography>
+      )}
+      <FeatureList>
+        {features.map((feature, index) => (
+          <FeatureItem
+            key={index}
+            sx={{
+              opacity: !isAnnual && !feature.available ? 0.5 : 1,
+              textDecoration:
+                !isAnnual && !feature.available ? "line-through" : "none",
+            }}
+          >
+            {isAnnual || feature.available ? (
+              <Check size={20} color="white" />
+            ) : (
+              <X size={20} color="white" />
+            )}
+            <Typography
+              sx={{
+                color: "white",
+                fontSize: "0.875rem",
+              }}
+            >
+              {feature.text}
+            </Typography>
+          </FeatureItem>
+        ))}
+      </FeatureList>
+      <StyledButton
+        variant="contained"
+        fullWidth
+        sx={{
+          mt: "auto",
+          color: "white",
+          fontSize: "1rem",
+          py: 1.5,
+          fontWeight: 600,
+        }}
+      >
+        ASSINAR
+      </StyledButton>
+    </PricingCard>
+  );
 
   return (
     <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "#1A1A1A" }}>
@@ -127,184 +246,27 @@ export const PricingSection = () => {
 
         {isMobile ? (
           <ScrollContainer>
-            <PricingCard sx={{ bgcolor: "#333333" }}>
-              <Typography variant="h6" sx={{ color: "white", mb: 2 }}>
-                MENSAL
-              </Typography>
-              <Typography
-                variant="h3"
-                sx={{
-                  color: "white",
-                  mb: 3,
-                  fontSize: "2rem",
-                }}
-              >
-                R$ 69,90
-                <Typography
-                  component="span"
-                  variant="body1"
-                  sx={{ color: "white", ml: 1 }}
-                >
-                  /mês
-                </Typography>
-              </Typography>
-              <FeatureList>
-                {features.map((feature, index) => (
-                  <FeatureItem key={index}>
-                    <Check size={20} color="white" />
-                    <Typography sx={{ color: "white", fontSize: "0.875rem" }}>
-                      {feature}
-                    </Typography>
-                  </FeatureItem>
-                ))}
-              </FeatureList>
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ mt: "auto" }}
-              >
-                ASSINAR
-              </Button>
-            </PricingCard>
-
-            <PricingCard
-              sx={{ bgcolor: (theme) => theme.palette.primary.main }}
-            >
-              <RecommendedTag>RECOMENDADO</RecommendedTag>
-              <Typography variant="h6" sx={{ color: "white", mb: 2 }}>
-                ANUAL
-              </Typography>
-              <Typography
-                variant="h3"
-                sx={{
-                  color: "white",
-                  mb: 3,
-                  fontSize: "2rem",
-                }}
-              >
-                R$ 997,90
-                <Typography
-                  component="span"
-                  variant="body1"
-                  sx={{ color: "white", ml: 1 }}
-                >
-                  /ano
-                </Typography>
-              </Typography>
-              <FeatureList>
-                {features.map((feature, index) => (
-                  <FeatureItem key={index}>
-                    <Check size={20} color="white" />
-                    <Typography sx={{ color: "white", fontSize: "0.875rem" }}>
-                      {feature}
-                    </Typography>
-                  </FeatureItem>
-                ))}
-              </FeatureList>
-              <Button
-                variant="contained"
-                sx={{
-                  mt: "auto",
-                  bgcolor: "white",
-                  color: "primary.main",
-                  "&:hover": {
-                    bgcolor: "rgba(255,255,255,0.9)",
-                  },
-                }}
-                fullWidth
-              >
-                ASSINAR
-              </Button>
-            </PricingCard>
+            {renderPricingCard(false)}
+            {renderPricingCard(true)}
           </ScrollContainer>
         ) : (
           <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
             <Box sx={{ flex: 1, minWidth: 280 }}>
-              <PricingCard sx={{ bgcolor: "#333333" }}>
-                <Typography variant="h6" sx={{ color: "white", mb: 2 }}>
-                  MENSAL
-                </Typography>
-                <Typography variant="h3" sx={{ color: "white", mb: 3 }}>
-                  R$ 69,90
-                  <Typography
-                    component="span"
-                    variant="body1"
-                    sx={{ color: "white", ml: 1 }}
-                  >
-                    /mês
-                  </Typography>
-                </Typography>
-                <FeatureList>
-                  {features.map((feature, index) => (
-                    <FeatureItem key={index}>
-                      <Check size={20} color="white" />
-                      <Typography sx={{ color: "white" }}>{feature}</Typography>
-                    </FeatureItem>
-                  ))}
-                </FeatureList>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                  sx={{ mt: "auto" }}
-                >
-                  ASSINAR
-                </Button>
-              </PricingCard>
+              {renderPricingCard(false)}
             </Box>
-
-            <Box sx={{ flex: 1, minWidth: 280 }}>
-              <PricingCard
-                sx={{ bgcolor: (theme) => theme.palette.primary.main }}
-              >
-                <RecommendedTag>RECOMENDADO</RecommendedTag>
-                <Typography variant="h6" sx={{ color: "white", mb: 2 }}>
-                  ANUAL
-                </Typography>
-                <Typography variant="h3" sx={{ color: "white", mb: 3 }}>
-                  R$ 997,90
-                  <Typography
-                    component="span"
-                    variant="body1"
-                    sx={{ color: "white", ml: 1 }}
-                  >
-                    /ano
-                  </Typography>
-                </Typography>
-                <FeatureList>
-                  {features.map((feature, index) => (
-                    <FeatureItem key={index}>
-                      <Check size={20} color="white" />
-                      <Typography sx={{ color: "white" }}>{feature}</Typography>
-                    </FeatureItem>
-                  ))}
-                </FeatureList>
-                <Button
-                  variant="contained"
-                  sx={{
-                    mt: "auto",
-                    bgcolor: "white",
-                    color: "primary.main",
-                    "&:hover": {
-                      bgcolor: "rgba(255,255,255,0.9)",
-                    },
-                  }}
-                  fullWidth
-                >
-                  ASSINAR
-                </Button>
-              </PricingCard>
-            </Box>
+            <Box sx={{ flex: 1, minWidth: 280 }}>{renderPricingCard(true)}</Box>
           </Box>
         )}
 
         <GuaranteeCard>
-          <Box sx={{ maxWidth: { xs: "100%", md: 600 } }}>
+          <Box sx={{ maxWidth: { xs: "100%", md: 500 } }}>
             <Typography
               variant="h3"
               gutterBottom
-              sx={{ fontSize: { xs: "1.75rem", md: "2.5rem" } }}
+              sx={{
+                fontSize: { xs: "1.75rem", md: "2.5rem" },
+                fontWeight: 700,
+              }}
             >
               Garantia de satisfação
             </Typography>
@@ -315,13 +277,21 @@ export const PricingSection = () => {
                 fontSize: { xs: "0.875rem", md: "1rem" },
               }}
             >
-              Nós estamos tão confiantes no nosso método que oferecemos uma
-              garantia incondicional.
+              Nós estamos tão confiantes no
+              <br />
+              nosso método que{" "}
+              <b>
+                oferecemos <br />
+                uma garantia incondicional:
+              </b>
             </Typography>
             <Typography
               variant="h5"
               gutterBottom
-              sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
+              sx={{
+                fontSize: { xs: "1.25rem", md: "1.5rem" },
+                fontWeight: 700,
+              }}
             >
               7 dias para testar a plataforma.
             </Typography>
@@ -329,7 +299,10 @@ export const PricingSection = () => {
               variant="body1"
               sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
             >
-              Se você não gostar, devolvemos 100% do seu investimento.
+              Você poderá pedir a devolução de 100% do seu dinheiro dentro desse
+              prazo, sem se justificar. É só mandar um email para
+              email@email.com.br e em até 30 dias após sua compra que o dinheiro
+              volta pra sua conta.
             </Typography>
           </Box>
           <Box
@@ -337,15 +310,16 @@ export const PricingSection = () => {
               position: "absolute",
               right: { xs: 20, md: 40 },
               bottom: { xs: -20, md: -40 },
-              width: { xs: 100, md: 200 },
-              height: { xs: 100, md: 200 },
+              width: { xs: 150, md: 337 },
+              height: { xs: 150, md: 337 },
+              border: "2px solid red",
             }}
           >
             <Image
               src="/selo-qualidade.png"
               alt="Selo de Garantia"
-              width={200}
-              height={200}
+              width={337}
+              height={337}
               style={{
                 width: "100%",
                 height: "100%",

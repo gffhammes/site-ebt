@@ -8,18 +8,21 @@ const testimonials = [
     id: 1,
     name: "João Silva",
     rating: 5,
+    title: "Excelente! Muito atenciosos",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: 2,
     name: "Maria Santos",
     rating: 5,
+    title: "Muito bom",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: 3,
     name: "Pedro Oliveira",
     rating: 5,
+    title: "Ótimo!!",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
@@ -40,6 +43,21 @@ const TestimonialCard = styled(Box)(({ theme }) => ({
     maxWidth: "none",
   },
 }));
+
+const TestimonialText = styled(Box)(({ theme }) => ({
+  background: "rgba(255, 255, 255, 0.1)",
+  borderRadius: "12px",
+  padding: theme.spacing(2),
+}));
+
+const StyledRating = styled(Rating)({
+  "& .MuiRating-icon": {
+    color: "#FFD700",
+  },
+  "& .MuiRating-iconFilled": {
+    color: "#FFD700",
+  },
+});
 
 const ScrollContainer = styled(Box)({
   overflowX: "auto",
@@ -71,6 +89,7 @@ export const TestimonialsSection = () => {
             mb: { xs: 3, md: 6 },
             fontWeight: 700,
             fontSize: { xs: "2rem", md: "2.5rem" },
+            color: "#000",
           }}
         >
           Depoimentos
@@ -79,27 +98,33 @@ export const TestimonialsSection = () => {
           <ScrollContainer>
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id}>
-                <Rating value={testimonial.rating} readOnly size="small" />
+                <StyledRating
+                  value={testimonial.rating}
+                  readOnly
+                  size="small"
+                />
                 <Typography
-                  variant="body2"
-                  sx={{
-                    color: "white",
-                    flex: 1,
-                    fontSize: "0.875rem",
-                  }}
-                >
-                  {testimonial.text}
-                </Typography>
-                <Typography
-                  variant="subtitle2"
+                  variant="h6"
                   sx={{
                     color: "white",
                     fontWeight: 600,
-                    fontSize: "0.875rem",
+                    fontSize: "1rem",
                   }}
                 >
-                  {testimonial.name}
+                  {testimonial.title}
                 </Typography>
+                <TestimonialText>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "white",
+                      flex: 1,
+                      fontSize: "0.875rem",
+                    }}
+                  >
+                    {testimonial.text}
+                  </Typography>
+                </TestimonialText>
               </TestimonialCard>
             ))}
           </ScrollContainer>
@@ -113,16 +138,22 @@ export const TestimonialsSection = () => {
         >
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id}>
-              <Rating value={testimonial.rating} readOnly />
-              <Typography variant="body1" sx={{ color: "white", flex: 1 }}>
-                {testimonial.text}
-              </Typography>
+              <StyledRating value={testimonial.rating} readOnly />
               <Typography
-                variant="subtitle1"
-                sx={{ color: "white", fontWeight: 600 }}
+                variant="h6"
+                sx={{
+                  color: "white",
+                  fontWeight: 600,
+                  fontSize: "1.25rem",
+                }}
               >
-                {testimonial.name}
+                {testimonial.title}
               </Typography>
+              <TestimonialText>
+                <Typography variant="body1" sx={{ color: "white", flex: 1 }}>
+                  {testimonial.text}
+                </Typography>
+              </TestimonialText>
             </TestimonialCard>
           ))}
         </Box>

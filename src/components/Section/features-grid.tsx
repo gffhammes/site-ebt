@@ -12,6 +12,25 @@ import {
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
+const OrangeCircleContainer = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  left: "-20%",
+  top: "-10%",
+  width: "140%",
+  height: "140%",
+  zIndex: 0,
+
+  [theme.breakpoints.up("md")]: {
+    position: "absolute",
+    left: "-30%",
+    top: "-50%",
+    width: "150%",
+    height: "200%",
+    transform: "none",
+    zIndex: 0,
+  },
+}));
+
 const StyledCard = styled(Box)(({ theme }) => ({
   position: "relative",
   aspectRatio: "1",
@@ -62,26 +81,6 @@ const WelcomeSection = styled(Box)(({ theme }) => ({
   },
 }));
 
-const OrangeCircleContainer = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  left: 0,
-  top: 0,
-  width: "100%",
-  height: "auto",
-  zIndex: -1,
-  transform: "scale(1.5)",
-
-  [theme.breakpoints.up("md")]: {
-    position: "absolute",
-    left: "-20%",
-    top: "-30%",
-    width: "120%",
-    height: "150%",
-    transform: "none",
-    zIndex: 1,
-  },
-}));
-
 const ScrollContainer = styled(Box)({
   overflowX: "auto",
   overflowY: "hidden",
@@ -94,11 +93,12 @@ const ScrollContainer = styled(Box)({
 
 const DesktopContainer = styled(Box)(({}) => ({
   position: "relative",
-  overflow: "hidden",
+  overflow: "visible",
   backgroundColor: "#fff",
   minHeight: "800px",
   display: "flex",
   alignItems: "center",
+  marginTop: "100px",
 }));
 
 const modules = [
@@ -122,17 +122,13 @@ export const FeaturesGrid = () => {
     >
       {isMobile ? (
         <Container sx={{ py: 4, px: 2 }}>
-          <Box>
+          <Box sx={{ position: "relative", overflow: "hidden" }}>
+            {/* No mobile, removemos o OrangeCircleContainer com a imagem */}
+            <OrangeCircleContainer sx={{ backgroundColor: "white" }}>
+              {/* Não exibe a imagem do círculo laranja no mobile */}
+            </OrangeCircleContainer>
+
             <WelcomeSection>
-              <OrangeCircleContainer>
-                <Image
-                  src="/circle-orange.png"
-                  alt=""
-                  width={800}
-                  height={200}
-                  style={{ width: "100%", height: "auto" }}
-                />
-              </OrangeCircleContainer>
               <Typography
                 variant="h4"
                 component="h2"
@@ -144,6 +140,7 @@ export const FeaturesGrid = () => {
                   position: "relative",
                   zIndex: 1,
                   maxWidth: "300px",
+                  color: "black", // Texto em preto no mobile
                 }}
               >
                 Seja bem-vindo à sua nova jornada de aprendizado!
@@ -155,6 +152,7 @@ export const FeaturesGrid = () => {
                   zIndex: 1,
                   fontSize: "1rem",
                   lineHeight: 1.5,
+                  color: "black", // Texto em preto no mobile
                 }}
               >
                 Na EBT vamos contemplar as disciplinas essenciais da Teologia
@@ -168,6 +166,7 @@ export const FeaturesGrid = () => {
                   fontSize: "1rem",
                   lineHeight: 1.5,
                   mb: 4,
+                  color: "black", // Texto em preto no mobile
                 }}
               >
                 <Box component="span" sx={{ fontWeight: 700 }}>
@@ -175,36 +174,8 @@ export const FeaturesGrid = () => {
                 </Box>{" "}
                 Cada curso terá uma média de 10 a 20 aulas de 20min de duração.
               </Typography>
-            </WelcomeSection>
 
-            <ScrollContainer>
-              <Box sx={{ display: "flex", gap: 2, pb: 2 }}>
-                {modules.map((module) => (
-                  <StyledCard key={module.id}>
-                    <Image
-                      src="/card-grid.png"
-                      alt={module.title}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                    <CardOverlay>
-                      <Typography
-                        variant="h6"
-                        component="h3"
-                        sx={{ color: "white", mb: 1 }}
-                      >
-                        {module.title}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: "white" }}>
-                        {module.description}
-                      </Typography>
-                    </CardOverlay>
-                  </StyledCard>
-                ))}
-              </Box>
-            </ScrollContainer>
-
-            <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
+              {/* Botão adicionado após o texto sobre cursos */}
               <Button
                 variant="contained"
                 color="primary"
@@ -216,10 +187,43 @@ export const FeaturesGrid = () => {
                   textTransform: "none",
                   width: "100%",
                   maxWidth: "300px",
+                  mb: 4,
+                  zIndex: 1,
+                  position: "relative",
                 }}
               >
                 Acesse a nova turma da EBT!
               </Button>
+            </WelcomeSection>
+
+            {/* Cards abaixo dos parágrafos no mobile */}
+            <Box sx={{ position: "relative", zIndex: 1 }}>
+              <ScrollContainer>
+                <Box sx={{ display: "flex", gap: 2, pb: 2 }}>
+                  {modules.map((module) => (
+                    <StyledCard key={module.id}>
+                      <Image
+                        src="/card-grid.png"
+                        alt={module.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                      <CardOverlay>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          sx={{ color: "white", mb: 1 }}
+                        >
+                          {module.title}
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "white" }}>
+                          {module.description}
+                        </Typography>
+                      </CardOverlay>
+                    </StyledCard>
+                  ))}
+                </Box>
+              </ScrollContainer>
             </Box>
           </Box>
         </Container>
@@ -228,20 +232,32 @@ export const FeaturesGrid = () => {
           <Container maxWidth="xl" sx={{ position: "relative" }}>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6} sx={{ position: "relative" }}>
-                <OrangeCircleContainer>
+                <OrangeCircleContainer
+                  sx={{
+                    position: "absolute",
+                    left: "-30%",
+                    top: "-50%",
+                    width: "150%",
+                    height: "200%",
+                    transform: "none",
+                    zIndex: 0,
+                  }}
+                >
                   <Image
                     src="/circle-orange.png"
                     alt=""
-                    width={1000}
-                    height={1000}
+                    width={1200}
+                    height={1200}
                     style={{
                       width: "100%",
                       height: "100%",
                       objectFit: "contain",
+                      position: "absolute",
                     }}
                     priority
                   />
                 </OrangeCircleContainer>
+
                 <WelcomeSection>
                   <Typography
                     variant="h2"
@@ -273,6 +289,7 @@ export const FeaturesGrid = () => {
                       fontSize: "1.125rem",
                       lineHeight: 1.6,
                       maxWidth: "480px",
+                      mb: 4,
                     }}
                   >
                     <Box component="span" sx={{ fontWeight: 700 }}>
@@ -281,6 +298,25 @@ export const FeaturesGrid = () => {
                     Cada curso terá uma média de 18 a 20 aulas de 20min de
                     duração.
                   </Typography>
+
+                  <Button
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      borderRadius: "2rem",
+                      padding: "0.75rem 1.5rem",
+                      fontSize: "1rem",
+                      textTransform: "none",
+                      maxWidth: "400px",
+                      backgroundColor: "white",
+                      color: "orange",
+                      "&:hover": {
+                        backgroundColor: "#ff9800",
+                      },
+                    }}
+                  >
+                    Acesse a nova turma da EBT!
+                  </Button>
                 </WelcomeSection>
               </Grid>
               <Grid item xs={12} md={6}>

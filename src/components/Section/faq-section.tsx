@@ -84,7 +84,6 @@ export const FaqSection = () => {
           }}
         />
 
-        {/* Content */}
         <Box sx={{ position: "relative", zIndex: 1 }}>
           <Typography variant="h2" align="center" gutterBottom>
             Perguntas frequentes
