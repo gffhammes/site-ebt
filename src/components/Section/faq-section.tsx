@@ -55,8 +55,6 @@ export const FaqSection = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Box sx={{ position: "relative" }}>
-        {/* Removido os elementos com círculos laranjas */}
-
         <Box sx={{ position: "relative", zIndex: 1 }}>
           <Typography variant="h2" align="center" gutterBottom>
             Perguntas frequentes

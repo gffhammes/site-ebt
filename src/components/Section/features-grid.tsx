@@ -23,9 +23,6 @@ const OrangeCircleContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     position: "absolute",
     left: "-30%",
-    top: "-50%",
-    width: "150%",
-    height: "200%",
     transform: "none",
     zIndex: 0,
   },
@@ -38,8 +35,8 @@ const StyledCard = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   cursor: "pointer",
   transition: "transform 0.3s ease",
-  minWidth: "280px",
-  height: "380px",
+  minWidth: "226px",
+  height: "350px",
   [theme.breakpoints.up("md")]: {
     minWidth: "unset",
     height: "auto",
@@ -92,20 +89,36 @@ const ScrollContainer = styled(Box)({
 });
 
 const DesktopContainer = styled(Box)(({}) => ({
-  position: "relative",
   overflow: "visible",
   backgroundColor: "#fff",
-  minHeight: "1300px",
-  display: "flex",
-  alignItems: "center",
-  marginTop: "100px",
+  paddingBottom: "300px",
 }));
 
 const modules = [
-  { id: 1, title: "Módulo", description: "breve descrição breve descrição" },
-  { id: 2, title: "Módulo", description: "breve descrição breve descrição" },
-  { id: 3, title: "Módulo", description: "breve descrição breve descrição" },
-  { id: 4, title: "Módulo", description: "breve descrição breve descrição" },
+  {
+    id: 1,
+    title: "Módulo",
+    description: "breve descrição breve descrição",
+    image: "/book-img.png",
+  },
+  {
+    id: 2,
+    title: "Módulo",
+    description: "breve descrição breve descrição",
+    image: "/book-img2.png",
+  },
+  {
+    id: 3,
+    title: "Módulo",
+    description: "breve descrição breve descrição",
+    image: "/book-img3.png",
+  },
+  {
+    id: 4,
+    title: "Módulo",
+    description: "breve descrição breve descrição",
+    image: "/book-img4.png",
+  },
 ];
 
 export const FeaturesGrid = () => {
@@ -116,12 +129,12 @@ export const FeaturesGrid = () => {
     <Box
       sx={{
         position: "relative",
-        overflow: "hidden",
-        bgcolor: "background.default",
+        overflow: "visible",
+        color: "#fff",
       }}
     >
       {isMobile ? (
-        <Container sx={{ py: 4, px: 2 }}>
+        <Container>
           <Box sx={{ position: "relative", overflow: "hidden" }}>
             <OrangeCircleContainer
               sx={{ backgroundColor: "white" }}
@@ -199,7 +212,7 @@ export const FeaturesGrid = () => {
                   {modules.map((module) => (
                     <StyledCard key={module.id}>
                       <Image
-                        src="/card-grid.png"
+                        src={module.image || "/placeholder.svg"}
                         alt={module.title}
                         layout="fill"
                         objectFit="cover"
@@ -225,25 +238,22 @@ export const FeaturesGrid = () => {
         </Container>
       ) : (
         <DesktopContainer>
-          <Container maxWidth="lg" sx={{ position: "relative" }}>
+          <Container
+            maxWidth={false}
+            sx={{
+              position: "relative",
+              padding: 0,
+              width: "100vw",
+            }}
+          >
             <Grid container spacing={4}>
               <Grid item xs={12} md={6} sx={{ position: "relative" }}>
-                <OrangeCircleContainer
-                  sx={{
-                    position: "absolute",
-                    left: "-30%",
-                    top: "-50%",
-                    width: "150%",
-                    height: "200%",
-                    transform: "none",
-                    zIndex: 0,
-                  }}
-                >
+                <OrangeCircleContainer>
                   <Image
                     src="/circle-orange.png"
                     alt=""
-                    width={1200}
-                    height={1200}
+                    width={980}
+                    height={980}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -321,7 +331,7 @@ export const FeaturesGrid = () => {
                     <Grid item xs={6} key={module.id}>
                       <StyledCard>
                         <Image
-                          src="/card-grid.png"
+                          src={module.image || "/placeholder.svg"}
                           alt={module.title}
                           layout="fill"
                           objectFit="cover"

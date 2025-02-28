@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const professors = [
   { id: 1, name: "Nome do Professor", role: "Área de Formação" },
@@ -18,6 +19,19 @@ const professors = [
   { id: 5, name: "Nome do Professor", role: "Área de Formação" },
   { id: 6, name: "Nome do Professor", role: "Área de Formação" },
 ];
+
+const BackgroundCircle = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  right: "-15%",
+  top: "45%",
+  transform: "translateY(-50%)",
+  width: "50%",
+  height: "90%",
+  zIndex: 0,
+  [theme.breakpoints.down("md")]: {
+    display: "none",
+  },
+}));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
   width: theme.spacing(15),
@@ -40,8 +54,26 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 export const ProfessorsSection = () => {
   return (
-    <Box sx={{ position: "relative", py: 8, bgcolor: "white" }}>
-      <Container>
+    <Box
+      sx={{ position: "relative", py: 8, bgcolor: "white", overflow: "hidden" }}
+    >
+      <BackgroundCircle>
+        <Image
+          src="/bg-circle-professors.png"
+          alt=""
+          layout="fill"
+          objectFit="contain"
+          priority
+        />
+      </BackgroundCircle>
+
+      <Container
+        sx={{
+          position: "relative",
+          paddingTop: "150px",
+          paddingBottom: "80px",
+        }}
+      >
         <Box sx={{ textAlign: "center", mb: 6 }}>
           <Typography
             variant="h5"
@@ -111,7 +143,9 @@ export const ProfessorsSection = () => {
           ))}
         </Grid>
 
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", paddingTop: "40px" }}
+        >
           <StyledButton variant="contained">
             Acesse a nova turma da EBT!
           </StyledButton>

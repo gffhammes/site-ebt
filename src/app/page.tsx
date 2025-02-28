@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { QuestionsCarousel } from "@/components/questions-carousel";
 import { AboutSection } from "@/components/Section/about-section";
 import { BibotalkSection } from "@/components/Section/bibotalk-section";
 import { CertificateSection } from "@/components/Section/certificate-section";
@@ -15,10 +16,9 @@ export default function Home() {
     <div>
       <Header />
       <main>
-        <div>
-          <FeaturesGrid />
-        </div>
+        <FeaturesGrid />
         <ProfessorsSection />
+        <QuestionsCarousel />
         <CertificateSection />
         <TestimonialsSection />
         <PricingSection />
