@@ -6,6 +6,7 @@ import { BibotalkSection } from "@/components/Section/bibotalk-section";
 import { CertificateSection } from "@/components/Section/certificate-section";
 import { FaqSection } from "@/components/Section/faq-section";
 import { FeaturesGrid } from "@/components/Section/features-grid";
+import { InformationSection } from "@/components/Section/information-section";
 import { MiniCoursesSection } from "@/components/Section/mini-courses-section";
 import { PricingSection } from "@/components/Section/pricing-section";
 import { ProfessorsSection } from "@/components/Section/professors-section";
@@ -22,6 +23,7 @@ export default function Home() {
         <CertificateSection />
         <TestimonialsSection />
         <PricingSection />
+        <InformationSection />
         <AboutSection />
         <FaqSection />
         <MiniCoursesSection />

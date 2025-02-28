@@ -35,7 +35,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 export const CertificateSection = () => {
   return (
-    <Box sx={{ py: 25, bgcolor: "background.default" }}>
+    <Box sx={{ py: 20, bgcolor: "background.default" }}>
       <Container maxWidth="lg">
         <Box
           sx={{

@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Check, X } from "lucide-react";
-import Image from "next/image";
 
 const PricingCard = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -78,20 +77,12 @@ const RecommendedTag = styled("div")(({}) => ({
   fontWeight: 500,
 }));
 
-const GuaranteeCard = styled(Box)(({ theme }) => ({
-  background: theme.palette.primary.main,
-  borderRadius: theme.spacing(2),
-  padding: theme.spacing(3),
-  color: "white",
-  position: "relative",
-  marginTop: theme.spacing(4),
-  marginBottom: theme.spacing(4),
-
-  [theme.breakpoints.up("md")]: {
-    padding: theme.spacing(4),
-    marginTop: theme.spacing(6),
+const StyledButton = styled(Button)({
+  backgroundColor: "#00C853",
+  "&:hover": {
+    backgroundColor: "#00B34A",
   },
-}));
+});
 
 const features = [
   {
@@ -127,13 +118,6 @@ const features = [
     available: false,
   },
 ];
-
-const StyledButton = styled(Button)({
-  backgroundColor: "#00C853",
-  "&:hover": {
-    backgroundColor: "#00B34A",
-  },
-});
 
 export const PricingSection = () => {
   const theme = useTheme();
@@ -257,76 +241,6 @@ export const PricingSection = () => {
             <Box sx={{ flex: 1, minWidth: 280 }}>{renderPricingCard(true)}</Box>
           </Box>
         )}
-
-        <GuaranteeCard>
-          <Box sx={{ maxWidth: { xs: "100%", md: 500 } }}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              sx={{
-                fontSize: { xs: "1.75rem", md: "2.5rem" },
-                fontWeight: 700,
-              }}
-            >
-              Garantia de satisfação
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                mb: 3,
-                fontSize: { xs: "0.875rem", md: "1rem" },
-              }}
-            >
-              Nós estamos tão confiantes no
-              <br />
-              nosso método que{" "}
-              <b>
-                oferecemos <br />
-                uma garantia incondicional:
-              </b>
-            </Typography>
-            <Typography
-              variant="h5"
-              gutterBottom
-              sx={{
-                fontSize: { xs: "1.25rem", md: "1.5rem" },
-                fontWeight: 700,
-              }}
-            >
-              7 dias para testar a plataforma.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
-            >
-              Você poderá pedir a devolução de 100% do seu dinheiro dentro desse
-              prazo, sem se justificar. É só mandar um email para
-              email@email.com.br e em até 30 dias após sua compra que o dinheiro
-              volta pra sua conta.
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              right: { xs: 20, md: 40 },
-              bottom: { xs: -20, md: -40 },
-              width: { xs: 150, md: 337 },
-              height: { xs: 150, md: 337 },
-              border: "2px solid red",
-            }}
-          >
-            <Image
-              src="/selo-qualidade.png"
-              alt="Selo de Garantia"
-              width={337}
-              height={337}
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            />
-          </Box>
-        </GuaranteeCard>
 
         <Box sx={{ color: "white", mt: 4 }}>
           <Typography
