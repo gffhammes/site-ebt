@@ -12,13 +12,7 @@ export const BibotalkSection = () => {
         alignItems: "center",
       }}
     >
-      <Image
-        src="/bibotalk.png"
-        alt="Bibotalk"
-        width={200}
-        height={60}
-        style={{ filter: "brightness(0) invert(1)" }}
-      />
+      <Image src="/bibotalk.png" alt="Bibotalk" width={200} height={60} />
     </Box>
   );
 };

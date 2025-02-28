@@ -16,7 +16,7 @@ export const InformationSection: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: { xs: 2, md: 4 },
+        padding: { xs: 3, md: 6 },
       }}
     >
       <Paper

@@ -241,31 +241,6 @@ export const PricingSection = () => {
             <Box sx={{ flex: 1, minWidth: 280 }}>{renderPricingCard(true)}</Box>
           </Box>
         )}
-
-        <Box sx={{ color: "white", mt: 4 }}>
-          <Typography
-            variant="h5"
-            gutterBottom
-            sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
-          >
-            Acesso imediato:
-          </Typography>
-          <Typography
-            variant="body1"
-            gutterBottom
-            sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}
-          >
-            Seu login e senha serão enviados ao seu e-mail logo após o
-            processamento do pagamento.
-          </Typography>
-          <Typography
-            variant="body2"
-            color="gray"
-            sx={{ fontSize: { xs: "0.75rem", md: "0.875rem" } }}
-          >
-            Se não recebeu, dá uma olhadinha na sua caixa de SPAM, por favor!
-          </Typography>
-        </Box>
       </Container>
     </Box>
   );

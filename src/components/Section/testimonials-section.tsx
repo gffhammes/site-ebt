@@ -76,88 +76,119 @@ const ScrollContainer = styled(Box)({
   paddingRight: "16px",
 });
 
+const BackgroundWrapper = styled(Box)(({ theme }) => ({
+  position: "relative",
+  backgroundColor: "#fff",
+  overflow: "hidden",
+  "&::after": {
+    // eslint-disable-next-line quotes
+    content: '""',
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "150px",
+    background: "url('/bg-circle-depoiments.png')",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
+    backgroundSize: "cover",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
+}));
+
 export const TestimonialsSection = () => {
   return (
-    <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "background.default" }}>
-      <Container sx={{ px: { xs: 2, md: 3 } }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          gutterBottom
-          sx={{
-            mb: { xs: 3, md: 6 },
-            fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-            color: "#000",
-          }}
-        >
-          Depoimentos
-        </Typography>
-        <Box sx={{ display: { xs: "block", md: "none" } }}>
-          <ScrollContainer>
+    <BackgroundWrapper>
+      <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "background.default" }}>
+        <Container sx={{ px: { xs: 2, md: 3 } }}>
+          <Typography
+            variant="h2"
+            component="h2"
+            align="center"
+            gutterBottom
+            sx={{
+              mb: { xs: 3, md: 6 },
+              fontWeight: 700,
+              fontSize: { xs: "2rem", md: "2.5rem" },
+              color: "#000",
+            }}
+          >
+            Depoimentos
+          </Typography>
+          <Box
+            sx={{
+              display: { xs: "block", md: "none" },
+              position: "relative",
+              zIndex: 1,
+              pb: 15,
+            }}
+          >
+            <ScrollContainer>
+              {testimonials.map((testimonial) => (
+                <TestimonialCard key={testimonial.id}>
+                  <StyledRating
+                    value={testimonial.rating}
+                    readOnly
+                    size="small"
+                  />
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: "white",
+                      fontWeight: 600,
+                      fontSize: "1rem",
+                    }}
+                  >
+                    {testimonial.title}
+                  </Typography>
+                  <TestimonialText>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "white",
+                        flex: 1,
+                        fontSize: "0.875rem",
+                      }}
+                    >
+                      {testimonial.text}
+                    </Typography>
+                  </TestimonialText>
+                </TestimonialCard>
+              ))}
+            </ScrollContainer>
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "none", md: "grid" },
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 3,
+            }}
+          >
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id}>
-                <StyledRating
-                  value={testimonial.rating}
-                  readOnly
-                  size="small"
-                />
+                <StyledRating value={testimonial.rating} readOnly />
                 <Typography
                   variant="h6"
                   sx={{
                     color: "white",
                     fontWeight: 600,
-                    fontSize: "1rem",
+                    fontSize: "1.25rem",
                   }}
                 >
                   {testimonial.title}
                 </Typography>
                 <TestimonialText>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "white",
-                      flex: 1,
-                      fontSize: "0.875rem",
-                    }}
-                  >
+                  <Typography variant="body1" sx={{ color: "white", flex: 1 }}>
                     {testimonial.text}
                   </Typography>
                 </TestimonialText>
               </TestimonialCard>
             ))}
-          </ScrollContainer>
-        </Box>
-        <Box
-          sx={{
-            display: { xs: "none", md: "grid" },
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 3,
-          }}
-        >
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id}>
-              <StyledRating value={testimonial.rating} readOnly />
-              <Typography
-                variant="h6"
-                sx={{
-                  color: "white",
-                  fontWeight: 600,
-                  fontSize: "1.25rem",
-                }}
-              >
-                {testimonial.title}
-              </Typography>
-              <TestimonialText>
-                <Typography variant="body1" sx={{ color: "white", flex: 1 }}>
-                  {testimonial.text}
-                </Typography>
-              </TestimonialText>
-            </TestimonialCard>
-          ))}
-        </Box>
-      </Container>
-    </Box>
+          </Box>
+        </Container>
+      </Box>
+    </BackgroundWrapper>
   );
 };
