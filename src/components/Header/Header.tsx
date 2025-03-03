@@ -11,9 +11,11 @@ import {
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const HeaderContainer = styled("header")(({ theme }) => ({
   position: "relative",
   width: "100%",
+  minHeight: "950px",
   height: "100vh",
   display: "flex",
   flexDirection: "column",
@@ -24,9 +26,6 @@ const HeaderContainer = styled("header")(({ theme }) => ({
   paddingLeft: "2rem",
   background: "#1A1A1A",
   overflow: "hidden",
-  [theme.breakpoints.up("md")]: {
-    paddingLeft: "5rem",
-  },
 }));
 
 const BackgroundImage = styled("div")(({ theme }) => ({
@@ -46,7 +45,7 @@ const BackgroundImage = styled("div")(({ theme }) => ({
     background: "linear-gradient(90deg, #1a1a1a 0%, rgba(26, 26, 26, 0) 100%)",
   },
   [theme.breakpoints.up("md")]: {
-    width: "60%",
+    width: "80%",
   },
 }));
 
@@ -78,10 +77,10 @@ export const Header = () => {
       <Content>
         <Box
           sx={{
-            marginBottom: { xs: "450px", md: "300px" },
+            marginBottom: { xs: "450px", md: "200px" },
           }}
         >
-          <Image src="/logo-topo.png" alt="EBT Logo" width={200} height={40} />
+          <Image src="/logo-topo.png" alt="EBT Logo" width={225} height={50} />
         </Box>
 
         <Typography
@@ -98,19 +97,37 @@ export const Header = () => {
           <Box component="span" sx={{ display: "block", fontWeight: 500 }}>
             <b>aprender Teologia</b> de maneira
           </Box>
+        </Typography>
+
+        <Typography
+          variant="h1"
+          sx={{
+            fontFamily: "Montserrat, sans-serif",
+            fontWeight: 700,
+            fontSize: { xs: "120px", md: "152px" },
+            lineHeight: { xs: "180px", md: "200px" },
+            display: "block",
+            position: "relative",
+          }}
+        >
           <Box
             component="span"
             sx={{
-              fontFamily: "Montserrat, sans-serif",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              fontSize: "200px",
               fontWeight: 700,
-              fontSize: "175px",
-              lineHeight: { xs: "180px", md: "200px" },
-              display: "block",
+              color: "transparent",
+              WebkitTextStroke: "1px rgba(255, 255, 255, 0.5)",
+              zIndex: -1,
             }}
           >
             fácil
           </Box>
+          fácil
         </Typography>
+
         <Button
           variant="contained"
           color="primary"

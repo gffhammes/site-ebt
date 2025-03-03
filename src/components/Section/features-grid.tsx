@@ -14,7 +14,6 @@ import Image from "next/image";
 
 const OrangeCircleContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
-  left: "-20%",
   top: "-10%",
   width: "140%",
   height: "140%",
@@ -30,19 +29,16 @@ const OrangeCircleContainer = styled(Box)(({ theme }) => ({
 
 const StyledCard = styled(Box)(({ theme }) => ({
   position: "relative",
-  aspectRatio: "1",
-  borderRadius: "8px",
+  height: 350,
+  width: 226,
+  borderRadius: theme.shape.borderRadius,
   overflow: "hidden",
-  cursor: "pointer",
-  transition: "transform 0.3s ease",
-  minWidth: "226px",
-  height: "350px",
-  [theme.breakpoints.up("md")]: {
-    minWidth: "unset",
-    height: "auto",
-    "&:hover": {
-      transform: "scale(1.02)",
-    },
+  boxShadow: theme.shadows[2],
+  margin: "0 auto",
+  [theme.breakpoints.down("md")]: {
+    width: 180,
+    height: 280,
+    flexShrink: 0,
   },
 }));
 
@@ -72,7 +68,7 @@ const WelcomeSection = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     color: "white",
     justifyContent: "center",
-    padding: theme.spacing(6),
+    padding: theme.spacing(10),
     position: "relative",
     zIndex: 2,
   },
@@ -147,7 +143,7 @@ export const FeaturesGrid = () => {
                 gutterBottom
                 sx={{
                   fontSize: "2rem",
-                  fontWeight: 600,
+                  fontWeight: 700,
                   mb: 3,
                   position: "relative",
                   zIndex: 1,
@@ -270,8 +266,8 @@ export const FeaturesGrid = () => {
                     component="h2"
                     gutterBottom
                     sx={{
-                      fontSize: "2.5rem",
-                      fontWeight: 600,
+                      fontSize: "2rem",
+                      fontWeight: 700,
                       mb: 3,
                       maxWidth: "480px",
                     }}
