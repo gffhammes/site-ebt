@@ -20,7 +20,6 @@ const StyledSection = styled(Box)(({ theme }) => ({
   },
 }));
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ContentContainer = styled(Container)(({ theme }) => ({
   position: "relative",
   zIndex: 2,

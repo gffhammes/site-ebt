@@ -11,7 +11,6 @@ import {
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const HeaderContainer = styled("header")(({ theme }) => ({
   position: "relative",
   width: "100%",
