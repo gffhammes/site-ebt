@@ -1,0 +1,36 @@
+[
+    {
+      "text": "Todos os cursos disponíveis e ilimitados",
+      "available": true
+    },
+    {
+      "text": "Materiais complementares",
+      "available": true
+    },
+    {
+      "text": "Avaliações periódicas",
+      "available": true
+    },
+    {
+      "text": "Acesso online e offline",
+      "available": true
+    },
+    {
+      "text": "Sorteios quinzenais de livros",
+      "available": false
+    },
+    {
+      "text": "Orientações Teológicas",
+      "available": false
+    },
+    {
+      "text": "Grupo exclusivo no WhatsApp",
+      "available": false
+    },
+    {
+      "text": "Tutor Teológico",
+      "available": false
+    }
+  ]
+  
+  

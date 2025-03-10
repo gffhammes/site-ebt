@@ -6,7 +6,6 @@ import { styled } from "@mui/material/styles";
 import type { Testimonial } from "@/@types/testimonal";
 import testimonialsData from "@/data/testimonials-data.json";
 
-// Styled components
 const TestimonialCard = styled(Box)(({ theme }) => ({
   background: "#333333",
   borderRadius: "16px",

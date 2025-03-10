@@ -91,7 +91,8 @@ const ScrollContainer = styled(Box)({
 const DesktopContainer = styled(Box)(({}) => ({
   overflow: "visible",
   backgroundColor: "#fff",
-  paddingBottom: "300px",
+  paddingTop: "140px",
+  paddingBottom: "200px",
 }));
 
 const modules = [
@@ -282,8 +283,9 @@ export const FeaturesGrid = () => {
                     sx={{
                       mb: 2,
                       fontWeight: 300,
-                      lineHeight: 1.2,
+                      lineHeight: 1.3,
                       maxWidth: "480px",
+                      paddingBottom: "30px",
                     }}
                   >
                     Na EBT vamos contemplar as disciplinas essenciais da
@@ -292,14 +294,14 @@ export const FeaturesGrid = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      lineHeight: 1.6,
+                      lineHeight: 1.3,
                       maxWidth: "480px",
                       mb: 4,
                     }}
                   >
                     <Box component="span" sx={{ fontWeight: 700 }}>
                       A EBT é dividida em cursos.
-                    </Box>{" "}
+                    </Box>
                     Cada curso terá uma média de 18 a 20 aulas de 20min de
                     duração.
                   </Typography>
