@@ -3,13 +3,13 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#1C1C1C", py: 4 }}>
+    <Box sx={{ backgroundColor: "#1C1C1C", pt: 12, pb: 6 }}>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 2,
+          gap: 8,
         }}
       >
         <Link
@@ -30,8 +30,8 @@ export const Footer = () => {
           <Image
             src="/instagram-logo.png"
             alt="Instagram"
-            width={40}
-            height={40}
+            width={74}
+            height={74}
           />
         </Link>
 

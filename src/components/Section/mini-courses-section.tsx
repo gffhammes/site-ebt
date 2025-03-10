@@ -49,12 +49,11 @@ export const MiniCoursesSection = () => {
           sx={{
             mb: 15,
             fontSize: { xs: "24px", md: "32px" },
-            fontWeight: 700,
+            fontWeight: 500,
             color: "#000",
           }}
         >
-          Conheça também <br />
-          nossos mini-cursos:
+          Conheça também nossos mini-cursos:
         </Typography>
 
         <Box
