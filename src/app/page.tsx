@@ -19,7 +19,7 @@ export default function Home() {
       <main>
         <FeaturesGrid />
         <ProfessorsSection />
-        <QuestionsCarousel />
+        <QuestionsCarousel rowCount={2} speed={45} pauseOnHover={true} />
         <CertificateSection />
         <TestimonialsSection />
         <PricingSection />

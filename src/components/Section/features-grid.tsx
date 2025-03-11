@@ -14,16 +14,20 @@ import Image from "next/image";
 
 const OrangeCircleContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
-  top: "-10%",
-  width: "140%",
-  height: "140%",
+  top: "50%",
+  left: "0",
+  transform: "translate(-40%, -50%)",
+  width: "1200px",
+  height: "1200px",
   zIndex: 0,
+  overflow: "hidden",
 
   [theme.breakpoints.up("md")]: {
-    position: "absolute",
-    left: "-30%",
-    transform: "none",
-    zIndex: 0,
+    width: "1209px",
+    height: "1149px",
+    top: "50%",
+    left: "0",
+    transform: "translate(-20%, -50%)",
   },
 }));
 
@@ -87,7 +91,8 @@ const ScrollContainer = styled(Box)({
 const DesktopContainer = styled(Box)(({}) => ({
   overflow: "visible",
   backgroundColor: "#fff",
-  paddingBottom: "300px",
+  paddingTop: "140px",
+  paddingBottom: "200px",
 }));
 
 const modules = [
@@ -248,13 +253,11 @@ export const FeaturesGrid = () => {
                   <Image
                     src="/circle-orange.png"
                     alt=""
-                    width={980}
-                    height={980}
+                    fill
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "contain",
-                      position: "absolute",
+                      objectPosition: "center",
+                      zIndex: 0,
                     }}
                     priority
                   />
@@ -266,20 +269,23 @@ export const FeaturesGrid = () => {
                     component="h2"
                     gutterBottom
                     sx={{
-                      fontSize: "2rem",
-                      fontWeight: 700,
+                      fontWeight: 600,
+                      lineHeight: 1.6,
                       mb: 3,
-                      maxWidth: "480px",
+                      maxWidth: "330px",
                     }}
                   >
                     Seja bem-vindo à sua nova jornada de aprendizado!
                   </Typography>
                   <Typography
+                    variant="body1"
+                    component="p"
                     sx={{
                       mb: 2,
-                      fontSize: "1.125rem",
-                      lineHeight: 1.6,
+                      fontWeight: 300,
+                      lineHeight: 1.3,
                       maxWidth: "480px",
+                      paddingBottom: "30px",
                     }}
                   >
                     Na EBT vamos contemplar as disciplinas essenciais da
@@ -288,15 +294,14 @@ export const FeaturesGrid = () => {
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: "1.125rem",
-                      lineHeight: 1.6,
+                      lineHeight: 1.3,
                       maxWidth: "480px",
                       mb: 4,
                     }}
                   >
                     <Box component="span" sx={{ fontWeight: 700 }}>
                       A EBT é dividida em cursos.
-                    </Box>{" "}
+                    </Box>
                     Cada curso terá uma média de 18 a 20 aulas de 20min de
                     duração.
                   </Typography>

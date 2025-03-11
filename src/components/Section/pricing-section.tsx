@@ -12,6 +12,10 @@ import {
 import { styled } from "@mui/material/styles";
 import { Check, X } from "lucide-react";
 
+import type { PricingFeature, PricingPlan } from "@/@types/pricing";
+import pricingFeatures from "@/data/pricing-features.json";
+import pricingPlans from "@/data/pricing-plans.json";
+
 const PricingCard = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
   borderRadius: theme.spacing(2),
@@ -65,7 +69,7 @@ const FeatureItem = styled("li")(({ theme }) => ({
   },
 }));
 
-const RecommendedTag = styled("div")(({}) => ({
+const RecommendedTag = styled("div")({
   position: "absolute",
   top: -12,
   right: 24,
@@ -75,7 +79,7 @@ const RecommendedTag = styled("div")(({}) => ({
   borderRadius: 16,
   fontSize: 14,
   fontWeight: 500,
-}));
+});
 
 const StyledButton = styled(Button)({
   backgroundColor: "#00C853",
@@ -84,53 +88,62 @@ const StyledButton = styled(Button)({
   },
 });
 
-const features = [
-  {
-    text: "Todos os cursos disponíveis e ilimitados",
-    available: true,
-  },
-  {
-    text: "Materiais complementares",
-    available: true,
-  },
-  {
-    text: "Avaliações periódicas",
-    available: true,
-  },
-  {
-    text: "Acesso online e offline",
-    available: true,
-  },
-  {
-    text: "Sorteios quinzenais de livros",
-    available: false,
-  },
-  {
-    text: "Orientações Teológicas",
-    available: false,
-  },
-  {
-    text: "Grupo exclusivo no WhatsApp",
-    available: false,
-  },
-  {
-    text: "Tutor Teológico",
-    available: false,
-  },
-];
-
 export const PricingSection = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const renderPricingCard = (isAnnual = false) => (
-    <PricingCard sx={{ bgcolor: isAnnual ? "#FF5C00" : "#333333" }}>
-      {isAnnual && <RecommendedTag>RECOMENDADO</RecommendedTag>}
+  return (
+    <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "#1A1A1A" }}>
+      <Container sx={{ px: { xs: 2, md: 3 } }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          align="center"
+          sx={{
+            color: "white",
+            mb: { xs: 4, md: 6 },
+            fontWeight: 700,
+            fontSize: { xs: "2rem", md: "2.5rem" },
+          }}
+        >
+          Planos
+        </Typography>
+
+        {isMobile ? (
+          <ScrollContainer>
+            {pricingPlans.map((plan) => (
+              <PricingCardComponent key={plan.id} plan={plan} />
+            ))}
+          </ScrollContainer>
+        ) : (
+          <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
+            {pricingPlans.map((plan) => (
+              <Box key={plan.id} sx={{ flex: 1, minWidth: 280 }}>
+                <PricingCardComponent plan={plan} />
+              </Box>
+            ))}
+          </Box>
+        )}
+      </Container>
+    </Box>
+  );
+};
+
+interface PricingCardProps {
+  plan: PricingPlan;
+}
+
+const PricingCardComponent = ({ plan }: PricingCardProps) => {
+  const isAnnual = plan.id === "annual";
+
+  return (
+    <PricingCard sx={{ bgcolor: plan.color }}>
+      {plan.recommended && <RecommendedTag>RECOMENDADO</RecommendedTag>}
       <Typography
         variant="h6"
         sx={{ color: "white", mb: 2, textTransform: "uppercase" }}
       >
-        {isAnnual ? "Anual" : "Mensal"}
+        {plan.title}
       </Typography>
       <Box sx={{ display: "flex", alignItems: "flex-start", mb: 3 }}>
         <Typography
@@ -148,16 +161,16 @@ export const PricingSection = () => {
             fontWeight: 700,
           }}
         >
-          {isAnnual ? "997,90" : "69,90"}
+          {plan.price}
         </Typography>
         <Typography
           component="span"
           sx={{ color: "white", fontSize: "1rem", mt: 1, ml: 1 }}
         >
-          /{isAnnual ? "ano" : "mês"}
+          /{plan.period}
         </Typography>
       </Box>
-      {isAnnual && (
+      {plan.additionalInfo && (
         <Typography
           sx={{
             color: "white",
@@ -166,11 +179,11 @@ export const PricingSection = () => {
             opacity: 0.8,
           }}
         >
-          + taxas hotmart
+          {plan.additionalInfo}
         </Typography>
       )}
       <FeatureList>
-        {features.map((feature, index) => (
+        {pricingFeatures.map((feature: PricingFeature, index: number) => (
           <FeatureItem
             key={index}
             sx={{
@@ -209,39 +222,5 @@ export const PricingSection = () => {
         ASSINAR
       </StyledButton>
     </PricingCard>
-  );
-
-  return (
-    <Box sx={{ py: { xs: 4, md: 8 }, bgcolor: "#1A1A1A" }}>
-      <Container sx={{ px: { xs: 2, md: 3 } }}>
-        <Typography
-          variant="h2"
-          component="h2"
-          align="center"
-          sx={{
-            color: "white",
-            mb: { xs: 4, md: 6 },
-            fontWeight: 700,
-            fontSize: { xs: "2rem", md: "2.5rem" },
-          }}
-        >
-          Planos
-        </Typography>
-
-        {isMobile ? (
-          <ScrollContainer>
-            {renderPricingCard(false)}
-            {renderPricingCard(true)}
-          </ScrollContainer>
-        ) : (
-          <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
-            <Box sx={{ flex: 1, minWidth: 280 }}>
-              {renderPricingCard(false)}
-            </Box>
-            <Box sx={{ flex: 1, minWidth: 280 }}>{renderPricingCard(true)}</Box>
-          </Box>
-        )}
-      </Container>
-    </Box>
   );
 };

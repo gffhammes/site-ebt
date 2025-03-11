@@ -3,29 +3,8 @@
 import { Box, Container, Rating, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "João Silva",
-    rating: 5,
-    title: "Excelente! Muito atenciosos",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 2,
-    name: "Maria Santos",
-    rating: 5,
-    title: "Muito bom",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    id: 3,
-    name: "Pedro Oliveira",
-    rating: 5,
-    title: "Ótimo!!",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-];
+import type { Testimonial } from "@/@types/testimonal";
+import testimonialsData from "@/data/testimonials-data.json";
 
 const TestimonialCard = styled(Box)(({ theme }) => ({
   background: "#333333",
@@ -126,7 +105,7 @@ export const TestimonialsSection = () => {
             }}
           >
             <ScrollContainer>
-              {testimonials.map((testimonial) => (
+              {testimonialsData.map((testimonial: Testimonial) => (
                 <TestimonialCard key={testimonial.id}>
                   <StyledRating
                     value={testimonial.rating}
@@ -166,7 +145,7 @@ export const TestimonialsSection = () => {
               gap: 3,
             }}
           >
-            {testimonials.map((testimonial) => (
+            {testimonialsData.map((testimonial: Testimonial) => (
               <TestimonialCard key={testimonial.id}>
                 <StyledRating value={testimonial.rating} readOnly />
                 <Typography

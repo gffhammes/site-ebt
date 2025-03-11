@@ -1,33 +1,25 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Container,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
-const HeaderContainer = styled("header")(({ theme }) => ({
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const HeaderContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  minHeight: "950px",
-  height: "100vh",
+  height: "110vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "flex-start",
   textAlign: "left",
   color: "white",
-  paddingLeft: "2rem",
   background: "#1A1A1A",
   overflow: "hidden",
 }));
 
-const BackgroundImage = styled("div")(({ theme }) => ({
+const BackgroundImage = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: 0,
   right: 0,
@@ -58,38 +50,40 @@ const Content = styled(Container)({
 });
 
 export const Header = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <HeaderContainer>
       <BackgroundImage>
         <Image
-          src={isMobile ? "/header-mobile.png" : "/bg-desktop-img.png"}
+          src="/bg-desktop-img.png"
           alt="Background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="right center"
+          fill
+          sizes="100vw"
+          priority
+          style={{
+            objectFit: "cover",
+            objectPosition: "right center",
+          }}
         />
       </BackgroundImage>
 
       <Content>
-        <Box
-          sx={{
-            marginBottom: { xs: "450px", md: "200px" },
-          }}
-        >
-          <Image src="/logo-topo.png" alt="EBT Logo" width={225} height={50} />
+        <Box sx={{ marginBottom: { xs: "450px", md: "260px" } }}>
+          <Image
+            src="/logo-topo.png"
+            alt="EBT Logo"
+            width={225}
+            height={50}
+            priority
+          />
         </Box>
 
         <Typography
-          variant="h1"
+          variant="h2"
           sx={{
             fontFamily: "Montserrat, sans-serif",
             fontWeight: 400,
             fontSize: { xs: "16px", md: "32px" },
             lineHeight: { xs: "19.5px", md: "39.01px" },
-            letterSpacing: "0%",
           }}
         >
           Chegou a hora de você

@@ -11,15 +11,10 @@ import {
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
-const professors = [
-  { id: 1, name: "Nome do Professor", role: "Área de Formação" },
-  { id: 2, name: "Nome do Professor", role: "Área de Formação" },
-  { id: 3, name: "Nome do Professor", role: "Área de Formação" },
-  { id: 4, name: "Nome do Professor", role: "Área de Formação" },
-  { id: 5, name: "Nome do Professor", role: "Área de Formação" },
-  { id: 6, name: "Nome do Professor", role: "Área de Formação" },
-];
+import type { Professor } from "@/@types/professor";
+import professorsData from "@/data/professors-data.json";
 
+// Styled components
 const BackgroundCircle = styled(Box)(({ theme }) => ({
   position: "absolute",
   right: "-15%",
@@ -61,8 +56,11 @@ export const ProfessorsSection = () => {
         <Image
           src="/bg-circle-professors.png"
           alt=""
-          layout="fill"
-          objectFit="contain"
+          fill
+          sizes="50vw"
+          style={{
+            objectFit: "contain",
+          }}
           priority
         />
       </BackgroundCircle>
@@ -102,7 +100,7 @@ export const ProfessorsSection = () => {
         </Box>
 
         <Grid container spacing={4} justifyContent="center">
-          {professors.map((professor) => (
+          {professorsData.map((professor: Professor) => (
             <Grid
               item
               xs={6}
