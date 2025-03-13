@@ -11,19 +11,19 @@ import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
 const StyledSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
+  padding: theme.spacing(4, 0),
   background: "#ffffff",
   position: "relative",
   overflow: "hidden",
-  [theme.breakpoints.down("md")]: {
-    padding: theme.spacing(4, 0),
-  },
 }));
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ContentContainer = styled(Container)(({ theme }) => ({
   position: "relative",
   zIndex: 2,
+  padding: theme.spacing(0, 2),
+  [theme.breakpoints.down("md")]: {
+    maxWidth: "100%",
+  },
 }));
 
 const ImageWrapper = styled(Box)(({ theme }) => ({
@@ -39,6 +39,7 @@ const ImageWrapper = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "400px",
     marginTop: theme.spacing(4),
+    position: "relative",
   },
 }));
 
@@ -56,18 +57,21 @@ export const AboutSection = () => {
         <Box
           sx={{
             maxWidth: { xs: "100%", md: "50%" },
-            pr: { xs: 2, md: 6 },
+            pr: { xs: 0, md: 6 },
           }}
         >
-          <Box sx={{ position: "relative", mb: 4 }}>
+          <Box sx={{ position: "relative", mb: { xs: 3, md: 4 } }}>
             <Typography
               variant="h2"
-              gutterBottom
+              component="h2"
               sx={{
                 fontWeight: 700,
                 color: "#000",
-                fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
-                lineHeight: 1.2,
+                fontSize: { xs: "32px", sm: "3rem", md: "3.5rem" },
+                lineHeight: { xs: 1.2, md: 1.2 },
+                "& span": {
+                  display: "inline",
+                },
               }}
             >
               Mas afinal, quem é o{" "}
@@ -76,7 +80,7 @@ export const AboutSection = () => {
                 sx={{
                   color: "primary.main",
                   position: "relative",
-                  display: "inline-block",
+                  display: "inline",
                 }}
               >
                 Bibo?
@@ -85,32 +89,64 @@ export const AboutSection = () => {
           </Box>
 
           {isMobile ? (
-            <>
-              <Typography variant="body1" paragraph sx={{ color: "#000" }}>
+            <Box sx={{ mb: 4 }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#000",
+                  fontSize: "16px",
+                  lineHeight: 1.5,
+                  mb: 2,
+                }}
+              >
                 Rodrigo Luis de Aquino, conhecido como <BoldSpan>Bibo</BoldSpan>
                 , é um teólogo de 42 anos, casado e pai de dois filhos.
               </Typography>
 
-              <Typography variant="body1" paragraph sx={{ color: "#000" }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#000",
+                  fontSize: "16px",
+                  lineHeight: 1.5,
+                  mb: 2,
+                }}
+              >
                 Formado em teologia pela Faculdade Luterana de Teologia, com
                 especialização em aconselhamento cristão e mestrado pela
                 FABAPAR, ele fundou o site e podcast Bibotalk em 2011 para
                 tornar o estudo da teologia e da Bíblia mais acessível.
               </Typography>
 
-              <Typography variant="body1" paragraph sx={{ color: "#000" }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#000",
+                  fontSize: "16px",
+                  lineHeight: 1.5,
+                  mb: 2,
+                }}
+              >
                 O Bibotalk já conta com mais de 430 episódios e 11 milhões de
                 downloads. No YouTube, seu canal tem mais de 117 mil inscritos e
                 4 milhões de visualizações.
               </Typography>
 
-              <Typography variant="body1" paragraph sx={{ color: "#000" }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "#000",
+                  fontSize: "16px",
+                  lineHeight: 1.5,
+                }}
+              >
                 Apaixonado por café e chocolate, Bibo não gosta muito de saladas
                 e curte assistir a filmes e séries (inclusive gostou do final de
                 LOST).
               </Typography>
-            </>
+            </Box>
           ) : (
+            // Desktop version remains unchanged
             <>
               <Typography variant="body1" paragraph sx={{ color: "#000" }}>
                 Rodrigo Luis de Aquino, 42 anos, é teólogo, casado com Alexandra

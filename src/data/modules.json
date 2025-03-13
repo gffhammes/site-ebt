@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Módulo 1",
+      "description": "Breve descrição do Módulo 1",
+      "image": "/book-img.png"
+    },
+    {
+      "id": 2,
+      "title": "Módulo 2",
+      "description": "Breve descrição do Módulo 2",
+      "image": "/book-img2.png"
+    },
+    {
+      "id": 3,
+      "title": "Módulo 3",
+      "description": "Breve descrição do Módulo 3",
+      "image": "/book-img3.png"
+    },
+    {
+      "id": 4,
+      "title": "Módulo 4",
+      "description": "Breve descrição do Módulo 4",
+      "image": "/book-img4.png"
+    }
+  ]
+  

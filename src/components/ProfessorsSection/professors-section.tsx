@@ -14,7 +14,6 @@ import Image from "next/image";
 import type { Professor } from "@/@types/professor";
 import professorsData from "@/data/professors-data.json";
 
-// Styled components
 const BackgroundCircle = styled(Box)(({ theme }) => ({
   position: "absolute",
   right: "-15%",
@@ -79,7 +78,7 @@ export const ProfessorsSection = () => {
             gutterBottom
             sx={{
               color: "black",
-              mb: 2,
+              mb: 6,
               fontSize: { xs: "1.25rem", md: "1.5rem" },
             }}
           >
@@ -91,7 +90,7 @@ export const ProfessorsSection = () => {
             component="h3"
             sx={{
               fontWeight: 700,
-              fontSize: { xs: "2.5rem", md: "3.5rem" },
+              fontSize: { xs: "2.5rem", md: "5.5rem" },
               color: "black",
             }}
           >
