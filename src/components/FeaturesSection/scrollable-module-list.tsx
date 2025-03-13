@@ -15,7 +15,7 @@ const ScrollContainer = styled(Box)({
     display: "none",
   },
   scrollbarWidth: "none",
-  width: "100%", // Ensure full width
+  width: "100%",
 });
 
 interface ScrollableModuleListProps {

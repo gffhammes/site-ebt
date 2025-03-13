@@ -28,15 +28,12 @@ export const DepoimentsSection = () => {
             Depoimentos
           </Typography>
 
-          {/* Mobile View */}
           <MobileTestimonials testimonials={testimonialsData} />
 
-          {/* Desktop View */}
           <DesktopTestimonials testimonials={testimonialsData} />
         </Container>
       </Box>
 
-      {/* Add spacing to ensure the next section is positioned correctly */}
       <Box sx={{ height: { xs: "50px", md: "100px" } }} />
     </BackgroundWrapper>
   );
@@ -52,8 +49,8 @@ const MobileTestimonials = ({ testimonials }: TestimonialsListProps) => {
       sx={{
         display: { xs: "block", md: "none" },
         position: "relative",
-        zIndex: 2, // Higher than the background circles
-        pb: 4, // Reduced padding since we added spacing at the bottom of the wrapper
+        zIndex: 2,
+        pb: 4,
       }}
     >
       <ScrollContainer>
@@ -77,7 +74,7 @@ const DesktopTestimonials = ({ testimonials }: TestimonialsListProps) => {
         gridTemplateColumns: "repeat(3, 1fr)",
         gap: 3,
         position: "relative",
-        zIndex: 2, // Higher than the background circles
+        zIndex: 2,
       }}
     >
       {testimonials.map((testimonial) => (

@@ -146,7 +146,6 @@ export const AboutSection = () => {
               </Typography>
             </Box>
           ) : (
-            // Desktop version remains unchanged
             <>
               <Typography variant="body1" paragraph sx={{ color: "#000" }}>
                 Rodrigo Luis de Aquino, 42 anos, é teólogo, casado com Alexandra
