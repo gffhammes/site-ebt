@@ -2,54 +2,64 @@
 
 import { Box, Button, Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import { MoveDown } from "lucide-react";
 import Image from "next/image";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const HeaderContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
-  height: "110vh",
+  height: "115vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  alignItems: "flex-start",
-  textAlign: "left",
-  color: "white",
-  background: "#1A1A1A",
+  color: theme.palette.common.white,
   overflow: "hidden",
+  paddingBottom: "150px",
 }));
 
-const BackgroundImage = styled(Box)(({ theme }) => ({
+const BackgroundImage = styled(Box)({
   position: "absolute",
   top: 0,
   right: 0,
   width: "100%",
   height: "100%",
   zIndex: 0,
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "linear-gradient(90deg, #1a1a1a 0%, rgba(26, 26, 26, 0) 100%)",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "80%",
-  },
-}));
+});
 
-const Content = styled(Container)({
+const Content = styled(Container)(({ theme }) => ({
   position: "relative",
   zIndex: 1,
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
-  gap: "2rem",
-});
+  gap: theme.spacing(4),
+}));
+
+const ScrollArrow = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  bottom: theme.spacing(4),
+  left: "50%",
+  transform: "translateX(-50%)",
+  zIndex: 2,
+  cursor: "pointer",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "48px",
+  height: "48px",
+  borderRadius: "50%",
+  color: theme.palette.common.white,
+}));
 
 export const Header = () => {
+  const scrollToNextSection = () => {
+    const featuresSection = document.querySelector("main > div:first-child");
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <HeaderContainer>
       <BackgroundImage>
@@ -67,7 +77,7 @@ export const Header = () => {
       </BackgroundImage>
 
       <Content>
-        <Box sx={{ marginBottom: { xs: "450px", md: "260px" } }}>
+        <Box sx={{ mb: { xs: "450px", md: "260px" } }}>
           <Image
             src="/logo-topo.png"
             alt="EBT Logo"
@@ -79,63 +89,78 @@ export const Header = () => {
 
         <Typography
           variant="h2"
-          sx={{
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 400,
-            fontSize: { xs: "16px", md: "32px" },
+          sx={(theme) => ({
+            fontWeight: theme.typography.h2.fontWeight,
+            fontSize: { xs: "16px", md: theme.typography.h2.fontSize },
             lineHeight: { xs: "19.5px", md: "39.01px" },
-          }}
+          })}
         >
           Chegou a hora de você
-          <Box component="span" sx={{ display: "block", fontWeight: 500 }}>
+          <Box component="span" sx={{ display: "block", fontWeight: 400 }}>
             <b>aprender Teologia</b> de maneira
           </Box>
         </Typography>
 
-        <Typography
-          variant="h1"
-          sx={{
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: { xs: "120px", md: "152px" },
-            lineHeight: { xs: "180px", md: "200px" },
-            display: "block",
-            position: "relative",
-          }}
-        >
-          <Box
-            component="span"
+        <Box sx={{ position: "relative" }}>
+          <Typography
+            variant="h1"
             sx={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              fontSize: "200px",
               fontWeight: 700,
-              color: "transparent",
-              WebkitTextStroke: "1px rgba(255, 255, 255, 0.5)",
-              zIndex: -1,
+              fontSize: { xs: "120px", md: "152px" },
+              lineHeight: { xs: "180px", md: "200px" },
+              position: "relative",
             }}
           >
+            <Box
+              component="span"
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                fontSize: "200px",
+                fontWeight: 700,
+                color: "transparent",
+                WebkitTextStroke: "1px rgba(255, 255, 255, 0.5)",
+                zIndex: -1,
+              }}
+            >
+              fácil
+            </Box>
             fácil
-          </Box>
-          fácil
-        </Typography>
+          </Typography>
+        </Box>
 
         <Button
           variant="contained"
           color="primary"
           size="large"
-          sx={{
-            borderRadius: "8px",
-            padding: "1rem 2rem",
+          sx={(theme) => ({
+            borderRadius: theme.shape.borderRadius,
+            padding: theme.spacing(2, 4),
             fontSize: "1.25rem",
             fontWeight: 700,
             textTransform: "none",
-          }}
+          })}
         >
           Acesse a nova turma da EBT!
         </Button>
       </Content>
+
+      <ScrollArrow
+        onClick={scrollToNextSection}
+        style={{ marginBottom: "3rem" }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+            duration: 1.5,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        >
+          <MoveDown size={45} />
+        </motion.div>
+      </ScrollArrow>
     </HeaderContainer>
   );
 };
