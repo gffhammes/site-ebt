@@ -18,7 +18,8 @@ const eslintConfig = [
       quotes: ["error", "double"],
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
-      "simple-import-sort/imports": "error"
+      "simple-import-sort/imports": "error",
+      "@typescript-eslint/no-unused-vars": "warn"
     }
   }),
 ];
