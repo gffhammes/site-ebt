@@ -1,6 +1,12 @@
 "use client";
 
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -26,6 +32,8 @@ const courses = [
 ];
 
 export const MiniCoursesSection = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [currentSlide, setCurrentSlide] = useState(1);
 
   useEffect(() => {
@@ -41,13 +49,19 @@ export const MiniCoursesSection = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "white", py: 10 }}>
+    <Box
+      sx={{
+        backgroundColor: "white",
+        py: { xs: 5, md: 10 },
+        overflow: "hidden",
+      }}
+    >
       <Container maxWidth="lg">
         <Typography
           variant="h2"
           align="center"
           sx={{
-            mb: 15,
+            mb: { xs: 5, md: 15 },
             fontSize: { xs: "24px", md: "32px" },
             fontWeight: 500,
             color: "#000",
@@ -59,12 +73,13 @@ export const MiniCoursesSection = () => {
         <Box
           sx={{
             position: "relative",
-            height: { xs: "300px", md: "400px" },
+            height: { xs: "400px", md: "500px" },
             width: "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             perspective: "1000px",
+            mb: { xs: 5, md: 0 },
           }}
         >
           <AnimatePresence mode="popLayout">
@@ -75,14 +90,15 @@ export const MiniCoursesSection = () => {
                   key={course.id}
                   style={{
                     position: "absolute",
-                    width: "263px",
-                    height: "470px",
+                    width: isMobile ? "220px" : "263px",
+                    height: isMobile ? "380px" : "470px",
                     cursor: "pointer",
                   }}
                   animate={{
-                    x: `${position * 40}%`,
-                    scale: position === 0 ? 1 : 0.8,
+                    x: isMobile ? `${position * 30}%` : `${position * 40}%`,
+                    scale: position === 0 ? 1 : isMobile ? 0.7 : 0.8,
                     zIndex: position === 0 ? 2 : 1,
+                    opacity: Math.abs(position) > 1 && isMobile ? 0 : 1,
                   }}
                   transition={{
                     type: "spring",
@@ -117,7 +133,7 @@ export const MiniCoursesSection = () => {
                         bottom: 0,
                         left: 0,
                         right: 0,
-                        padding: "20px",
+                        padding: { xs: "15px", md: "20px" },
                         background:
                           "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
                         color: "white",
@@ -159,7 +175,7 @@ export const MiniCoursesSection = () => {
             display: "flex",
             justifyContent: "center",
             gap: 3,
-            mt: 15,
+            mt: { xs: 2, md: 15 },
           }}
         >
           {courses.map((_, index) => (
@@ -167,8 +183,8 @@ export const MiniCoursesSection = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               sx={{
-                width: 15,
-                height: 15,
+                width: { xs: 12, md: 15 },
+                height: { xs: 12, md: 15 },
                 borderRadius: "50%",
                 backgroundColor:
                   currentSlide === index ? "primary.main" : "grey.300",

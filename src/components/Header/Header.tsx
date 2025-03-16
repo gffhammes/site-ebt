@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { MoveDown } from "lucide-react";
 import Image from "next/image";
 
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+
 const HeaderContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   width: "100%",
@@ -53,12 +55,15 @@ const ScrollArrow = styled(Box)(({ theme }) => ({
 }));
 
 export const Header = () => {
+  const { sm, md } = useBreakpoint();
   const scrollToNextSection = () => {
     const featuresSection = document.querySelector("main > div:first-child");
     if (featuresSection) {
       featuresSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const objectPosition = md ? "50% center" : sm ? "60% center" : "70% center";
 
   return (
     <HeaderContainer>
@@ -71,13 +76,13 @@ export const Header = () => {
           priority
           style={{
             objectFit: "cover",
-            objectPosition: "right center",
+            objectPosition: objectPosition,
           }}
         />
       </BackgroundImage>
 
       <Content>
-        <Box sx={{ mb: { xs: "450px", md: "260px" } }}>
+        <Box sx={{ mb: { xs: "280px", sm: "250px", md: "260px" } }}>
           <Image
             src="/logo-topo.png"
             alt="EBT Logo"

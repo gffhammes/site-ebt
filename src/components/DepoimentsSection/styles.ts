@@ -90,9 +90,7 @@ export const BackgroundWrapper = styled(Box)(({ theme }) => ({
       bottom: "-100px",
     },
     "&::after": {
-      width: "200px",
-      height: "200px",
-      bottom: "-100px",
+      display: "none",
     },
   },
 }));
