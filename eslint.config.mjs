@@ -21,7 +21,9 @@ const eslintConfig = [
       "simple-import-sort/imports": "error",
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-empty-object-type": "off",
-      "simple-import-sort/imports": "off"
+      "simple-import-sort/imports": "off",
+      "semi": "off",
+      "quotes": "off"
     }
   }),
 ];

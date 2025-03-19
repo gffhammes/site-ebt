@@ -5,7 +5,7 @@ export interface IMobileHeroSectionProps {}
 
 export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
   return (
-    <Box sx={{ height: "100svh" }}>
+    <Box sx={{ height: "100svh", backgroundColor: "#000" }}>
       <Box
         sx={{
           height: "50%",
@@ -24,7 +24,7 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
         }}
       >
         <Container>
-          <Stack gap={2}>
+          <Stack gap={2} alignItems="flex-start">
             <Typography
               color="white"
               variant="h1"
