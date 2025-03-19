@@ -2,7 +2,7 @@ import { DepoimentsSection } from "@/components/DepoimentsSection/depoiments-sec
 import { FeaturesGrid } from "@/components/FeaturesSection/features-grid";
 import { BibotalkSection } from "@/components/Footer/bibotalk-section";
 import { Footer } from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
+import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { InformationSection } from "@/components/InformationSection/information-section";
 import { PricingSection } from "@/components/PricingSection/pricing-section";
 import { ProfessorsSection } from "@/components/ProfessorsSection/professors-section";
@@ -15,9 +15,9 @@ import { MiniCoursesSection } from "@/components/Section/mini-courses-section";
 export default function Home() {
   return (
     <div>
-      <Header />
       <main>
-        <FeaturesGrid />
+        <HeroSection />
+        {/* <FeaturesGrid />
         <ProfessorsSection />
         <QuestionsCarousel rowCount={2} speed={45} pauseOnHover={true} />
         <CertificateSection />
@@ -27,7 +27,7 @@ export default function Home() {
         <AboutSection />
         <FaqSection />
         <MiniCoursesSection />
-        <BibotalkSection />
+        <BibotalkSection /> */}
       </main>
       <Footer />
     </div>

@@ -19,7 +19,9 @@ const eslintConfig = [
       "prefer-arrow-callback": ["error"],
       "prefer-template": ["error"],
       "simple-import-sort/imports": "error",
-      "@typescript-eslint/no-unused-vars": "warn"
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "simple-import-sort/imports": "off"
     }
   }),
 ];
