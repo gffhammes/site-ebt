@@ -34,6 +34,5 @@ export const RowContainer = styled(Box)({
   display: "flex",
   overflow: "hidden",
   width: "100%",
-  padding: "12px 0",
+  // padding: "12px 0",
 });
-

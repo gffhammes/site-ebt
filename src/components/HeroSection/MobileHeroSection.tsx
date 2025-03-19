@@ -1,5 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import bgImage from "../../../public/banner2-1920x850-1.png";
+import { getLineShadowCss } from "@/utils/utils";
 
 export interface IMobileHeroSectionProps {}
 
@@ -18,8 +19,6 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
 
       <Box
         sx={{
-          position: "relative",
-          zIndex: 1,
           overflow: "hidden",
         }}
       >
@@ -32,18 +31,14 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
               sx={{
                 "& strong": {
                   fontSize: 74,
+                  position: "relative",
+                  zIndex: 1,
 
-                  "&::before": {
-                    content: "'simples'",
-                    position: "absolute",
-                    fontSize: 120,
-                    color: "black",
-                    zIndex: -1,
-                    filter: "opacity(.2)",
-                    transform: "translate(-3%, -35%)",
-                    textShadow:
-                      "-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff",
-                  },
+                  "&::before": getLineShadowCss({
+                    text: "simples",
+                    lineColor: "white",
+                    textColor: "black",
+                  }),
                 },
               }}
             >

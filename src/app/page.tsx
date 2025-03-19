@@ -1,17 +1,9 @@
-import { DepoimentsSection } from "@/components/DepoimentsSection/depoiments-section";
-import { FeaturesGrid } from "@/components/FeaturesSection/features-grid";
-import { BibotalkSection } from "@/components/Footer/bibotalk-section";
 import { Footer } from "@/components/Footer/Footer";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
-import { InformationSection } from "@/components/InformationSection/information-section";
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
-import { PricingSection } from "@/components/PricingSection/pricing-section";
-import { ProfessorsSection } from "@/components/ProfessorsSection/professors-section";
+import { ProfessorsSection } from "@/components/ProfessorsSection/ProfessorsSection";
 import { QuestionsCarousel } from "@/components/QuestionsCarousel/questions-carousel";
-import { AboutSection } from "@/components/Section/about-section";
-import { CertificateSection } from "@/components/Section/certificate-section";
-import { FaqSection } from "@/components/Section/faq-section";
-import { MiniCoursesSection } from "@/components/Section/mini-courses-section";
+import { Stack } from "@mui/material";
 
 export default function Home() {
   return (
@@ -19,11 +11,16 @@ export default function Home() {
       <main style={{ backgroundColor: "white" }}>
         <HeroSection />
 
-        <ModulesSection />
+        <Stack gap={16}>
+          <ModulesSection />
+
+          <ProfessorsSection />
+
+          <QuestionsCarousel rowCount={2} speed={45} pauseOnHover={true} />
+        </Stack>
 
         {/* <FeaturesGrid />
         <ProfessorsSection />
-        <QuestionsCarousel rowCount={2} speed={45} pauseOnHover={true} />
         <CertificateSection />
         <DepoimentsSection />
         <PricingSection />
@@ -33,6 +30,7 @@ export default function Home() {
         <MiniCoursesSection />
         <BibotalkSection /> */}
       </main>
+
       <Footer />
     </div>
   );

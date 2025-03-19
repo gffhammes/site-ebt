@@ -8,7 +8,7 @@ export interface IMobileModulesSectionProps {}
 
 export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
   return (
-    <Box sx={{ pb: 10 }}>
+    <Box>
       <Box sx={{ position: "relative", height: "10rem", width: "100%" }}>
         <Image
           src={circle.src}
