@@ -9,9 +9,6 @@ export const MobileModulesCarousel = (props: IMobileModulesCarouselProps) => {
     <Carousel
       options={{ align: "start", loop: true }}
       slides={moduleSectionData.modules.map((module, index) => {
-        const isFirstSlide = index === 0;
-        const isLastSlide = index === moduleSectionData.modules.length - 1;
-
         return (
           <Box
             key={module.name}

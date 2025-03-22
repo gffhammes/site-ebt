@@ -1,7 +1,9 @@
 import { BiboSection } from "@/components/BiboSection/BiboSection";
+import { BibotalkSection } from "@/components/BibotalkSection/BibotalkSection";
 import { FaqSection } from "@/components/FaqSection/FaqSection";
 import { Footer } from "@/components/Footer/Footer";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
+import { MiniCoursesSection } from "@/components/MiniCoursesSection/MiniCoursesSection";
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
 import { PricingSection } from "@/components/PricingSection/PricingSection";
 import { ProfessorsSection } from "@/components/ProfessorsSection/ProfessorsSection";
@@ -29,18 +31,11 @@ export default function Home() {
           <BiboSection />
 
           <FaqSection />
+
+          <MiniCoursesSection />
         </Stack>
 
-        {/* <FeaturesGrid />
-        <ProfessorsSection />
-        <CertificateSection />
-        <DepoimentsSection />
-        <PricingSection />
-        <InformationSection />
-        <AboutSection />
-        <FaqSection />
-        <MiniCoursesSection />
-        <BibotalkSection /> */}
+        <BibotalkSection />
       </main>
 
       <Footer />
