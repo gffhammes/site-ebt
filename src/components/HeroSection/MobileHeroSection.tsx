@@ -29,7 +29,7 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
               variant="h1"
               fontSize={16}
               sx={{
-                "& strong": {
+                "& strong.outlined": {
                   fontSize: 74,
                   position: "relative",
                   zIndex: 1,
@@ -44,9 +44,12 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
             >
               Chegou a hora de você
               <br />
-              aprender Teologia de maneira
+              <strong style={{ zIndex: 99, position: "relative" }}>
+                Aprender Teologia
+              </strong>{" "}
+              de maneira
               <br />
-              <strong>simples</strong>
+              <strong className="outlined">simples</strong>
             </Typography>
 
             <Button variant="contained">Acesse a nova turma da EBT!</Button>

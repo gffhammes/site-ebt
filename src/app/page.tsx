@@ -1,3 +1,5 @@
+import { BiboSection } from "@/components/BiboSection/BiboSection";
+import { FaqSection } from "@/components/FaqSection/FaqSection";
 import { Footer } from "@/components/Footer/Footer";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
@@ -13,7 +15,7 @@ export default function Home() {
       <main style={{ backgroundColor: "white" }}>
         <HeroSection />
 
-        <Stack gap={16}>
+        <Stack gap={16} sx={{ pb: 16 }}>
           <ModulesSection />
 
           <ProfessorsSection />
@@ -23,6 +25,10 @@ export default function Home() {
           <ReviewsSection />
 
           <PricingSection />
+
+          <BiboSection />
+
+          <FaqSection />
         </Stack>
 
         {/* <FeaturesGrid />

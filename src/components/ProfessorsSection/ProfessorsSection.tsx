@@ -6,7 +6,7 @@ export interface IProfessorsSectionProps {}
 
 export const ProfessorsSection = (props: IProfessorsSectionProps) => {
   return (
-    <Box sx={{ overflow: "hidden", width: "100%" }}>
+    <Box sx={{ width: "100%", overflow: "hidden", pb: 3 }}>
       <Container>
         <Stack gap={4} alignItems="center">
           <Typography
@@ -20,13 +20,15 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
                 position: "relative",
                 zIndex: 1,
 
-                "&::before": getLineShadowCss({
-                  lineColor: "black",
-                  textColor: "white",
-                  text: "professores",
-                  opacity: 0.1,
-                  transform: "translate(-10%, -30%)",
-                }),
+                "&::before": {
+                  ...getLineShadowCss({
+                    lineColor: "black",
+                    textColor: "white",
+                    text: "professores",
+                    opacity: 0.1,
+                    transform: "translate(-10%, -30%)",
+                  }),
+                },
               },
             }}
           >
