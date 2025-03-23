@@ -7,7 +7,7 @@ import { MiniCoursesSection } from "@/components/MiniCoursesSection/MiniCoursesS
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
 import { PricingSection } from "@/components/PricingSection/PricingSection";
 import { ProfessorsSection } from "@/components/ProfessorsSection/ProfessorsSection";
-import { QuestionsCarousel } from "@/components/QuestionsCarousel/questions-carousel";
+import { QuestionPills } from "@/components/QuestionPills/QuestionPills";
 import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { Stack } from "@mui/material";
 
@@ -22,7 +22,7 @@ export default function Home() {
 
           <ProfessorsSection />
 
-          <QuestionsCarousel rowCount={2} speed={45} pauseOnHover={false} />
+          <QuestionPills />
 
           <ReviewsSection />
 
