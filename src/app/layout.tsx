@@ -10,8 +10,9 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import theme from "../utils/theme";
 
 export const metadata: Metadata = {
-  title: "EBT",
-  description: "descrição",
+  title: "Escola Bibotalk de Teologia",
+  description:
+    "Descubra a Escola Bibotalk de Teologia: cursos online de alta qualidade sobre estudos bíblicos e teológicos, com aulas gravadas, materiais complementares e uma comunidade ativa. Aprenda de forma acessível e plural com o teólogo Rodrigo Bibo. Comece hoje!",
 };
 
 export default function RootLayout({

@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const ImageWrapper = styled(Box)(({ theme }) => ({
   position: "absolute",
-  right: "20px",
+  right: "-20px",
   bottom: "0",
   width: "350px",
   height: "350px",
   [theme.breakpoints.up("md")]: {
     width: "502px",
     height: "502px",
-    right: "-60px",
+    right: "-100px",
   },
 }));
 
