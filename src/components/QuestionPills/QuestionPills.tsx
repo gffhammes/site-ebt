@@ -2,15 +2,37 @@
 
 import { Box, Stack, Typography } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export const QuestionPills = () => {
   const { scrollYProgress } = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
+  const targetRef = useRef(null);
 
   const firstRowX = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
   const secondRowX = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Define a visibilidade quando pelo menos 50% do elemento estiver visível
+    );
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Stack sx={{ gap: 1 }}>
+    <Stack sx={{ gap: 1 }} ref={targetRef}>
       <Box
         sx={{
           overflow: "hidden",
@@ -24,7 +46,7 @@ export const QuestionPills = () => {
             display: "flex",
             gap: "8px",
             position: "absolute",
-            x: firstRowX,
+            x: isVisible ? firstRowX : 0,
           }}
         >
           {questions.map((pill, index) => (
@@ -61,7 +83,7 @@ export const QuestionPills = () => {
             display: "flex",
             gap: "8px",
             position: "absolute",
-            x: secondRowX,
+            x: isVisible ? secondRowX : 0,
           }}
         >
           {questions.map((pill, index) => (
