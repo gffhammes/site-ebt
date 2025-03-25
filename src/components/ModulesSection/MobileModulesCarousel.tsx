@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import { Carousel } from "../Carousel/Carousel";
 import { moduleSectionData } from "./ModulesSection";
+import Image from "next/image";
 
 export interface IMobileModulesCarouselProps {}
 
@@ -13,18 +14,14 @@ export const MobileModulesCarousel = (props: IMobileModulesCarouselProps) => {
           <Box
             key={module.name}
             sx={{
-              height: "20rem",
+              height: "17rem",
               flex: "0 0 10rem",
               pl: 2,
             }}
           >
-            <Box
-              sx={{
-                height: "100%",
-                width: "100%",
-                backgroundColor: "red",
-              }}
-            ></Box>
+            <Box sx={{ position: "relative", height: "100%", width: "100%" }}>
+              <Image src={module.image} fill alt="Modulo" objectFit="cover" />
+            </Box>
           </Box>
         );
       })}

@@ -1,6 +1,13 @@
 import { getLineShadowCss } from "@/utils/utils";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
+import professor1Image from "../../../public/professores/1.png.webp";
+import professor2Image from "../../../public/professores/2.png.webp";
+import professor3Image from "../../../public/professores/3.png.webp";
+import professor4Image from "../../../public/professores/4.png.webp";
+import professor5Image from "../../../public/professores/5.png.webp";
+import professor6Image from "../../../public/professores/6.png.webp";
+import professor7Image from "../../../public/professores/7.png.webp";
 
 export interface IProfessorsSectionProps {}
 
@@ -45,7 +52,14 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
             sx={{ position: "relative", zIndex: 1 }}
           >
             {professorsData.map((professor) => (
-              <Box key={professor.name}>
+              <Box
+                key={professor.name}
+                sx={{
+                  ":last-child:nth-child(odd)": {
+                    gridColumn: "span 2",
+                  },
+                }}
+              >
                 <Stack alignItems="center">
                   <Box
                     sx={{
@@ -53,15 +67,14 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
                       width: photoSize,
                       borderRadius: photoSize,
                       overflow: "hidden",
+                      position: "relative",
                     }}
                   >
-                    {/* <Image src={professor.photo} alt="Foto" fill /> */}
-                    <Box
-                      sx={{
-                        height: "100%",
-                        width: "100%",
-                        backgroundColor: "#dcdcdc",
-                      }}
+                    <Image
+                      src={professor.photo}
+                      alt="Foto"
+                      fill
+                      objectFit="cover"
                     />
                   </Box>
 
@@ -85,33 +98,38 @@ const photoSize = "4rem";
 
 export const professorsData = [
   {
-    name: "Jailson Mendes",
+    name: "Cacau Marques",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor1Image.src,
   },
   {
-    name: "Roberto Mendes",
+    name: "Tiago Garros",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor2Image.src,
   },
   {
-    name: "João Mendes",
+    name: "Paulo Won",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor3Image.src,
   },
   {
-    name: "Rodrigo Mendes",
+    name: "Guilherme Nunes",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor4Image.src,
   },
   {
-    name: "Filipe Mendes",
+    name: "Willibaldo Neto",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor5Image.src,
   },
   {
-    name: "Ruan Mendes",
+    name: "Cynthia Muniz",
     text: "Idolatria e Espírito santo",
-    photo: "",
+    photo: professor6Image.src,
+  },
+  {
+    name: "Rodrigo Bibo",
+    text: "Idolatria e Espírito santo",
+    photo: professor7Image.src,
   },
 ];
