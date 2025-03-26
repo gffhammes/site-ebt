@@ -8,6 +8,7 @@ import professor4Image from "../../../public/professores/4.png.webp";
 import professor5Image from "../../../public/professores/5.png.webp";
 import professor6Image from "../../../public/professores/6.png.webp";
 import professor7Image from "../../../public/professores/7.png.webp";
+import { Animate } from "../Animate";
 
 export interface IProfessorsSectionProps {}
 
@@ -41,7 +42,14 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
           >
             Conheça os seus
             <br />
-            <strong>professores</strong>
+            <Animate
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-35%" }}
+              transition={{ duration: 1 }}
+            >
+              <strong>professores</strong>
+            </Animate>
           </Typography>
 
           <Box

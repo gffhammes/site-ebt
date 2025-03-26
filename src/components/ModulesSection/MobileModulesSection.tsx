@@ -2,6 +2,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { moduleSectionData } from "./ModulesSection";
 import { MobileModulesCarousel } from "./MobileModulesCarousel";
 import { CirclesDecoration } from "../CirclesDecoration/CirclesDecoration";
+import { Animate } from "../Animate";
 
 export interface IMobileModulesSectionProps {}
 
@@ -21,13 +22,27 @@ export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
       <Stack gap={4}>
         <Container>
           <Stack gap={4}>
-            <Typography variant="h2" maxWidth="14ch">
-              {moduleSectionData.h2}
-            </Typography>
+            <Animate
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-35%" }}
+              transition={{ duration: 1 }}
+            >
+              <Typography variant="h2" maxWidth="14ch">
+                {moduleSectionData.h2}
+              </Typography>
+            </Animate>
 
-            <Typography whiteSpace="pre-wrap">
-              {moduleSectionData.text}
-            </Typography>
+            <Animate
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-35%" }}
+              transition={{ duration: 1 }}
+            >
+              <Typography whiteSpace="pre-wrap">
+                {moduleSectionData.text}
+              </Typography>
+            </Animate>
           </Stack>
         </Container>
 

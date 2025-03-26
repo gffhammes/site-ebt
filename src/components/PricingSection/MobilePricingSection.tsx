@@ -4,6 +4,7 @@ import { plansData } from "./PricingSection";
 import { PricingCard } from "./PricingCard";
 import { MobileSatisfactionCard } from "../SatisfactionCard/MobileSatisfactionCard";
 import { AccessCard } from "../AccessCard/AccessCard";
+import { Animate } from "../Animate";
 
 export interface IMobilePricingSectionProps {}
 
@@ -18,20 +19,27 @@ export const MobilePricingSection = (props: IMobilePricingSectionProps) => {
             </Typography>
           </Container>
 
-          <Carousel
-            slides={plansData.map((plan, index) => {
-              const isLastItem = index === plansData.length - 1;
+          <Animate
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-35%" }}
+            transition={{ duration: 1 }}
+          >
+            <Carousel
+              slides={plansData.map((plan, index) => {
+                const isLastItem = index === plansData.length - 1;
 
-              return (
-                <Box
-                  key={plan.name}
-                  sx={{ flex: "0 0 18rem", ml: 2, mr: isLastItem ? 2 : 0 }}
-                >
-                  <PricingCard plan={plan} />
-                </Box>
-              );
-            })}
-          />
+                return (
+                  <Box
+                    key={plan.name}
+                    sx={{ flex: "0 0 18rem", ml: 2, mr: isLastItem ? 2 : 0 }}
+                  >
+                    <PricingCard plan={plan} />
+                  </Box>
+                );
+              })}
+            />
+          </Animate>
         </Stack>
       </Box>
 

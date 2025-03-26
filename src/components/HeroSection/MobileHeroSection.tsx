@@ -2,6 +2,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import bgImage from "../../../public/banner2-1920x850-1.png";
 import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
+import { Animate } from "../Animate";
 
 export interface IMobileHeroSectionProps {}
 
@@ -55,17 +56,35 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
                   },
                 }}
               >
-                Chegou a hora de você
-                <br />
-                <strong style={{ zIndex: 99, position: "relative" }}>
-                  Aprender Teologia
-                </strong>{" "}
-                de maneira
-                <br />
-                <strong className="outlined">simples</strong>
+                <Animate
+                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  Chegou a hora de você
+                  <br />
+                  <strong style={{ zIndex: 99, position: "relative" }}>
+                    Aprender Teologia
+                  </strong>{" "}
+                  de maneira
+                  <br />
+                </Animate>
+                <Animate
+                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 1, delay: 1 }}
+                >
+                  <strong className="outlined">simples</strong>
+                </Animate>
               </Typography>
 
-              <Button variant="contained">Acesse a nova turma da EBT!</Button>
+              <Animate
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 1, delay: 2 }}
+              >
+                <Button variant="contained">Acesse a nova turma da EBT!</Button>
+              </Animate>
             </Stack>
           </Stack>
         </Container>

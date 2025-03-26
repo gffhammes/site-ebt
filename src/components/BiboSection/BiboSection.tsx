@@ -1,6 +1,7 @@
 import { getLineShadowCss } from "@/utils/utils";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import biboImage from "../../../public/Design-sem-nome-7.png";
+import { Animate } from "../Animate";
 
 export interface IBiboSectionProps {}
 
@@ -32,7 +33,14 @@ export const BiboSection = (props: IBiboSectionProps) => {
             }}
           >
             Mas afinal, quem é o <br />
-            <strong>Bibo?</strong>
+            <Animate
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-35%" }}
+              transition={{ duration: 1 }}
+            >
+              <strong>Bibo?</strong>
+            </Animate>
           </Typography>
 
           <Typography>
