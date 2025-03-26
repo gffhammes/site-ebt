@@ -19,6 +19,7 @@ export const MobileSatisfactionCard = (props: IMobileSatisfactionCardProps) => {
             py: 4,
             position: "relative",
             boxShadow: 10,
+            zIndex: 11,
           }}
         >
           <Image

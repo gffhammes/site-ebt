@@ -1,23 +1,22 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import Image from "next/image";
-import circle from "../../../public/Group 38.png";
 import { moduleSectionData } from "./ModulesSection";
 import { MobileModulesCarousel } from "./MobileModulesCarousel";
+import { CirclesDecoration } from "../CirclesDecoration/CirclesDecoration";
 
 export interface IMobileModulesSectionProps {}
 
 export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
   return (
     <Box>
-      <Box sx={{ position: "relative", height: "10rem", width: "100%" }}>
-        <Image
-          src={circle.src}
-          alt="circle"
-          fill
-          objectFit="cover"
-          objectPosition="bottom right"
-        />
-      </Box>
+      <CirclesDecoration
+        circleSize={500}
+        containerHeight={100}
+        xAlign="left"
+        yAlign="top"
+        padding={{
+          bottom: 4,
+        }}
+      />
 
       <Stack gap={4}>
         <Container>
@@ -32,7 +31,7 @@ export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
           </Stack>
         </Container>
 
-        <MobileModulesCarousel />
+        <MobileModulesCarousel align="start" />
 
         <Container>
           <Button variant="contained">{moduleSectionData.buttonText}</Button>

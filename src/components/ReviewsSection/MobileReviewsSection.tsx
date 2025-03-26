@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { ReviewCard } from "./ReviewCard";
 import { Carousel } from "../Carousel/Carousel";
 
@@ -20,6 +20,10 @@ export const MobileReviewsSection = (props: IMobileReviewsSectionProps) => {
             </Box>
           ))}
         />
+
+        <Container>
+          <Button variant="contained">Ver planos</Button>
+        </Container>
       </Stack>
     </Box>
   );

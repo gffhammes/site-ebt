@@ -3,12 +3,16 @@ import { Carousel } from "../Carousel/Carousel";
 import { moduleSectionData } from "./ModulesSection";
 import Image from "next/image";
 
-export interface IMobileModulesCarouselProps {}
+export interface IMobileModulesCarouselProps {
+  align?: "center" | "start";
+}
 
-export const MobileModulesCarousel = (props: IMobileModulesCarouselProps) => {
+export const MobileModulesCarousel = ({
+  align = "center",
+}: IMobileModulesCarouselProps) => {
   return (
     <Carousel
-      options={{ align: "start", loop: true }}
+      options={{ align, loop: true }}
       slides={moduleSectionData.modules.map((module, index) => {
         return (
           <Box

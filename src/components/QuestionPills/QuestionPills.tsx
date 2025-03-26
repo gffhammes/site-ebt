@@ -3,6 +3,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { QuestionPill } from "./QuestionPill";
 
 export const QuestionPills = () => {
   const { scrollYProgress } = useScroll();
@@ -50,22 +51,7 @@ export const QuestionPills = () => {
           }}
         >
           {questions.map((pill, index) => (
-            <Box
-              key={index}
-              sx={{
-                backgroundColor: "#363636",
-                px: 2,
-                py: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: 10,
-              }}
-            >
-              <Typography color="white" whiteSpace="nowrap" fontSize={12}>
-                {pill}
-              </Typography>
-            </Box>
+            <QuestionPill key={index}>{pill}</QuestionPill>
           ))}
         </motion.div>
       </Box>
@@ -87,22 +73,7 @@ export const QuestionPills = () => {
           }}
         >
           {questions.map((pill, index) => (
-            <Box
-              key={index}
-              sx={{
-                backgroundColor: "#363636",
-                px: 2,
-                py: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                borderRadius: 10,
-              }}
-            >
-              <Typography color="white" whiteSpace="nowrap" fontSize={12}>
-                {pill}
-              </Typography>
-            </Box>
+            <QuestionPill key={index}>{pill}</QuestionPill>
           ))}
         </motion.div>
       </Box>
