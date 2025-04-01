@@ -1,37 +1,17 @@
-import { Box } from "@mui/material";
-import { Carousel } from "../Carousel/Carousel";
 import { MobileModulesCarousel } from "../ModulesSection/MobileModulesCarousel";
 
-export interface IMiniCoursesCarouselProps {}
+export interface IMiniCoursesCarouselProps {
+  align?: "center" | "start";
+  height?: string;
+  width?: string;
+}
 
-export const MiniCoursesCarousel = (props: IMiniCoursesCarouselProps) => {
-  return <MobileModulesCarousel />;
-
-  // return (
-  //   <Carousel
-  //     options={{ align: "center", loop: true }}
-  //     slides={miniCourses.map((item) => {
-  //       return (
-  //         <Box
-  //           key={item.name}
-  //           sx={{
-  //             height: "20rem",
-  //             flex: "0 0 10rem",
-  //             px: 1,
-  //           }}
-  //         >
-  //           <Box
-  //             sx={{
-  //               height: "100%",
-  //               width: "100%",
-  //               backgroundColor: "red",
-  //             }}
-  //           ></Box>
-  //         </Box>
-  //       );
-  //     })}
-  //   />
-  // );
+export const MiniCoursesCarousel = ({
+  align,
+  height,
+  width,
+}: IMiniCoursesCarouselProps) => {
+  return <MobileModulesCarousel align={align} height={height} width={width} />;
 };
 
 const miniCourses = [

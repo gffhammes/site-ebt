@@ -5,10 +5,14 @@ import Image from "next/image";
 
 export interface IMobileModulesCarouselProps {
   align?: "center" | "start";
+  height?: string;
+  width?: string;
 }
 
 export const MobileModulesCarousel = ({
   align = "center",
+  height = "17rem",
+  width = "10rem",
 }: IMobileModulesCarouselProps) => {
   return (
     <Carousel
@@ -18,9 +22,10 @@ export const MobileModulesCarousel = ({
           <Box
             key={module.name}
             sx={{
-              height: "17rem",
-              flex: "0 0 10rem",
-              pl: 2,
+              height,
+              flex: `0 0 ${width}`,
+              pl: align === "center" ? 1 : 2,
+              pr: align === "center" ? 1 : 0,
             }}
           >
             <Box sx={{ position: "relative", height: "100%", width: "100%" }}>

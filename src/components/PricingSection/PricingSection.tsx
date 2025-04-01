@@ -1,9 +1,16 @@
+import { ResponsiveComponent } from "../ResponsiveComponent";
+import { DesktopPricingSection } from "./DesktopPricingSection";
 import { MobilePricingSection } from "./MobilePricingSection";
 
 export interface IPricingSectionProps {}
 
 export const PricingSection = (props: IPricingSectionProps) => {
-  return <MobilePricingSection />;
+  return (
+    <ResponsiveComponent
+      xs={<MobilePricingSection />}
+      md={<DesktopPricingSection />}
+    />
+  );
 };
 
 export interface IPlan {

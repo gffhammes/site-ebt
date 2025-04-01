@@ -25,10 +25,10 @@ const theme = createTheme({
   typography: {
     fontFamily: montserrat.style.fontFamily,
     h1: {
-      fontSize: 42,
+      fontSize: 16,
       fontWeight: 400,
       "@media (min-width:600px)": {
-        fontSize: 62,
+        fontSize: 32,
       },
     },
     h2: {
@@ -40,15 +40,9 @@ const theme = createTheme({
     },
     body1: {
       fontSize: 16,
-      "@media (min-width:600px)": {
-        fontSize: 22,
-      },
     },
     button: {
       fontSize: 16,
-      "@media (min-width:600px)": {
-        fontSize: 18,
-      },
     },
   },
   components: {

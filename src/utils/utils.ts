@@ -4,11 +4,12 @@ export const getLineShadowCss = ({
   text,
   opacity = 0.2,
   transform = "translate(-3%, -35%)",
+  fontSize = 120,
 }: IGetLineShadowCssArgs) => {
   return {
     content: `"${text}"`,
     position: "absolute",
-    fontSize: 120,
+    fontSize,
     color: textColor,
     zIndex: -1,
     filter: `opacity(${opacity})`,
@@ -23,4 +24,5 @@ interface IGetLineShadowCssArgs {
   text: string;
   opacity?: number;
   transform?: string;
+  fontSize?: number;
 }

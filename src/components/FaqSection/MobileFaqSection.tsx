@@ -6,7 +6,7 @@ export interface IMobileFaqSectionProps {}
 export const MobileFaqSection = (props: IMobileFaqSectionProps) => {
   return (
     <Box>
-      <Container>
+      <Container maxWidth="md">
         <Stack gap={4} alignItems="center">
           <Typography variant="h2" textAlign="center">
             Perguntas frequentes

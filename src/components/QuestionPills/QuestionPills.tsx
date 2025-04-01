@@ -50,7 +50,7 @@ export const QuestionPills = () => {
             x: isVisible ? firstRowX : 0,
           }}
         >
-          {questions.map((pill, index) => (
+          {[...questions, ...questions].map((pill, index) => (
             <QuestionPill key={index}>{pill}</QuestionPill>
           ))}
         </motion.div>
@@ -72,7 +72,7 @@ export const QuestionPills = () => {
             x: isVisible ? secondRowX : 0,
           }}
         >
-          {questions.map((pill, index) => (
+          {[...questions, ...questions].map((pill, index) => (
             <QuestionPill key={index}>{pill}</QuestionPill>
           ))}
         </motion.div>

@@ -41,7 +41,6 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
               <Typography
                 color="white"
                 variant="h1"
-                fontSize={16}
                 sx={{
                   "& strong.outlined": {
                     fontSize: 74,

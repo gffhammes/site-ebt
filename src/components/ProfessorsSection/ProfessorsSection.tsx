@@ -54,20 +54,13 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
 
           <Box
             display="grid"
-            gridTemplateColumns="1fr 1fr"
+            gridTemplateColumns={{ xs: "1fr 1fr", md: "1fr 1fr 1fr" }}
             rowGap={4}
-            columnGap={2}
+            columnGap={{ xs: 2, md: 8 }}
             sx={{ position: "relative", zIndex: 1 }}
           >
             {professorsData.map((professor) => (
-              <Box
-                key={professor.name}
-                sx={{
-                  ":last-child:nth-child(odd)": {
-                    gridColumn: "span 2",
-                  },
-                }}
-              >
+              <Box key={professor.name}>
                 <Stack alignItems="center">
                   <Box
                     sx={{

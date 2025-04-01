@@ -5,14 +5,14 @@ export interface IAccessCardProps {}
 export const AccessCard = (props: IAccessCardProps) => {
   return (
     <Box>
-      <Container>
+      <Container maxWidth="md">
         <Box
           sx={{
             width: "100%",
             backgroundColor: "#d3d3d3",
             borderRadius: 4,
-            px: 2,
-            py: 4,
+            px: { xs: 2, md: 6 },
+            py: { xs: 4, md: 6 },
             position: "relative",
             boxShadow: 10,
             zIndex: 11,
