@@ -47,13 +47,18 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
         </Typography>
 
         <Stack direction="row" gap={0.5}>
-          <Typography fontWeight={700} color="white" lineHeight={1}>
+          <Typography
+            fontWeight={700}
+            fontSize={{ xs: 16, md: 24 }}
+            color="white"
+            lineHeight={1}
+          >
             R$
           </Typography>
 
           <Typography
             fontWeight={700}
-            fontSize={40}
+            fontSize={{ xs: 40, md: 60 }}
             color="white"
             lineHeight={0.8}
           >
@@ -67,6 +72,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             fontWeight={700}
             color="white"
             lineHeight={1}
+            fontSize={{ xs: 16, md: 24 }}
             alignSelf="flex-end"
           >
             /{plan.period}
