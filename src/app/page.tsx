@@ -18,7 +18,7 @@ export default function Home() {
       <main style={{ backgroundColor: "white" }}>
         <HeroSection />
 
-        <Stack gap={16} sx={{ pb: 16 }}>
+        <Stack gap={{ xs: 16, md: 24 }} sx={{ pb: 16 }}>
           <ModulesSection />
 
           <ProfessorsSection />
