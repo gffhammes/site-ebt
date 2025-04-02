@@ -1,8 +1,8 @@
 "use client";
 
 import { Box, Rating, Stack, Typography } from "@mui/material";
-import { IReviewData } from "./MobileReviewsSection";
 import { useEffect, useRef, useState } from "react";
+import { IReviewData } from "./ReviewsSection";
 
 export interface IReviewCardProps {
   data: IReviewData;
