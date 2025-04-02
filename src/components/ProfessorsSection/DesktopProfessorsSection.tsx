@@ -1,8 +1,9 @@
 import { getLineShadowCss } from "@/utils/utils";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
 import { professorsData } from "./ProfessorsSection";
 import { ProfessorItem } from "./ProfessorItem";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IDesktopProfessorsSectionProps {}
 
@@ -65,11 +66,11 @@ export const DesktopProfessorsSection = (
             ))}
           </Stack>
 
-          <Button variant="contained">Acesse a nova turma da EBT!</Button>
+          <ScrollButton targetSection="planos" variant="contained">
+            Acesse a nova turma da EBT!
+          </ScrollButton>
         </Stack>
       </Container>
     </Box>
   );
 };
-
-const photoSize = "6re";

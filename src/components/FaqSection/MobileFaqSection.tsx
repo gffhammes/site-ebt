@@ -1,5 +1,6 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { FaqAccordion } from "./FaqAccordion";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IMobileFaqSectionProps {}
 
@@ -14,7 +15,9 @@ export const MobileFaqSection = (props: IMobileFaqSectionProps) => {
 
           <FaqAccordion />
 
-          <Button variant="contained">Inscreva-se</Button>
+          <ScrollButton targetSection="planos" variant="contained">
+            Inscreva-se
+          </ScrollButton>
         </Stack>
       </Container>
     </Box>

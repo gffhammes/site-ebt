@@ -3,6 +3,7 @@ import bgImage from "../../../public/banner2-1920x850-1.png";
 import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
 import { Animate } from "../Animate";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IDesktopHeroSectionProps {}
 
@@ -85,7 +86,9 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
                 initial={{ opacity: 0 }}
                 transition={{ duration: 1, delay: 2 }}
               >
-                <Button variant="contained">Acesse a nova turma da EBT!</Button>
+                <ScrollButton targetSection="planos" variant="contained">
+                  Acesse a nova turma da EBT!
+                </ScrollButton>
               </Animate>
             </Stack>
           </Stack>

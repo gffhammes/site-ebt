@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Animate } from "../Animate";
 import { professorsData } from "./ProfessorsSection";
 import { ProfessorItem } from "./ProfessorItem";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IMobileProfessorsSectionProps {}
 
@@ -66,7 +67,9 @@ export const MobileProfessorsSection = (
             ))}
           </Stack>
 
-          <Button variant="contained">Acesse a nova turma da EBT!</Button>
+          <ScrollButton targetSection="planos" variant="contained">
+            Acesse a nova turma da EBT!
+          </ScrollButton>
         </Stack>
       </Container>
     </Box>

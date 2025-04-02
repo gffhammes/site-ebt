@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { moduleSectionData } from "./ModulesSection";
 import { Animate } from "../Animate";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IBigOrangeCircleProps {}
 
@@ -41,9 +42,13 @@ export const BigOrangeCircle = (props: IBigOrangeCircleProps) => {
             {moduleSectionData.text}
           </Typography>
 
-          <Button variant="contained" color="secondary">
+          <ScrollButton
+            targetSection="planos"
+            variant="contained"
+            color="secondary"
+          >
             {moduleSectionData.buttonText}
-          </Button>
+          </ScrollButton>
         </Stack>
       </Box>
     </Animate>

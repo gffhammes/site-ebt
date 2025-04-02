@@ -3,6 +3,7 @@ import { moduleSectionData } from "./ModulesSection";
 import { MobileModulesCarousel } from "./MobileModulesCarousel";
 import { CirclesDecoration } from "../CirclesDecoration/CirclesDecoration";
 import { Animate } from "../Animate";
+import { ScrollButton } from "../ScrollButton";
 
 export interface IMobileModulesSectionProps {}
 
@@ -49,7 +50,9 @@ export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
         <MobileModulesCarousel align="start" />
 
         <Container>
-          <Button variant="contained">{moduleSectionData.buttonText}</Button>
+          <ScrollButton targetSection="planos" variant="contained">
+            {moduleSectionData.buttonText}
+          </ScrollButton>
         </Container>
       </Stack>
     </Box>

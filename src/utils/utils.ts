@@ -26,3 +26,22 @@ interface IGetLineShadowCssArgs {
   transform?: string;
   fontSize?: number;
 }
+
+export const scrollTo = (id: string, offset?: number) => {
+  const target = document.getElementById(id);
+
+  if (!target) return;
+
+  const targetOffsetTop = target.offsetTop;
+
+  const getTopDistance = () => {
+    return targetOffsetTop - (offset ?? 0);
+  };
+
+  const topDistance = getTopDistance();
+
+  window.scrollTo({
+    top: topDistance,
+    behavior: "smooth",
+  });
+};

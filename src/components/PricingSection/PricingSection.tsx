@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { ResponsiveComponent } from "../ResponsiveComponent";
 import { DesktopPricingSection } from "./DesktopPricingSection";
 import { MobilePricingSection } from "./MobilePricingSection";
@@ -6,10 +7,12 @@ export interface IPricingSectionProps {}
 
 export const PricingSection = (props: IPricingSectionProps) => {
   return (
-    <ResponsiveComponent
-      xs={<MobilePricingSection />}
-      md={<DesktopPricingSection />}
-    />
+    <Box id="planos">
+      <ResponsiveComponent
+        xs={<MobilePricingSection />}
+        md={<DesktopPricingSection />}
+      />
+    </Box>
   );
 };
 
