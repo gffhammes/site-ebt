@@ -28,6 +28,7 @@ export const DesktopPricingSection = (props: IDesktopPricingSectionProps) => {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true, margin: "-35%" }}
                       transition={{ duration: 1 }}
+                      style={{ height: "100%" }}
                     >
                       <PricingCard plan={plan} />
                     </Animate>

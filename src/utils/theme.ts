@@ -15,6 +15,9 @@ const theme = createTheme({
     secondary: {
       main: "#3F0204",
     },
+    success: {
+      main: "#1CD122",
+    },
     background: {
       default: "#ffffff",
     },
@@ -43,6 +46,7 @@ const theme = createTheme({
     },
     button: {
       fontSize: 16,
+      fontWeight: 700,
     },
   },
   components: {
@@ -51,7 +55,6 @@ const theme = createTheme({
         root: {
           borderRadius: "8px",
           textTransform: "none",
-          fontWeight: 500,
         },
         contained: {
           textTransform: "none",

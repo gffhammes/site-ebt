@@ -109,14 +109,27 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
           ))}
         </Box>
 
-        <Button
-          variant="contained"
-          color="success"
-          fullWidth
-          sx={{ mt: "auto" }}
-        >
-          Assinar
-        </Button>
+        {plan.isRecomended ? (
+          <Button
+            variant="contained"
+            color="success"
+            fullWidth
+            sx={{ mt: "auto" }}
+          >
+            ASSINAR
+          </Button>
+        ) : (
+          <Box sx={{ mt: "auto", color: "white" }}>
+            <Button
+              variant="contained"
+              color="inherit"
+              fullWidth
+              sx={{ color: "primary.main" }}
+            >
+              ASSINAR
+            </Button>
+          </Box>
+        )}
       </Stack>
     </Box>
   );

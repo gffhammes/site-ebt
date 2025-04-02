@@ -1,6 +1,5 @@
 import { getLineShadowCss } from "@/utils/utils";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import Image from "next/image";
 import { Animate } from "../Animate";
 import { professorsData } from "./ProfessorsSection";
 import { ProfessorItem } from "./ProfessorItem";
@@ -12,7 +11,7 @@ export const DesktopProfessorsSection = (
 ) => {
   return (
     <Box sx={{ width: "100%", overflow: "hidden", pb: 3 }}>
-      <Container>
+      <Container maxWidth={false} sx={{ maxWidth: 1000 }}>
         <Stack gap={8} alignItems="center">
           <Typography
             variant="h2"

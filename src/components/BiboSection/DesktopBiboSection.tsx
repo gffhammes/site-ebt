@@ -2,7 +2,7 @@ import { getLineShadowCss } from "@/utils/utils";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
 import Image from "next/image";
-import biboImage from "../../../public/Group 52 (2).png";
+import biboImage from "../../../public/Group 52 (4).png";
 
 export interface IDesktopBiboSectionProps {}
 

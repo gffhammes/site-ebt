@@ -14,7 +14,7 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
           height: "100%",
           width: "100%",
           backgroundImage: `url("${bgImage.src}")`,
-          backgroundPosition: "top right",
+          backgroundPosition: "80%",
           backgroundSize: "cover",
           position: "absolute",
         }}
