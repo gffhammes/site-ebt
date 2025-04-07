@@ -15,7 +15,7 @@ export const ProfessorItem = ({
   photoSize,
 }: IProfessorItemProps) => {
   return (
-    <Box key={professor.name} sx={{ maxWidth: "12rem" }}>
+    <Box key={professor.name} sx={{ maxWidth: "10rem" }}>
       <Stack alignItems="center" gap={1}>
         <Box
           sx={{

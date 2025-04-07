@@ -54,8 +54,8 @@ export const MobileProfessorsSection = (
             direction="row"
             flexWrap="wrap"
             justifyContent="center"
-            rowGap={8}
-            columnGap={{ xs: 2, md: 8 }}
+            rowGap={6}
+            columnGap={{ xs: 4, md: 8 }}
             sx={{ position: "relative", zIndex: 1 }}
           >
             {professorsData.map((professor) => (

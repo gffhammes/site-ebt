@@ -12,10 +12,10 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
     <Box sx={{ height: "100svh", backgroundColor: "#000" }}>
       <Box
         sx={{
-          height: "50%",
+          height: "60%",
           width: "100%",
           backgroundImage: `url("${bgImage.src}")`,
-          backgroundPosition: "top right",
+          backgroundPosition: "top right 20%",
           backgroundSize: "cover",
           position: "absolute",
         }}
@@ -32,7 +32,7 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
           sx={{
             height: "100%",
             pt: 4,
-            pb: 17,
+            pb: "20svh",
           }}
         >
           <Stack height="100%" justifyContent="space-between">
