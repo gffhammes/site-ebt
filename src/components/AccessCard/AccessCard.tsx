@@ -25,8 +25,8 @@ export const AccessCard = (props: IAccessCardProps) => {
 
             <Typography color="rgba(0, 0, 0, .8)">
               <strong>
-                Seu login e senha serão enviados ao seu e-mail logo após o
-                processamento do pagamento.
+                Seu login e senha serão enviados ao e-mail que você cadastrar na
+                Hotmart.
               </strong>{" "}
               <br />
               Se não recebeu, dá uma olhadinha na sua caixa de SPAM, por favor!

@@ -35,6 +35,7 @@ export const plansData = [
       "Materiais complementares",
       "Acesso Online e Offline",
       "Atualizações mensais",
+      "Grupo privado no Whats",
       "Orientações teológicas",
       "Avaliações periódicas",
       "Sorteios de livros",
@@ -51,6 +52,7 @@ export const plansData = [
       "Materiais complementares",
       "Acesso Online e Offline",
       "Atualizações mensais",
+      "Grupo privado no Whats",
     ],
     notIncludedFeatures: [
       "Orientações teológicas",

@@ -46,36 +46,46 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
           {plan.name}
         </Typography>
 
-        <Stack direction="row" gap={0.5}>
-          <Typography
-            fontWeight={700}
-            fontSize={{ xs: 16, md: 24 }}
-            color="white"
-            lineHeight={1}
-          >
-            R$
-          </Typography>
+        <Stack gap={1}>
+          <Stack direction="row" gap={0.5}>
+            <Typography
+              fontWeight={700}
+              fontSize={{ xs: 16, md: 24 }}
+              color="white"
+              lineHeight={1}
+            >
+              R$
+            </Typography>
+
+            <Typography
+              fontWeight={700}
+              fontSize={{ xs: 40, md: 60 }}
+              color="white"
+              lineHeight={0.8}
+            >
+              {plan.price.toLocaleString("pt-BR", {
+                maximumFractionDigits: 2,
+                minimumFractionDigits: 2,
+              })}
+            </Typography>
+
+            <Typography
+              fontWeight={700}
+              color="white"
+              lineHeight={1}
+              fontSize={{ xs: 16, md: 24 }}
+              alignSelf="flex-end"
+            >
+              /{plan.period}
+            </Typography>
+          </Stack>
 
           <Typography
-            fontWeight={700}
-            fontSize={{ xs: 40, md: 60 }}
-            color="white"
-            lineHeight={0.8}
-          >
-            {plan.price.toLocaleString("pt-BR", {
-              maximumFractionDigits: 2,
-              minimumFractionDigits: 2,
-            })}
-          </Typography>
-
-          <Typography
-            fontWeight={700}
-            color="white"
             lineHeight={1}
-            fontSize={{ xs: 16, md: 24 }}
-            alignSelf="flex-end"
+            color="rgba(255, 255, 255, 0.5)"
+            fontSize={12}
           >
-            /{plan.period}
+            + taxas Hotmart
           </Typography>
         </Stack>
 

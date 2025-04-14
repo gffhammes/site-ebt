@@ -60,8 +60,7 @@ export const DesktopSatisfactionCard = (
             <Typography color="rgba(0, 0, 0, .6)">
               Você poderá pedir a devolução de{" "}
               <strong>100% do seu dinheiro</strong> dentro desse prazo, sem se
-              justificar. É só mandar um email para email@email.com.br e em até
-              30 dias o dinheiro volta pra sua conta.
+              justificar.
             </Typography>
           </Stack>
         </Box>
