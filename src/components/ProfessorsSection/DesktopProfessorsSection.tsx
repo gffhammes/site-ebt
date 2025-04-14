@@ -1,9 +1,8 @@
 import { getLineShadowCss } from "@/utils/utils";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
-import { professorsData } from "./ProfessorsSection";
-import { ProfessorItem } from "./ProfessorItem";
 import { ScrollButton } from "../ScrollButton";
+import { ProfessorsList } from "./ProfessorsList";
 
 export interface IDesktopProfessorsSectionProps {}
 
@@ -11,7 +10,7 @@ export const DesktopProfessorsSection = (
   props: IDesktopProfessorsSectionProps
 ) => {
   return (
-    <Box sx={{ width: "100%", overflow: "hidden", pb: 3 }}>
+    <Box sx={{ width: "100%", overflow: "hidden", pb: 3, pt: 10 }}>
       <Container maxWidth={false} sx={{ maxWidth: 1000 }}>
         <Stack gap={8} alignItems="center">
           <Typography
@@ -49,22 +48,7 @@ export const DesktopProfessorsSection = (
             </Animate>
           </Typography>
 
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            justifyContent="center"
-            rowGap={10}
-            columnGap={{ xs: 2, md: 6 }}
-            sx={{ position: "relative", zIndex: 1 }}
-          >
-            {professorsData.map((professor) => (
-              <ProfessorItem
-                professor={professor}
-                key={professor.name}
-                photoSize="6rem"
-              />
-            ))}
-          </Stack>
+          <ProfessorsList />
 
           <ScrollButton targetSection="planos" variant="contained">
             Acesse a nova turma da EBT!

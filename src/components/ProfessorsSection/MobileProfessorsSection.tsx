@@ -1,10 +1,8 @@
 import { getLineShadowCss } from "@/utils/utils";
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import Image from "next/image";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { Animate } from "../Animate";
-import { professorsData } from "./ProfessorsSection";
-import { ProfessorItem } from "./ProfessorItem";
 import { ScrollButton } from "../ScrollButton";
+import { ProfessorsList } from "./ProfessorsList";
 
 export interface IMobileProfessorsSectionProps {}
 
@@ -50,22 +48,7 @@ export const MobileProfessorsSection = (
             </Animate>
           </Typography>
 
-          <Stack
-            direction="row"
-            flexWrap="wrap"
-            justifyContent="center"
-            rowGap={6}
-            columnGap={{ xs: 4, md: 8 }}
-            sx={{ position: "relative", zIndex: 1 }}
-          >
-            {professorsData.map((professor) => (
-              <ProfessorItem
-                professor={professor}
-                key={professor.name}
-                photoSize="4rem"
-              />
-            ))}
-          </Stack>
+          <ProfessorsList />
 
           <ScrollButton targetSection="planos" variant="contained">
             Acesse a nova turma da EBT!

@@ -34,7 +34,9 @@ export const ProfessorItem = ({
             {professor.name}
           </Typography>
 
-          <Typography textAlign="center">{professor.text}</Typography>
+          <Typography textAlign="center" fontSize={12}>
+            {professor.text}
+          </Typography>
         </Stack>
       </Stack>
     </Box>
