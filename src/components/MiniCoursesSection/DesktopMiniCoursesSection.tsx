@@ -1,5 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { MiniCoursesCarousel } from "./MiniCoursesCarousel";
+import { MiniCoursesCards } from "./MiniCoursesCards";
 
 export interface IDesktopMiniCoursesSectionProps {}
 
@@ -14,7 +15,9 @@ export const DesktopMiniCoursesSection = (
             Conheça também nossos mini-cursos:
           </Typography>
 
-          <MiniCoursesCarousel align="center" height="31rem" width="17rem" />
+          <MiniCoursesCards height="31rem" width="17rem" />
+
+          {/* <MiniCoursesCarousel align="center" height="31rem" width="17rem" /> */}
         </Stack>
       </Container>
     </Box>

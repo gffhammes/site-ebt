@@ -1,14 +1,9 @@
 import { Box } from "@mui/material";
 import { Carousel } from "../Carousel/Carousel";
 import Image from "next/image";
-import module1Image from "../../../public/modulos/1.webp";
-import module2Image from "../../../public/modulos/2.webp";
-import module3Image from "../../../public/modulos/3.webp";
-import module4Image from "../../../public/modulos/4.webp";
-import module5Image from "../../../public/modulos/Espiritualidade-Vertical.webp";
-import module6Image from "../../../public/modulos/Panorama-do-AT-Vertical.webp";
-import module7Image from "../../../public/modulos/WhatsApp-Image-2022-03-23-at-13.58.16-1.webp";
-import module8Image from "../../../public/modulos/WhatsApp-Image-2022-03-23-at-13.58.16-2.webp";
+import teologiaSimples from "../../../public/modulos/WhatsApp-Image-2022-03-23-at-13.58.16-1.webp";
+import espiritoSanto from "../../../public/espirito-santo.jpg";
+
 export interface IMiniCoursesCarouselProps {
   align?: "center" | "start";
   height?: string;
@@ -69,53 +64,20 @@ export const MiniCoursesCarousel = ({
   );
 };
 
-const miniCourses = [
+export const miniCourses = [
   {
-    name: "Módulo 1",
+    name: "Teologia Simples",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module1Image.src,
+    image: teologiaSimples.src,
+    link: "https://escolabibotalk.com.br/idolatria/",
   },
+
   {
-    name: "Módulo 2",
+    name: "Espírito Santo",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module2Image.src,
-  },
-  {
-    name: "Módulo 3",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module3Image.src,
-  },
-  {
-    name: "Módulo 4",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module4Image.src,
-  },
-  {
-    name: "Módulo 5",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module5Image.src,
-  },
-  {
-    name: "Módulo 6",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module6Image.src,
-  },
-  {
-    name: "Módulo 7",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module7Image.src,
-  },
-  {
-    name: "Módulo 8",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-    image: module8Image.src,
+    image: espiritoSanto.src,
+    link: "https://escolabibotalk.com.br/espiritosanto-v2/",
   },
 ];
