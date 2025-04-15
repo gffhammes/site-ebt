@@ -16,6 +16,14 @@ export const MobileModulesCarousel = ({
 }: IMobileModulesCarouselProps) => {
   return (
     <Carousel
+      autoscroll
+      autoscrollOptions={{
+        speed: 0.6,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+        stopOnFocusIn: false,
+        startDelay: 0,
+      }}
       options={{ align, loop: true }}
       slides={moduleSectionData.modules.map((module, index) => {
         return (

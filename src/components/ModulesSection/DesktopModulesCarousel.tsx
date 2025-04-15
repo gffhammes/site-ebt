@@ -16,8 +16,16 @@ export const DesktopModulesCarousel = ({
 }: IDesktopModulesCarouselProps) => {
   return (
     <Carousel
+      autoscroll
+      autoscrollOptions={{
+        speed: 1,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+        stopOnFocusIn: false,
+        startDelay: 0,
+      }}
       options={{ align, loop: true }}
-      slides={moduleSectionData.modules.map((module, index) => {
+      slides={moduleSectionData.modules.map((module) => {
         return (
           <Box
             key={module.name}

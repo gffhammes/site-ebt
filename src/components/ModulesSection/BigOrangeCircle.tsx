@@ -30,6 +30,7 @@ export const BigOrangeCircle = (props: IBigOrangeCircleProps) => {
             justifyContent: "center",
             alignItems: "center",
             zIndex: 0,
+            boxShadow: 10,
           }}
         ></Box>
 

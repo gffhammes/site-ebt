@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { ResponsiveComponent } from "../ResponsiveComponent";
 import { DesktopPricingSection } from "./DesktopPricingSection";
 import { MobilePricingSection } from "./MobilePricingSection";
+import { hotmartMonthlyLink, hotmartYearlyLink } from "@/utils/utils";
 
 export interface IPricingSectionProps {}
 
@@ -23,6 +24,7 @@ export interface IPlan {
   includedFeatures: string[];
   notIncludedFeatures: string[];
   isRecomended: boolean;
+  link: string;
 }
 
 export const plansData = [
@@ -42,6 +44,7 @@ export const plansData = [
     ],
     notIncludedFeatures: [],
     isRecomended: true,
+    link: hotmartYearlyLink,
   },
   {
     name: "Mensal",
@@ -60,5 +63,6 @@ export const plansData = [
       "Sorteios de livros",
     ],
     isRecomended: false,
+    link: hotmartMonthlyLink,
   },
 ];

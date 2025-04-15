@@ -125,6 +125,9 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             color="success"
             fullWidth
             sx={{ mt: "auto" }}
+            LinkComponent="a"
+            href={plan.link}
+            target="_blank"
           >
             ASSINAR
           </Button>
@@ -135,6 +138,9 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
               color="inherit"
               fullWidth
               sx={{ color: "primary.main" }}
+              LinkComponent="a"
+              href={plan.link}
+              target="_blank"
             >
               ASSINAR
             </Button>
