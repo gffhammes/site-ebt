@@ -4,6 +4,7 @@ import { Box, SxProps } from "@mui/material";
 import useEmblaCarousel from "embla-carousel-react";
 import { ReactNode } from "react";
 import { EmblaOptionsType } from "embla-carousel";
+import Autoscroll from "embla-carousel-auto-scroll";
 
 export interface ICarouselProps {
   slides: ReactNode[];
@@ -18,11 +19,21 @@ export const Carousel = ({
   containerSx,
   emblaSx,
 }: ICarouselProps) => {
-  const [emblaRef] = useEmblaCarousel({
-    align: "start",
-    skipSnaps: true,
-    ...options,
-  });
+  const [emblaRef] = useEmblaCarousel(
+    {
+      align: "start",
+      skipSnaps: true,
+      ...options,
+    },
+    [
+      Autoscroll({
+        speed: 1,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+        startDelay: 0,
+      }),
+    ]
+  );
 
   return (
     <Box

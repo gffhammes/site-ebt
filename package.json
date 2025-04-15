@@ -18,6 +18,8 @@
     "@mui/material-nextjs": "^6.4.3",
     "@next/third-parties": "^15.1.7",
     "embla-carousel": "^8.5.2",
+    "embla-carousel-auto-scroll": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.5.2",
     "formik": "^2.4.6",
     "framer-motion": "^12.4.7",

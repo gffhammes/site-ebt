@@ -57,7 +57,7 @@ interface WhatsAppButtonProps {
 
 export const WhatsAppButton = ({
   phoneNumber,
-  message = "Olá! Gostaria de saber mais sobre os cursos.",
+  message = "Olá! Vim pelo site e gostaria de saber mais sobre a EBT.",
 }: WhatsAppButtonProps) => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
