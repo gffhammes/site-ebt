@@ -4,6 +4,7 @@ import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
 import { Animate } from "../Animate";
 import { ScrollButton } from "../ScrollButton";
+import Image from "next/image";
 
 export interface IDesktopHeroSectionProps {}
 
@@ -14,12 +15,26 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
         sx={{
           height: "100%",
           width: "100%",
-          backgroundImage: `url("${bgImage.src}")`,
-          backgroundPosition: "80%",
-          backgroundSize: "cover",
           position: "absolute",
         }}
-      />
+      >
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
+            position: "relative",
+          }}
+        >
+          <Image
+            priority
+            src={bgImage.src}
+            alt="Bibo"
+            fill
+            objectFit="cover"
+            objectPosition="80%"
+          />
+        </Box>
+      </Box>
 
       <Box
         sx={{
@@ -36,10 +51,15 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
           }}
           maxWidth="xl"
         >
-          <Stack height="100%" justifyContent="flex-start" gap={30}>
+          <Stack height="100%" justifyContent="flex-start">
             <EBTLogo height={30} />
 
-            <Stack gap={2} alignItems="flex-start">
+            <Stack
+              gap={2}
+              alignItems="flex-start"
+              justifyContent="flex-end"
+              sx={{ height: "62svh" }}
+            >
               <Typography
                 color="white"
                 variant="h1"

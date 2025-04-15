@@ -1,9 +1,10 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import bgImage from "../../../public/banner2-1920x850-1.png";
 import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
 import { Animate } from "../Animate";
 import { ScrollButton } from "../ScrollButton";
+import Image from "next/image";
 
 export interface IMobileHeroSectionProps {}
 
@@ -14,12 +15,26 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
         sx={{
           height: "60%",
           width: "100%",
-          backgroundImage: `url("${bgImage.src}")`,
-          backgroundPosition: "top right 20%",
-          backgroundSize: "cover",
           position: "absolute",
         }}
-      />
+      >
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
+            position: "relative",
+          }}
+        >
+          <Image
+            priority
+            src={bgImage.src}
+            alt="Bibo"
+            fill
+            objectFit="cover"
+            objectPosition="80%"
+          />
+        </Box>
+      </Box>
 
       <Box
         sx={{
