@@ -23,6 +23,7 @@ export const MobileSatisfactionCard = (props: IMobileSatisfactionCardProps) => {
           }}
         >
           <Image
+            unoptimized={false}
             src={stamp.src}
             height={200}
             width={200 / stampAspectRatio}

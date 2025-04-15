@@ -33,6 +33,7 @@ export const OrangeCircleBackground = () => {
     >
       {!isMobile && (
         <Image
+          unoptimized={false}
           src="/circle-orange.png"
           alt=""
           fill

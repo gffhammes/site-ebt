@@ -55,7 +55,13 @@ export const MiniCoursesCarousel = ({
                 },
               }}
             >
-              <Image src={module.image} fill alt="Modulo" objectFit="cover" />
+              <Image
+                unoptimized={false}
+                src={module.image}
+                fill
+                alt="Modulo"
+                objectFit="cover"
+              />
             </Box>
           </Box>
         );

@@ -37,7 +37,13 @@ export const DesktopModulesCarousel = ({
             }}
           >
             <Box sx={{ position: "relative", height: "100%", width: "100%" }}>
-              <Image src={module.image} fill alt="Modulo" objectFit="cover" />
+              <Image
+                unoptimized={false}
+                src={module.image}
+                fill
+                alt="Modulo"
+                objectFit="cover"
+              />
             </Box>
           </Box>
         );

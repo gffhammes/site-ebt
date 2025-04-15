@@ -26,7 +26,13 @@ export const ProfessorItem = ({
             position: "relative",
           }}
         >
-          <Image src={professor.photo} alt="Foto" fill objectFit="cover" />
+          <Image
+            unoptimized={false}
+            src={professor.photo}
+            alt="Foto"
+            fill
+            objectFit="cover"
+          />
         </Box>
 
         <Stack>

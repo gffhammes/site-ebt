@@ -76,6 +76,7 @@ export const DesktopBiboSection = (props: IDesktopBiboSectionProps) => {
           </Stack>
 
           <Image
+            unoptimized={false}
             src={biboImage.src}
             alt="Bibo"
             height={imageHeight}

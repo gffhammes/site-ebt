@@ -49,6 +49,7 @@ export const ModuleCard = ({
   return (
     <StyledCard key={id}>
       <Image
+        unoptimized={false}
         src={image || "/placeholder.svg"}
         alt={title}
         layout="fill"

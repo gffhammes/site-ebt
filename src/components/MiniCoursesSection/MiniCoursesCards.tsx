@@ -50,7 +50,13 @@ export const MiniCoursesCards = ({ height, width }: IMiniCoursesCardsProps) => {
                 },
               }}
             >
-              <Image src={module.image} fill alt="Modulo" objectFit="cover" />
+              <Image
+                unoptimized={false}
+                src={module.image}
+                fill
+                alt="Modulo"
+                objectFit="cover"
+              />
 
               <ButtonBase
                 className="overlay"

@@ -26,6 +26,7 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
           }}
         >
           <Image
+            unoptimized={false}
             priority
             src={bgImage.src}
             alt="Bibo"

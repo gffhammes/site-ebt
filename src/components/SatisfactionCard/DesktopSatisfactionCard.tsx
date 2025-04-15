@@ -25,6 +25,7 @@ export const DesktopSatisfactionCard = (
           }}
         >
           <Image
+            unoptimized={false}
             src={stamp.src}
             height={300}
             width={300 / stampAspectRatio}

@@ -18,6 +18,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
+                unoptimized={false}
                 src="/instagram-logo.png"
                 alt="Instagram"
                 width={74}

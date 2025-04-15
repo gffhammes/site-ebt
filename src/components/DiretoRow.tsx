@@ -30,6 +30,7 @@ export const DiretoRow = (props: IDiretoRowProps) => {
             </Typography>
 
             <Image
+              unoptimized={false}
               src="https://www.studiodireto.com.br/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_direto_preta.f833362f.png&w=3840&q=75"
               alt="Direto."
               height={16}
