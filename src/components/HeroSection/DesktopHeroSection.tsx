@@ -1,5 +1,5 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import bgImage from "../../../public/banner2-1920x850-1.png";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import bgImage from "../../../public/banner2-1920x850-1.webp";
 import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
 import { Animate } from "../Animate";

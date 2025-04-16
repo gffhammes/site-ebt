@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import bgImage from "../../../public/banner2-1920x850-1.png";
+import bgImage from "../../../public/banner2-1920x850-1.webp";
 import { getLineShadowCss } from "@/utils/utils";
 import { EBTLogo } from "../EBTLogo/EBTLogo";
 import { Animate } from "../Animate";
@@ -26,13 +26,12 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
           }}
         >
           <Image
-            unoptimized={false}
             priority
             src={bgImage.src}
             alt="Bibo"
             fill
             objectFit="cover"
-            objectPosition="80%"
+            objectPosition="right"
           />
         </Box>
       </Box>
