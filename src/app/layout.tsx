@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Escola Bibotalk de Teologia",
   description:
     "Descubra a Escola Bibotalk de Teologia: cursos online de alta qualidade sobre estudos bíblicos e teológicos, com aulas gravadas, materiais complementares e uma comunidade ativa. Aprenda de forma acessível e plural com o teólogo Rodrigo Bibo. Comece hoje!",
+  other: {
+    "google-site-verification": "ZBUfuQm0u12Is2Mq0wNUvUrlV0S0vmoEWxrdNKWs-Uo",
+  },
 };
 
 export default function RootLayout({
