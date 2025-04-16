@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../public/logo-ebt.svg";
+import logo from "../../../public/logo-ebt.webp";
 
 export interface IEBTLogoProps {
   height: number;
@@ -15,7 +15,7 @@ export const EBTLogo = ({ height }: IEBTLogoProps) => {
       width={height / logoAspectRatio}
       alt="EBT"
       quality={100}
-      unoptimized
+      priority
     />
   );
 };
