@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
 import Script from "next/script";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 import theme from "../utils/theme";
@@ -22,6 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <GoogleTagManager gtmId="GTM-KH7KSW2F" />
+
       <body>
         <AppRouterCacheProvider options={{ key: "css" }}>
           <ThemeProvider theme={theme}>
