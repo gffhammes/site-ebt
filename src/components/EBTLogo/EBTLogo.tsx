@@ -14,7 +14,8 @@ export const EBTLogo = ({ height }: IEBTLogoProps) => {
       height={height}
       width={height / logoAspectRatio}
       alt="EBT"
-      unoptimized={true}
+      quality={100}
+      unoptimized
     />
   );
 };

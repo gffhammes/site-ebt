@@ -26,7 +26,8 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
           }}
         >
           <Image
-            unoptimized={false}
+            quality={100}
+            unoptimized
             priority
             src={bgImage.src}
             alt="Bibo"
