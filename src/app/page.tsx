@@ -11,10 +11,18 @@ import { ProfessorsSection } from "@/components/ProfessorsSection/ProfessorsSect
 import { QuestionPills } from "@/components/QuestionPills/QuestionPills";
 import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { Box, Stack } from "@mui/material";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="ZBUfuQm0u12Is2Mq0wNUvUrlV0S0vmoEWxrdNKWs-Uo"
+        />
+      </Head>
+
       <main style={{ backgroundColor: "white" }}>
         <HeroSection />
 
