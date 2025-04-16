@@ -8,7 +8,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 import theme from "../utils/theme";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Escola Bibotalk de Teologia",
@@ -23,13 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="ZBUfuQm0u12Is2Mq0wNUvUrlV0S0vmoEWxrdNKWs-Uo"
-        />
-      </Head>
-
       <GoogleTagManager gtmId="GTM-KH7KSW2F" />
 
       <body>
