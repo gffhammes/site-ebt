@@ -20,7 +20,11 @@ export const DesktopReviewsSection = (props: IDesktopReviewsSectionProps) => {
             ))}
           </Stack>
 
-          <ScrollButton targetSection="planos" variant="contained">
+          <ScrollButton
+            targetSection="planos"
+            variant="contained"
+            id="cta-reviews"
+          >
             Ver planos
           </ScrollButton>
         </Stack>

@@ -50,7 +50,11 @@ export const MobileModulesSection = (props: IMobileModulesSectionProps) => {
         <MobileModulesCarousel align="start" />
 
         <Container>
-          <ScrollButton targetSection="planos" variant="contained">
+          <ScrollButton
+            targetSection="planos"
+            variant="contained"
+            id="cta-modulos"
+          >
             {moduleSectionData.buttonText}
           </ScrollButton>
         </Container>

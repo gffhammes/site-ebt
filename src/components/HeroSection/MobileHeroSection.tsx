@@ -99,7 +99,11 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
                 initial={{ opacity: 0 }}
                 transition={{ duration: 1, delay: 2 }}
               >
-                <ScrollButton targetSection="planos" variant="contained">
+                <ScrollButton
+                  targetSection="planos"
+                  variant="contained"
+                  id="cta-hero"
+                >
                   Acesse a nova turma da EBT!
                 </ScrollButton>
               </Animate>

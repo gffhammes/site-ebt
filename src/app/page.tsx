@@ -12,8 +12,6 @@ import { QuestionPills } from "@/components/QuestionPills/QuestionPills";
 import { ReviewsSection } from "@/components/ReviewsSection/ReviewsSection";
 import { Box, Stack } from "@mui/material";
 
-import dynamic from "next/dynamic";
-
 export default function Home() {
   return (
     <div>

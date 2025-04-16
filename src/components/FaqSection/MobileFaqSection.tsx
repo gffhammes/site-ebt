@@ -15,7 +15,7 @@ export const MobileFaqSection = (props: IMobileFaqSectionProps) => {
 
           <FaqAccordion />
 
-          <ScrollButton targetSection="planos" variant="contained">
+          <ScrollButton targetSection="planos" variant="contained" id="cta-faq">
             Inscreva-se
           </ScrollButton>
         </Stack>

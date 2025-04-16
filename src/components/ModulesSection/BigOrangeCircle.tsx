@@ -46,6 +46,7 @@ export const BigOrangeCircle = (props: IBigOrangeCircleProps) => {
           <ScrollButton
             targetSection="planos"
             variant="contained"
+            id="cta-modulos"
             color="secondary"
           >
             {moduleSectionData.buttonText}

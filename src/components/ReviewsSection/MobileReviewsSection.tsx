@@ -24,7 +24,11 @@ export const MobileReviewsSection = (props: IMobileReviewsSectionProps) => {
         />
 
         <Container>
-          <ScrollButton targetSection="planos" variant="contained">
+          <ScrollButton
+            targetSection="planos"
+            variant="contained"
+            id="cta-reviews"
+          >
             Ver planos
           </ScrollButton>
         </Container>

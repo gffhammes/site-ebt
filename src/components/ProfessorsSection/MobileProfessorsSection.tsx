@@ -50,7 +50,11 @@ export const MobileProfessorsSection = (
 
           <ProfessorsList />
 
-          <ScrollButton targetSection="planos" variant="contained">
+          <ScrollButton
+            targetSection="planos"
+            variant="contained"
+            id="cta-professores"
+          >
             Acesse a nova turma da EBT!
           </ScrollButton>
         </Stack>

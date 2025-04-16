@@ -121,6 +121,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
 
         {plan.isRecomended ? (
           <Button
+            id="hotmart-anual"
             variant="contained"
             color="success"
             fullWidth
@@ -134,6 +135,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
         ) : (
           <Box sx={{ mt: "auto", color: "white" }}>
             <Button
+              id="hotmart-mensal"
               variant="contained"
               color="inherit"
               fullWidth
