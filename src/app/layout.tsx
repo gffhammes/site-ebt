@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <GoogleTagManager gtmId="GTM-KH7KSW2F" />
+      <GoogleTagManager gtmId="GTM-5C7TMB8" />
 
       <body>
         <AppRouterCacheProvider options={{ key: "css" }}>
