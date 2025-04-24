@@ -62,6 +62,10 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
               fontSize={{ xs: 40, md: 60 }}
               color="white"
               lineHeight={0.8}
+              sx={{
+                filter: plan.isRecomended ? "blur(25px)" : "none",
+                userSelect: plan.isRecomended ? "none" : "all",
+              }}
             >
               {plan.price.toLocaleString("pt-BR", {
                 maximumFractionDigits: 2,
