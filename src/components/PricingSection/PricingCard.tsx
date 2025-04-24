@@ -130,7 +130,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             href={plan.link}
             target="_blank"
           >
-            ASSINAR
+            ENTRAR NO GRUPO
           </Button>
         ) : (
           <Box sx={{ mt: "auto", color: "white" }}>
