@@ -20,6 +20,7 @@ export const PricingSection = (props: IPricingSectionProps) => {
 export interface IPlan {
   name: string;
   price: number;
+  oldPrice: number;
   period: string;
   includedFeatures: string[];
   notIncludedFeatures: string[];
@@ -27,10 +28,11 @@ export interface IPlan {
   link: string;
 }
 
-export const plansData = [
+export const plansData: IPlan[] = [
   {
     name: "Anual",
     price: 997.9,
+    oldPrice: 997,
     period: "ano",
     includedFeatures: [
       "Todos os cursos disponíveis",
@@ -49,6 +51,7 @@ export const plansData = [
   {
     name: "Mensal",
     price: 69,
+    oldPrice: 97,
     period: "mês",
     includedFeatures: [
       "Todos os cursos disponíveis",

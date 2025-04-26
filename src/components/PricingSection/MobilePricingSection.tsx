@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { Carousel } from "../Carousel/Carousel";
 import { plansData } from "./PricingSection";
-import { PricingCard } from "./PricingCard";
+import { PricingCard } from "./PricingCard/PricingCard";
 import { MobileSatisfactionCard } from "../SatisfactionCard/MobileSatisfactionCard";
 import { AccessCard } from "../AccessCard/AccessCard";
 import { Animate } from "../Animate";
