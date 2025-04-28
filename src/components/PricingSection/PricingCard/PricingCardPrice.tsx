@@ -38,6 +38,19 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
           title="PREÇO ESPECIAL"
           followCursor
           disableHoverListener={!plan.isRecomended}
+          enterDelay={0}
+          slotProps={{
+            popper: {
+              modifiers: [
+                {
+                  name: "offset",
+                  options: {
+                    offset: [0, -16],
+                  },
+                },
+              ],
+            },
+          }}
         >
           <Typography
             fontWeight={700}
@@ -47,6 +60,7 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
             sx={{
               filter: plan.isRecomended ? "blur(25px)" : "none",
               userSelect: plan.isRecomended ? "none" : "all",
+              cursor: plan.isRecomended ? "none" : "unset",
             }}
           >
             {plan.price.toLocaleString("pt-BR", {

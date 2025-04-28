@@ -80,18 +80,25 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
         </Box>
 
         {plan.isRecomended ? (
-          <Button
-            id="hotmart-anual"
-            variant="contained"
-            color="success"
-            fullWidth
-            sx={{ mt: "auto" }}
-            LinkComponent="a"
-            href={plan.link}
-            target="_blank"
-          >
-            GARANTIR PREÇO ESPECIAL
-          </Button>
+          <Stack gap={2} alignItems="center">
+            <Typography textAlign="center" maxWidth="22ch" color="white">
+              Entre na lista de espera e{" "}
+              <strong>garanta o preço especial!</strong>
+            </Typography>
+
+            <Button
+              id="hotmart-anual"
+              variant="contained"
+              color="success"
+              fullWidth
+              sx={{ mt: "auto" }}
+              LinkComponent="a"
+              href={plan.link}
+              target="_blank"
+            >
+              GARANTIR PREÇO ESPECIAL
+            </Button>
+          </Stack>
         ) : (
           <Box sx={{ mt: "auto", color: "white" }}>
             <Button
