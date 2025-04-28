@@ -80,7 +80,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
         </Box>
 
         {plan.isRecomended ? (
-          <Stack gap={2} alignItems="center">
+          <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
             <Typography textAlign="center" maxWidth="22ch" color="white">
               Entre na lista de espera e{" "}
               <strong>garanta o preço especial!</strong>
@@ -91,7 +91,6 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
               variant="contained"
               color="success"
               fullWidth
-              sx={{ mt: "auto" }}
               LinkComponent="a"
               href={plan.link}
               target="_blank"
