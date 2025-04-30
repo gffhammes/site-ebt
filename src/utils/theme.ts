@@ -63,6 +63,7 @@ const theme = createTheme({
           borderRadius: "1rem",
           boxShadow: "none",
           lineHeight: 1,
+          textAlign: "center",
         },
         containedPrimary: {
           color: "#fff",
