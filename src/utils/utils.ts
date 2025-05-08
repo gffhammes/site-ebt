@@ -48,7 +48,7 @@ export const scrollTo = (id: string, offset?: number) => {
 
 export type TPeriod = "launch" | "normal";
 
-export const PERIOD: TPeriod = "normal";
+export const PERIOD: TPeriod = "launch";
 
 export const getYearlyPlanLink = (period: TPeriod): string => {
   const hotmartLink =
