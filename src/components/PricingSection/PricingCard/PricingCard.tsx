@@ -30,7 +30,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             position: "absolute",
             top: 0,
             left: "50%",
-            zIndex: 999,
+            zIndex: 40,
             overflow: "visible",
             transform: "translate(-50%, -50%)",
             backgroundColor: "success.main",
