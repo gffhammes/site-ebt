@@ -26,12 +26,14 @@ export interface IPlan {
   notIncludedFeatures: string[];
   isRecomended: boolean;
   link: string;
+  buttonText?: string;
+  blurPrice?: boolean;
 }
 
 export const plansData: IPlan[] = [
   {
     name: "Anual",
-    price: 997.9,
+    price: 698,
     oldPrice: 997,
     period: "ano",
     includedFeatures: [
@@ -47,6 +49,8 @@ export const plansData: IPlan[] = [
     notIncludedFeatures: [],
     isRecomended: true,
     link: hotmartYearlyLink,
+    buttonText: `Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`,
+    blurPrice: true,
   },
   {
     name: "Mensal",

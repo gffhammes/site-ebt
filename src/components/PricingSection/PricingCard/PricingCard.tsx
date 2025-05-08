@@ -4,6 +4,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { Fragment } from "react";
 import { PricingCardPrice } from "./PricingCardPrice";
+import parse from "html-react-parser";
 
 export interface IPricingCardProps {
   plan: IPlan;
@@ -81,10 +82,11 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
 
         {plan.isRecomended ? (
           <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
-            <Typography textAlign="center" maxWidth="22ch" color="white">
-              Entre na lista de espera e{" "}
-              <strong>garanta o preço especial!</strong>
-            </Typography>
+            {plan.buttonText && (
+              <Typography textAlign="center" maxWidth="22ch" color="white">
+                {parse(plan.buttonText)}
+              </Typography>
+            )}
 
             <Button
               id="hotmart-anual"
@@ -99,7 +101,13 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             </Button>
           </Stack>
         ) : (
-          <Box sx={{ mt: "auto", color: "white" }}>
+          <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
+            {plan.buttonText && (
+              <Typography textAlign="center" maxWidth="22ch" color="white">
+                {parse(plan.buttonText)}
+              </Typography>
+            )}
+
             <Button
               id="hotmart-mensal"
               variant="contained"
@@ -112,7 +120,7 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
             >
               ASSINAR
             </Button>
-          </Box>
+          </Stack>
         )}
       </Stack>
     </Box>
