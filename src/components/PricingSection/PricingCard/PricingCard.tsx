@@ -16,27 +16,40 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
       sx={{
         backgroundColor: plan.isRecomended ? "primary.main" : "#8f8f8f",
         p: 2,
+        pt: 3,
         borderRadius: 4,
         position: "relative",
         overflow: "visible",
         height: "100%",
+        mt: 2,
       }}
     >
-      {/* {plan.isRecomended && (
+      {plan.isRecomended && (
         <Box
           sx={{
             position: "absolute",
             top: 0,
-            left: 0,
+            left: "50%",
             zIndex: 999,
             overflow: "visible",
-            transform: "translate(50%, -50%)",
+            transform: "translate(-50%, -50%)",
             backgroundColor: "success.main",
+            px: 1,
+            py: 0.5,
+            borderRadius: 1,
           }}
         >
-          <Typography>Recomendado</Typography>
+          <Typography
+            lineHeight={1}
+            fontSize={12}
+            letterSpacing={2}
+            textTransform="uppercase"
+            fontWeight="bold"
+          >
+            Recomendado
+          </Typography>
         </Box>
-      )} */}
+      )}
 
       <Stack gap={4} sx={{ height: "100%" }}>
         <Typography
@@ -80,14 +93,14 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
           ))}
         </Box>
 
-        {plan.isRecomended ? (
-          <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
-            {plan.buttonText && (
-              <Typography textAlign="center" maxWidth="22ch" color="white">
-                {parse(plan.buttonText)}
-              </Typography>
-            )}
+        <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
+          {plan.buttonSubtitle && (
+            <Typography textAlign="center" maxWidth="22ch" color="white">
+              {parse(plan.buttonSubtitle)}
+            </Typography>
+          )}
 
+          {plan.isRecomended ? (
             <Button
               id="hotmart-anual"
               variant="contained"
@@ -97,17 +110,9 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
               href={plan.link}
               target="_blank"
             >
-              GARANTIR PREÇO ESPECIAL
+              {plan.buttonText}
             </Button>
-          </Stack>
-        ) : (
-          <Stack gap={2} alignItems="center" sx={{ mt: "auto" }}>
-            {plan.buttonText && (
-              <Typography textAlign="center" maxWidth="22ch" color="white">
-                {parse(plan.buttonText)}
-              </Typography>
-            )}
-
+          ) : (
             <Button
               id="hotmart-mensal"
               variant="contained"
@@ -118,10 +123,10 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
               href={plan.link}
               target="_blank"
             >
-              ASSINAR
+              {plan.buttonText}
             </Button>
-          </Stack>
-        )}
+          )}
+        </Stack>
       </Stack>
     </Box>
   );

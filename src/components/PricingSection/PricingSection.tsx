@@ -2,11 +2,17 @@ import { Box } from "@mui/material";
 import { ResponsiveComponent } from "../ResponsiveComponent";
 import { DesktopPricingSection } from "./DesktopPricingSection";
 import { MobilePricingSection } from "./MobilePricingSection";
-import { hotmartMonthlyLink, hotmartYearlyLink } from "@/utils/utils";
+import {
+  getYearlyPlanButtonSubtitle,
+  getYearlyPlanButtonText,
+  getYearlyPlanLink,
+  hotmartMonthlyLink,
+  PERIOD,
+} from "@/utils/utils";
 
 export interface IPricingSectionProps {}
 
-export const PricingSection = (props: IPricingSectionProps) => {
+export const PricingSection = () => {
   return (
     <Box id="planos">
       <ResponsiveComponent
@@ -26,7 +32,8 @@ export interface IPlan {
   notIncludedFeatures: string[];
   isRecomended: boolean;
   link: string;
-  buttonText?: string;
+  buttonSubtitle?: string;
+  buttonText: string;
   blurPrice?: boolean;
 }
 
@@ -48,9 +55,10 @@ export const plansData: IPlan[] = [
     ],
     notIncludedFeatures: [],
     isRecomended: true,
-    link: hotmartYearlyLink,
-    buttonText: `Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`,
-    blurPrice: true,
+    link: getYearlyPlanLink(PERIOD),
+    buttonSubtitle: getYearlyPlanButtonSubtitle(PERIOD),
+    blurPrice: PERIOD !== "launch",
+    buttonText: getYearlyPlanButtonText(PERIOD),
   },
   {
     name: "Mensal",
@@ -71,5 +79,6 @@ export const plansData: IPlan[] = [
     ],
     isRecomended: false,
     link: hotmartMonthlyLink,
+    buttonText: "ASSINAR",
   },
 ];
