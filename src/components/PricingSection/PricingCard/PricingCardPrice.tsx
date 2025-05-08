@@ -37,7 +37,7 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
         <Tooltip
           title="PREÇO ESPECIAL"
           followCursor
-          disableHoverListener={!plan.isRecomended}
+          disableHoverListener={!plan.blurPrice}
           enterDelay={0}
           slotProps={{
             popper: {
@@ -58,9 +58,9 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
             color="white"
             lineHeight={0.8}
             sx={{
-              filter: plan.isRecomended ? "blur(25px)" : "none",
-              userSelect: plan.isRecomended ? "none" : "all",
-              cursor: plan.isRecomended ? "none" : "unset",
+              filter: plan.blurPrice ? "blur(25px)" : "none",
+              userSelect: plan.blurPrice ? "none" : "all",
+              cursor: plan.blurPrice ? "none" : "unset",
             }}
           >
             {plan.price.toLocaleString("pt-BR", {
