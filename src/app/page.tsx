@@ -4,6 +4,7 @@ import { CirclesDecoration } from "@/components/CirclesDecoration/CirclesDecorat
 import { FaqSection } from "@/components/FaqSection/FaqSection";
 import { Footer } from "@/components/Footer/Footer";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
+import { LaunchStrip } from "@/components/LaunchStrip";
 import { MiniCoursesSection } from "@/components/MiniCoursesSection/MiniCoursesSection";
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
 import { PricingSection } from "@/components/PricingSection/PricingSection";
@@ -16,6 +17,8 @@ export default function Home() {
   return (
     <div>
       <main style={{ backgroundColor: "white" }}>
+        <LaunchStrip />
+
         <HeroSection />
 
         <Stack gap={{ xs: 16, md: 24 }} sx={{ pb: 16 }}>
