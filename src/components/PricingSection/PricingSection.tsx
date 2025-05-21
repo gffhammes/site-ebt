@@ -49,7 +49,7 @@ export const plansData: IPlan[] = [
     period: "ano",
     installments: {
       installmentQuantity: 12,
-      installmentValue: 76.49,
+      installmentValue: 58.16,
     },
     includedFeatures: [
       "Todos os cursos disponíveis",
