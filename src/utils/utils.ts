@@ -52,7 +52,7 @@ export const PERIOD: TPeriod = "launch";
 
 export const getYearlyPlanLink = (period: TPeriod): string => {
   const hotmartLink =
-    "https://pay.hotmart.com/H96047264Q?sck=HOTMART_PRODUCT_PAGE&off=rk5ud4my&hotfeature=32&_gl=1*lnp98i*_gcl_au*MTIyODQzNzA0NC4xNzM5ODEyNzY2*_ga*OTk0OTg2NDI3LjE3Mzk4MTI3NjY.*_ga_GQH2V1F11Q*czE3NDY3NDQ5NjQkbzExJGcwJHQxNzQ2NzQ0OTY0JGo2MCRsMCRoMA..&bid=1746744966422";
+    "https://pay.hotmart.com/H96047264Q?sck=HOTMART_PRODUCT_PAGE&off=rk5ud4my&hotfeature=32&_gl=1*lnp98i*_gcl_au*MTIyODQzNzA0NC4xNzM5ODEyNzY2*_ga*OTk0OTg2NDI3LjE3Mzk4MTI3NjY.*_ga_GQH2V1F11Q*czE3NDY3NDQ5NjQkbzExJGcwJHQxNzQ2NzQ0OTY0JGo2MCRsMCRoMA..&bid=1746744966422&offDiscount=EBT30";
 
   const whatsappGroupLink = "https://chat.whatsapp.com/IkVNK7Ej9HZBUovq7Op8Kj";
 
