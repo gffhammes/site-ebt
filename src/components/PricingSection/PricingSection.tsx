@@ -35,6 +35,10 @@ export interface IPlan {
   buttonSubtitle?: string;
   buttonText: string;
   blurPrice?: boolean;
+  installments?: {
+    installmentQuantity: number;
+    installmentValue: number;
+  };
 }
 
 export const plansData: IPlan[] = [
@@ -43,6 +47,10 @@ export const plansData: IPlan[] = [
     price: 698,
     oldPrice: 997,
     period: "ano",
+    installments: {
+      installmentQuantity: 12,
+      installmentValue: 76.49,
+    },
     includedFeatures: [
       "Todos os cursos disponíveis",
       "Materiais complementares",

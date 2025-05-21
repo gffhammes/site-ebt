@@ -1,4 +1,4 @@
-import { Stack, Tooltip, Typography } from "@mui/material";
+import { Box, Stack, Tooltip, Typography } from "@mui/material";
 import { IPlan } from "../PricingSection";
 
 export interface IPricingCardPriceProps {
@@ -24,62 +24,110 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
         por
       </Typography>
 
-      <Stack direction="row" gap={0.5}>
-        <Typography
-          fontWeight={700}
-          fontSize={{ xs: 16, md: 24 }}
-          color="white"
-          lineHeight={1}
-        >
-          R$
-        </Typography>
-
-        <Tooltip
-          title="PREÇO ESPECIAL"
-          followCursor
-          disableHoverListener={!plan.blurPrice}
-          enterDelay={0}
-          slotProps={{
-            popper: {
-              modifiers: [
-                {
-                  name: "offset",
-                  options: {
-                    offset: [0, -16],
-                  },
-                },
-              ],
-            },
-          }}
-        >
+      {plan.installments ? (
+        <Stack direction="row" gap={1}>
           <Typography
-            fontWeight={700}
-            fontSize={{ xs: 40, md: 60 }}
+            fontSize={{ xs: 16, md: 24 }}
             color="white"
-            lineHeight={0.8}
-            sx={{
-              filter: plan.blurPrice ? "blur(25px)" : "none",
-              userSelect: plan.blurPrice ? "none" : "all",
-              cursor: plan.blurPrice ? "none" : "unset",
+            lineHeight={1}
+          >
+            {plan.installments.installmentQuantity}x de
+          </Typography>
+
+          <Tooltip
+            title="PREÇO ESPECIAL"
+            followCursor
+            disableHoverListener={!plan.blurPrice}
+            enterDelay={0}
+            slotProps={{
+              popper: {
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, -16],
+                    },
+                  },
+                ],
+              },
             }}
           >
-            {plan.price.toLocaleString("pt-BR", {
-              maximumFractionDigits: 2,
-              minimumFractionDigits: 2,
-            })}
+            <Typography
+              fontWeight={700}
+              fontSize={{ xs: 40, md: 60 }}
+              color="white"
+              lineHeight={0.8}
+              sx={{
+                filter: plan.blurPrice ? "blur(25px)" : "none",
+                userSelect: plan.blurPrice ? "none" : "all",
+                cursor: plan.blurPrice ? "none" : "unset",
+              }}
+            >
+              {plan.installments.installmentValue.toLocaleString("pt-BR", {
+                maximumFractionDigits: 2,
+                minimumFractionDigits: 2,
+              })}
+            </Typography>
+          </Tooltip>
+        </Stack>
+      ) : (
+        <Stack direction="row" gap={0.5}>
+          <Typography
+            fontWeight={700}
+            fontSize={{ xs: 16, md: 24 }}
+            color="white"
+            lineHeight={1}
+          >
+            R$
           </Typography>
-        </Tooltip>
 
-        <Typography
-          fontWeight={700}
-          color="white"
-          lineHeight={1}
-          fontSize={{ xs: 16, md: 24 }}
-          alignSelf="flex-end"
-        >
-          /{plan.period}
-        </Typography>
-      </Stack>
+          <Tooltip
+            title="PREÇO ESPECIAL"
+            followCursor
+            disableHoverListener={!plan.blurPrice}
+            enterDelay={0}
+            slotProps={{
+              popper: {
+                modifiers: [
+                  {
+                    name: "offset",
+                    options: {
+                      offset: [0, -16],
+                    },
+                  },
+                ],
+              },
+            }}
+          >
+            <Typography
+              fontWeight={700}
+              fontSize={{ xs: 40, md: 60 }}
+              color="white"
+              lineHeight={0.8}
+              sx={{
+                filter: plan.blurPrice ? "blur(25px)" : "none",
+                userSelect: plan.blurPrice ? "none" : "all",
+                cursor: plan.blurPrice ? "none" : "unset",
+              }}
+            >
+              {plan.price.toLocaleString("pt-BR", {
+                maximumFractionDigits: 2,
+                minimumFractionDigits: 2,
+              })}
+            </Typography>
+          </Tooltip>
+
+          <Typography
+            fontWeight={700}
+            color="white"
+            lineHeight={1}
+            fontSize={{ xs: 16, md: 24 }}
+            alignSelf="flex-end"
+          >
+            /{plan.period}
+          </Typography>
+        </Stack>
+      )}
 
       <Typography
         lineHeight={1}

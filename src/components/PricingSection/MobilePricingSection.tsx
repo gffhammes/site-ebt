@@ -32,7 +32,12 @@ export const MobilePricingSection = (props: IMobilePricingSectionProps) => {
                 return (
                   <Box
                     key={plan.name}
-                    sx={{ flex: "0 0 18rem", ml: 2, mr: isLastItem ? 2 : 0 }}
+                    sx={{
+                      flex: "0 0 18rem",
+                      ml: 2,
+                      mr: isLastItem ? 2 : 0,
+                      mb: 2,
+                    }}
                   >
                     <PricingCard plan={plan} />
                   </Box>
