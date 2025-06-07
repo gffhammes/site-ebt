@@ -70,7 +70,7 @@ export const getYearlyPlanLink = (period: TPeriod): string => {
 
 export const getYearlyPlanButtonText = (period: TPeriod): string => {
   const launchText = "COMPRAR AGORA";
-  const normalText = "GARANTIR PREÇO ESPECIAL";
+  const normalText = "ASSINAR"; //"GARANTIR PREÇO ESPECIAL";
 
   switch (period) {
     case "launch":
@@ -86,7 +86,7 @@ export const getYearlyPlanButtonText = (period: TPeriod): string => {
 
 export const getYearlyPlanButtonSubtitle = (period: TPeriod): string => {
   const launchText = `Aproveite o cupom <strong>EBT30</strong>`;
-  const normalText = `Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`;
+  const normalText = ""; //`Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`;
 
   switch (period) {
     case "launch":

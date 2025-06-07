@@ -26,59 +26,64 @@ export const PricingSection = () => {
 export interface IPlan {
   name: string;
   price: number;
-  oldPrice: number;
+  oldPrice?: number;
   period: string;
   includedFeatures: string[];
   notIncludedFeatures: string[];
   isRecomended: boolean;
+  hideRecomendedBadge?: boolean;
+  hideTaxesText?: boolean;
   link: string;
   buttonSubtitle?: string;
   buttonText: string;
   blurPrice?: boolean;
 }
 
-export const plansData: IPlan[] = [
-  {
-    name: "Anual",
-    price: 698,
-    oldPrice: 997,
-    period: "ano",
-    includedFeatures: [
-      "Todos os cursos disponíveis",
-      "Materiais complementares",
-      "Acesso Online e Offline",
-      "Atualizações mensais",
-      "Grupo privado no Whats",
-      "Orientações teológicas",
-      "Avaliações periódicas",
-      "Sorteios de livros",
-    ],
-    notIncludedFeatures: [],
-    isRecomended: true,
-    link: getYearlyPlanLink(PERIOD),
-    buttonSubtitle: getYearlyPlanButtonSubtitle(PERIOD),
-    blurPrice: PERIOD !== "launch",
-    buttonText: getYearlyPlanButtonText(PERIOD),
-  },
-  {
-    name: "Mensal",
-    price: 69,
-    oldPrice: 97,
-    period: "mês",
-    includedFeatures: [
-      "Todos os cursos disponíveis",
-      "Materiais complementares",
-      "Acesso Online e Offline",
-      "Atualizações mensais",
-      "Grupo privado no Whats",
-    ],
-    notIncludedFeatures: [
-      "Orientações teológicas",
-      "Avaliações periódicas",
-      "Sorteios de livros",
-    ],
-    isRecomended: false,
-    link: hotmartMonthlyLink,
-    buttonText: "ASSINAR",
-  },
-];
+const planoAnual: IPlan = {
+  name: "Anual",
+  price: 997,
+  period: "ano",
+  includedFeatures: [
+    "Todos os cursos disponíveis",
+    "Materiais complementares",
+    "Acesso Online e Offline",
+    "Atualizações mensais",
+    "Grupo privado no Whats",
+    "Orientações teológicas",
+    "Avaliações periódicas",
+    "Sorteios de livros",
+  ],
+  notIncludedFeatures: [],
+  isRecomended: false,
+  // link: getYearlyPlanLink(PERIOD),
+  link: getYearlyPlanLink("launch"),
+  buttonSubtitle: getYearlyPlanButtonSubtitle(PERIOD),
+  blurPrice: false, //PERIOD !== "launch",
+  buttonText: getYearlyPlanButtonText(PERIOD),
+};
+
+const planoMensal: IPlan = {
+  name: "Mensal",
+  price: 69,
+  oldPrice: 97,
+  period: "mês",
+  includedFeatures: [
+    "Todos os cursos disponíveis",
+    "Materiais complementares",
+    "Acesso Online e Offline",
+    "Atualizações mensais",
+    "Grupo privado no Whats",
+  ],
+  notIncludedFeatures: [
+    "Orientações teológicas",
+    "Avaliações periódicas",
+    "Sorteios de livros",
+  ],
+  isRecomended: true,
+  hideRecomendedBadge: true,
+  link: hotmartMonthlyLink,
+  buttonText: "ASSINAR",
+  hideTaxesText: true,
+};
+
+export const plansData: IPlan[] = [planoAnual, planoMensal];

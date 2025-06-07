@@ -6,22 +6,37 @@ export interface IPricingCardPriceProps {
 }
 
 export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
+  const oldPriceText = plan.oldPrice ? (
+    <>
+      de{" "}
+      <strong
+        style={{
+          textDecorationLine: "line-through",
+        }}
+      >
+        {plan.oldPrice.toLocaleString("pt-BR", {
+          maximumFractionDigits: 0,
+          style: "currency",
+          currency: "BRL",
+        })}
+      </strong>{" "}
+      por
+    </>
+  ) : (
+    <> </>
+  );
+
+  const taxesText = plan.hideTaxesText ? "" : "+ taxas Hotmart";
+
   return (
     <Stack gap={2} width="fit-content">
-      <Typography lineHeight={1} color="rgba(255, 255, 255, 0.5)" fontSize={16}>
-        de{" "}
-        <strong
-          style={{
-            textDecorationLine: "line-through",
-          }}
-        >
-          {plan.oldPrice.toLocaleString("pt-BR", {
-            maximumFractionDigits: 0,
-            style: "currency",
-            currency: "BRL",
-          })}
-        </strong>{" "}
-        por
+      <Typography
+        lineHeight={1}
+        color="rgba(255, 255, 255, 0.5)"
+        fontSize={16}
+        sx={{ height: "1rem" }}
+      >
+        {oldPriceText}
       </Typography>
 
       <Stack direction="row" gap={0.5}>
@@ -86,8 +101,9 @@ export const PricingCardPrice = ({ plan }: IPricingCardPriceProps) => {
         color="rgba(255, 255, 255, 0.5)"
         fontSize={16}
         textAlign="right"
+        sx={{ height: "1rem" }}
       >
-        + taxas Hotmart
+        {taxesText}
       </Typography>
     </Stack>
   );

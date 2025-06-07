@@ -21,10 +21,10 @@ export const PricingCard = ({ plan }: IPricingCardProps) => {
         position: "relative",
         overflow: "visible",
         height: "100%",
-        mt: 2,
+        // mt: 2,
       }}
     >
-      {plan.isRecomended && (
+      {plan.isRecomended && !plan.hideRecomendedBadge && (
         <Box
           sx={{
             position: "absolute",
