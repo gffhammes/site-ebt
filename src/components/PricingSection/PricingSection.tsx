@@ -71,8 +71,8 @@ const planoMensal: IPlan = {
     "Todos os cursos disponíveis",
     "Materiais complementares",
     "Acesso Online e Offline",
-    "Atualizações mensais",
-    "Grupo privado no Whats",
+    "Módulos novos a cada 2 meses",
+    "Grupo no Whats para infos",
   ],
   notIncludedFeatures: [
     "Orientações teológicas",
