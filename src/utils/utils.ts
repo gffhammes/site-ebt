@@ -53,7 +53,7 @@ export const PERIOD: TPeriod = "normal";
 export const getYearlyPlanLink = (period: TPeriod): string => {
   const hotmartLink = "https://pay.hotmart.com/H96047264Q";
 
-  const whatsappGroupLink = "https://chat.whatsapp.com/IkVNK7Ej9HZBUovq7Op8Kj";
+  const whatsappGroupLink = "https://chat.whatsapp.com/DloqhI82ufO2WILLcsuO40";
 
   switch (period) {
     case "launch":
@@ -69,7 +69,7 @@ export const getYearlyPlanLink = (period: TPeriod): string => {
 
 export const getYearlyPlanButtonText = (period: TPeriod): string => {
   const launchText = "COMPRAR AGORA";
-  const normalText = "ASSINAR"; //"GARANTIR PREÇO ESPECIAL";
+  const normalText = "Entrar na lista de espera"; //"GARANTIR PREÇO ESPECIAL";
 
   switch (period) {
     case "launch":
@@ -85,7 +85,7 @@ export const getYearlyPlanButtonText = (period: TPeriod): string => {
 
 export const getYearlyPlanButtonSubtitle = (period: TPeriod): string => {
   const launchText = `Aproveite o cupom <strong>EBT30</strong>`;
-  const normalText = ""; //`Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`;
+  const normalText = "Garantir R$299 de desconto"; //`Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`;
 
   switch (period) {
     case "launch":

@@ -54,11 +54,11 @@ const planoAnual: IPlan = {
     "Sorteios de livros",
   ],
   notIncludedFeatures: [],
-  isRecomended: false,
+  isRecomended: true,
   // link: getYearlyPlanLink(PERIOD),
-  link: getYearlyPlanLink("launch"),
+  link: getYearlyPlanLink(PERIOD),
   buttonSubtitle: getYearlyPlanButtonSubtitle(PERIOD),
-  blurPrice: false, //PERIOD !== "launch",
+  blurPrice: true, //PERIOD !== "launch",
   buttonText: getYearlyPlanButtonText(PERIOD),
 };
 
@@ -79,7 +79,7 @@ const planoMensal: IPlan = {
     "Avaliações periódicas",
     "Sorteios de livros",
   ],
-  isRecomended: true,
+  isRecomended: false,
   hideRecomendedBadge: true,
   link: hotmartMonthlyLink,
   buttonText: "ASSINAR",
