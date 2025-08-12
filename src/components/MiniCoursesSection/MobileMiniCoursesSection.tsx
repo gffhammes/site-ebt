@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import { MiniCoursesCards } from "./MiniCoursesCards";
+import { MiniCoursesCarousel } from "./MiniCoursesCarousel";
 
 export interface IMobileMiniCoursesSectionProps {}
 
@@ -15,9 +15,7 @@ export const MobileMiniCoursesSection = (
           </Typography>
         </Container>
 
-        {/* <MiniCoursesCarousel /> */}
-
-        <MiniCoursesCards height="20rem" width="10rem" />
+        <MiniCoursesCarousel height="20rem" width="10rem" />
       </Stack>
     </Box>
   );

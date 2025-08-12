@@ -3,6 +3,7 @@ import { Carousel } from "../Carousel/Carousel";
 import Image from "next/image";
 import teologiaSimples from "../../../public/modulos/WhatsApp-Image-2022-03-23-at-13.58.16-1.webp";
 import espiritoSanto from "../../../public/espirito-santo.jpg";
+import idolatria from "../../../public/modulos/idolos.png";
 
 export interface IMiniCoursesCarouselProps {
   align?: "center" | "start";
@@ -17,23 +18,16 @@ export const MiniCoursesCarousel = ({
 }: IMiniCoursesCarouselProps) => {
   return (
     <Carousel
-      autoscroll
       options={{ align, loop: true }}
       containerSx={{
         "&:hover .slide": {
           opacity: 0.2,
         },
       }}
-      autoscrollOptions={{
-        speed: 1,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-        startDelay: 0,
-      }}
-      slides={miniCourses.map((module) => {
+      slides={[...miniCourses, ...miniCourses].map((module, index) => {
         return (
           <Box
-            key={module.name}
+            key={index}
             sx={{
               height,
               flex: `0 0 ${width}`,
@@ -86,11 +80,11 @@ export const miniCourses = [
     link: "https://escolabibotalk.com.br/espiritosanto-v2/",
   },
 
-  // {
-  //   name: "Idolatria",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
-  //   image: teologiaSimples.src,
-  //   link: "https://escolabibotalk.com.br/idolatria/",
-  // },
+  {
+    name: "Idolatria",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
+    image: idolatria.src,
+    link: "https://escolabibotalk.com.br/idolatria/",
+  },
 ];
