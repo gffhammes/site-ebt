@@ -76,9 +76,8 @@ export const miniCourses = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
     image: teologiaSimples.src,
-    link: "https://escolabibotalk.com.br/idolatria/",
+    link: "https://escolabibotalk.com.br/teologia-simples",
   },
-
   {
     name: "Espírito Santo",
     description:
@@ -86,4 +85,12 @@ export const miniCourses = [
     image: espiritoSanto.src,
     link: "https://escolabibotalk.com.br/espiritosanto-v2/",
   },
+
+  // {
+  //   name: "Idolatria",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla nibh sed metus lacinia dignissim.",
+  //   image: teologiaSimples.src,
+  //   link: "https://escolabibotalk.com.br/idolatria/",
+  // },
 ];

@@ -41,7 +41,8 @@ export interface IPlan {
 
 const planoAnual: IPlan = {
   name: "Anual",
-  price: 997,
+  oldPrice: 997,
+  price: 697.9,
   period: "ano",
   includedFeatures: [
     "Todos os cursos disponíveis",
@@ -58,7 +59,7 @@ const planoAnual: IPlan = {
   // link: getYearlyPlanLink(PERIOD),
   link: getYearlyPlanLink(PERIOD),
   buttonSubtitle: getYearlyPlanButtonSubtitle(PERIOD),
-  blurPrice: true, //PERIOD !== "launch",
+  blurPrice: PERIOD !== "launch",
   buttonText: getYearlyPlanButtonText(PERIOD),
 };
 

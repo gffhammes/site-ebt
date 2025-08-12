@@ -48,10 +48,10 @@ export const scrollTo = (id: string, offset?: number) => {
 
 export type TPeriod = "launch" | "normal";
 
-export const PERIOD: TPeriod = "normal";
+export const PERIOD: TPeriod = "launch";
 
 export const getYearlyPlanLink = (period: TPeriod): string => {
-  const hotmartLink = "https://pay.hotmart.com/H96047264Q";
+  const hotmartLink = "https://pay.hotmart.com/H96047264Q?offDiscount=EBT30";
 
   const whatsappGroupLink = "https://chat.whatsapp.com/DloqhI82ufO2WILLcsuO40";
 
@@ -68,7 +68,7 @@ export const getYearlyPlanLink = (period: TPeriod): string => {
 };
 
 export const getYearlyPlanButtonText = (period: TPeriod): string => {
-  const launchText = "COMPRAR AGORA";
+  const launchText = "ENTRE PARA A TURMA 05";
   const normalText = "Entrar na lista de espera"; //"GARANTIR PREÇO ESPECIAL";
 
   switch (period) {
