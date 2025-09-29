@@ -68,7 +68,7 @@ export const getYearlyPlanLink = (period: TPeriod): string => {
 };
 
 export const getYearlyPlanButtonText = (period: TPeriod): string => {
-  const launchText = "ENTRE PARA A TURMA 05";
+  const launchText = "ESTUDE CONOSCO";
   const normalText = "Entrar na lista de espera"; //"GARANTIR PREÇO ESPECIAL";
 
   switch (period) {
@@ -84,7 +84,7 @@ export const getYearlyPlanButtonText = (period: TPeriod): string => {
 };
 
 export const getYearlyPlanButtonSubtitle = (period: TPeriod): string => {
-  const launchText = `Aproveite o cupom <strong>EBT30</strong>`;
+  const launchText = ``;
   const normalText = "Garantir R$299 de desconto"; //`Entre na lista de espera e<br/><strong>garanta o preço especial!</strong>`;
 
   switch (period) {

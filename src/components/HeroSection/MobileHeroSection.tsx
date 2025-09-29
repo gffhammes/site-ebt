@@ -105,7 +105,7 @@ export const MobileHeroSection = (props: IMobileHeroSectionProps) => {
                   variant="contained"
                   id="cta-hero"
                 >
-                  Participe da turma 05
+                  ESTUDE CONOSCO
                 </ScrollButton>
               </Animate>
             </Stack>

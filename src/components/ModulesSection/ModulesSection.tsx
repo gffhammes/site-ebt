@@ -26,7 +26,7 @@ export const moduleSectionData = {
   text: `Na EBT vamos contemplar as disciplinas essenciais da Teologia Cristã. Nossos cursos proporcionarão uma introdução clara aos principais temas dos estudos bíblicos-teológicos.
 
 A EBT é dividida em cursos. Cada curso terá uma média de 10 a 20 aulas de 20min de duração.`,
-  buttonText: "Acesse a nova turma da EBT!",
+  buttonText: "escolha seu plano ideal",
 
   modules: [
     {

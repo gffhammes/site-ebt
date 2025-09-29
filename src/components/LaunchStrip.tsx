@@ -16,7 +16,6 @@ export const LaunchStrip = (props: ILaunchStripProps) => {
         bottom: 0,
         left: 0,
         width: "100%",
-        backgroundColor: "black",
         zIndex: 90,
         py: 2,
       }}
@@ -36,7 +35,7 @@ export const LaunchStrip = (props: ILaunchStripProps) => {
             whiteSpace="nowrap"
             sx={{ mx: 2 }}
           >
-            Use o cupom <strong>EBT30</strong> para <strong>30% OFF</strong>
+          
           </Typography>
         ))}
       />

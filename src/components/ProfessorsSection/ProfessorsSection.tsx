@@ -8,6 +8,8 @@ import professor7Image from "../../../public/professores/7.png.webp";
 import professor8Image from "../../../public/professores/8.jpeg";
 import professor9Image from "../../../public/professores/Andre-Reinke-2022b.jpg";
 import professor10Image from "../../../public/professores/_cQC9Yw4_400x400.jpg";
+import professor11Image from "../../../public/professores/Marcelo-Berti.jpeg";
+
 import { ResponsiveComponent } from "../ResponsiveComponent";
 import { MobileProfessorsSection } from "./MobileProfessorsSection";
 import { DesktopProfessorsSection } from "./DesktopProfessorsSection";
@@ -73,5 +75,11 @@ export const professorsData = [
     name: "Erlan Tostes",
     text: "Teólogo, filósofo e autor. Ensina Panorama do Novo Testamento.",
     photo: professor10Image.src,
+  },
+
+   {
+    name: "Marcelo Berti",
+    text: "Teólogo, filósofo e autor. Ensina Panorama do Novo Testamento.",
+    photo: professor11Image.src,
   },
 ];

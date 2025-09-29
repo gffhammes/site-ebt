@@ -41,8 +41,8 @@ export interface IPlan {
 
 const planoAnual: IPlan = {
   name: "Anual",
-  oldPrice: 997,
-  price: 697.9,
+  oldPrice: 1299,
+  price: 997.0,
   period: "ano",
   includedFeatures: [
     "Todos os cursos disponíveis",

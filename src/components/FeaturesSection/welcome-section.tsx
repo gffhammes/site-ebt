@@ -88,7 +88,7 @@ export const WelcomeSection = ({ isMobile }: WelcomeSectionProps) => {
           },
         }}
       >
-        Acesse a nova turma da EBT!
+       escolha seu plano ideal
       </Button>
     </StyledWelcomeSection>
   );

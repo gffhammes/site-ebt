@@ -55,7 +55,7 @@ export const MobileProfessorsSection = (
             variant="contained"
             id="cta-professores"
           >
-            Acesse a nova turma da EBT!
+            escolha seu plano ideal
           </ScrollButton>
         </Stack>
       </Container>

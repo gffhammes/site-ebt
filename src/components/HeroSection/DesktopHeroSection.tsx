@@ -113,7 +113,7 @@ export const DesktopHeroSection = (props: IDesktopHeroSectionProps) => {
                   variant="contained"
                   id="cta-hero"
                 >
-                  Participe da turma 05
+                  ESTUDE CONOSCO
                 </ScrollButton>
               </Animate>
             </Stack>
