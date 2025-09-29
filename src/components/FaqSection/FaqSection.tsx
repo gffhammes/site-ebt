@@ -8,44 +8,71 @@ export const FaqSection = (props: IFaqSectionProps) => {
 
 export const FAQData: IFAQItem[] = [
   {
-    question: "Qual é a confessionalidade da Escola Bibotalk de Teologia?",
-    answer: `Não somos calvinistas, nem arminianos. Também não somos pentecostais, nem luteranos. Então, o que somos? SOMOS EVANGÉLICOS!
-
-A equipe da EBT é composta por uma ampla variedade de tradições cristãs. Isso significa que somos plurais, o que considero muito positivo. Dentro da nossa história, abraçamos diversas correntes teológicas saudáveis, incluindo pentecostais, carismáticos, luteranos, arminianos e reformados em nossa equipe. Essa diversidade legítima é a beleza do nosso trabalho.
-
-Lutamos pela unidade da igreja e defendemos o que é comum, sempre respeitando as diversidades dentro das tradições cristãs. Não estamos vinculados a nenhuma confissão de fé denominacional específica. Nosso compromisso confessional é com o Credo Apostólico.
-
-Obviamente, ser plural não implica em desordem ou falta de direcionamento. Temos uma rica tradição que nos guia e nos baseamos no solo comum do cristianismo.`,
+    question: "SOBRE A EBT",
+    answer: `O que é a EBT?
+    A EBT é uma escola online com cursos livres de teologia, feitos para iniciantes — líderes ou
+    membros. O conteúdo é bíblico, acessível e com linguagem clara.
+    Preciso ser pastor ou ter formação teológica para participar?
+    Não. A EBT é para qualquer pessoa interessada em aprender teologia de forma simples e
+    profunda.
+    A EBT é ligada a alguma denominação?
+    Não. Nosso conteúdo é cristão, evangélico e interdenominacional.`,
   },
   {
-    question: "Como irei acessar a área de membros e o grupo?",
-    answer: `Após a confirmação da sua matrícula você receberá o link de acesso a área de membros no seu e-mail e em até 12h você receberá o Email para fazer parte do nosso grupo no Telegram`,
+    question: "CONTEÚDO E FUNCIONAMENTO",
+    answer: ` O que está incluído no curso?
+    Mais de 130 horas de aulas divididas por temas como Teologia Simples, Panorama do AT e NT,
+    Doutrina, Bibliologia, Espiritualidade Cristã, entre outros.
+    As aulas são ao vivo ou gravadas?
+    São todas gravadas. Você estuda no seu ritmo, quando e onde quiser.
+Por quanto tempo terei acesso ao curso?
+    • Plano mensal: acesso enquanto a assinatura estiver ativa. • Plano anual: acesso por 12 meses. n
+    Importante: o plano anual não é vitalício. Após os 12 meses, é necessário renovar para continuar
+    acessando.
+Tem plano vitalício?
+    Não. Os planos disponíveis são mensal e anual, ambos com acesso limitado ao tempo contratado.`,
   },
   {
-    question: "Posso acessar de qualquer lugar?",
+    question: "PLANOS E VALORES",
     answer:
-      "Sim. Basta ter uma conexão com internet o acesso pode ser feito por celular, tablet e computador",
+    `Quais são os planos disponíveis?
+     • Mensal: R$69,90/mês, renovação automática, sem fidelidade.
+     • Anual: R$997 à vista (ou parcelado com juros no cartão), com 12 meses de acesso.
+O que está incluído no plano anual?
+Além do conteúdo completo, você tem: • Encontros ao vivo quinzenais • Grupo com professor
+para dúvidas • Certificado digital • Sorteios exclusivos • Avaliações para acompanhar seu
+progresso`,
+     
   },
   {
-    question: "Posso assistir as aulas a qualquer momento?",
+    question: "CERTIFICADO",
     answer:
-      "As aulas estão gravadas e você poderá assistir quando quiser. As lives complementares serão avisadas no grupo do Telegram, mas caso você não consiga participar, elas ficarão gravadas pra sempre na área de membros. Quem faz seu horário é você!",
+    ` O curso oferece certificado?
+    Sim, mas o certificado digital está disponível exclusivamente para alunos do plano anual. Ele é
+    emitido ao final do curso e informa a carga horária estudada.
+O certificado é reconhecido pelo MEC?
+    Não. A EBT é um curso livre, sem vínculo com o MEC. O certificado comprova a carga horária
+    estudada e o desenvolvimento pessoal.`,
   },
   {
-    question: "Quanto tempo terei acesso a plataforma?",
+    question: "ACESSO E SUPORTE",
     answer:
-      "Você terá acesso a área de membros e ao grupo do Telegram por um ano, e será renovada automaticamente após o final do período.",
+       `Como acesso as aulas depois da compra?
+        Você recebe um e-mail com os dados de acesso e entra na plataforma da EBT. Pode assistir no
+        navegador ou no aplicativo (se disponível).
+Posso estudar pelo celular?
+        Sim. As aulas são compatíveis com celular, tablet e computador.
+        Tive problemas com acesso. Como falo com o suporte?
+        Você pode nos chamar pelo WhatsApp [n número] ou e-mail [n e-mail] que ajudamos você
+        rapidamente.`,
   },
   {
-    question: "A quantos cursos eu terei acesso?",
+    question: "CONTEÚDO DETALHADO (EM BREVE NA EMENTA DO SITE)",
     answer:
-      "Você terá acesso a todos os cursos que já estão gravados e a todos que estão em gravação. Nosso cronograma de entrega é de 1 novo curso a cada 3 meses.",
+      `Onde vejo os módulos e temas detalhados?
+Você pode consultar a ementa completa no site da EBT. Se quiser, te envio o link direto.`,
   },
-  {
-    question: "E se eu comprar e quiser cancelar?",
-    answer:
-      "Você tem 7 dias para pedir o reembolso e será devolvido 100% do seu investimento",
-  },
+  
 ];
 
 export interface IFAQItem {
