@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { LaunchStrip } from "@/components/LaunchStrip";
 import { MiniCoursesSection } from "@/components/MiniCoursesSection/MiniCoursesSection";
 import { ModulesSection } from "@/components/ModulesSection/ModulesSection";
+import { ModulosSection } from "@/components/ModulosSection/moduloSection";
 import { PricingSection } from "@/components/PricingSection/PricingSection";
 import { ProfessorsSection } from "@/components/ProfessorsSection/ProfessorsSection";
 import { QuestionPills } from "@/components/QuestionPills/QuestionPills";
@@ -24,6 +25,7 @@ export default function Home() {
         <Stack gap={{ xs: 16, md: 24 }} sx={{ pb: 16 }}>
           <ModulesSection />
 
+          <ModulosSection />
           <ProfessorsSection />
 
           <QuestionPills />

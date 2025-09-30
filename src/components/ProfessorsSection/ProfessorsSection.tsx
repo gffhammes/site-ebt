@@ -28,37 +28,37 @@ export const ProfessorsSection = (props: IProfessorsSectionProps) => {
 export const professorsData = [
   {
     name: "Rodrigo Bibo",
-    text: "Mestre e criador do Bibotalk. Ensina Teologia Simples, Idolatria e mais.",
+    text: "Mestre em Teologia, autor, comunicador e fundador do Bibotalk. Dá aula nos módulos: Teologia Simples, Idolatria e muito mais.",
     photo: professor7Image.src,
   },
   {
     name: "Cacau Marques",
-    text: "Pastor e podcaster. Dá aulas de Espiritualidade, Teologia Bíblica e mais.",
+    text: "Pastor, autor, historiador e podcaster. Dá aula nos módulos: Espiritualidade, Teologia Bíblica e muito mais.",
     photo: professor1Image.src,
   },
   {
     name: "André Reinke",
-    text: "Doutor, autor e historiador. Ensina Panorama do Antigo Testamento.",
+    text: "Doutor em Teologia, autor e historiador. Dá aula no módulo: Panorama do Antigo Testamento.",
     photo: professor9Image.src,
   },
   {
     name: "Guilherme Nunes",
-    text: "Teólogo. Dá aulas sobre Paulo e Dons Espirituais.",
+    text: "Mestre em Teologia e autor. Dá aula nos módulos: Teologia do Apóstolo Paulo e Teologia do Espirito Santo.",
     photo: professor4Image.src,
   },
   {
     name: "Cynthia Muniz",
-    text: "Pastora anglicana. Ensina Hinos Cristológicos e Mulheres no NT.",
+    text: "Mestranda em Teologia, pastora anglicana e bióloga. Dá aula nos módulos: Hinos Cristológicos e Mulheres no Novo Testamento.",
     photo: professor6Image.src,
   },
   {
     name: "Paulo Won",
-    text: "Mestre, pastor e autor. Professor de Bibliologia.",
+    text: "Mestre em Teologia, autor e pastor. Dá aula no módulo: Bibliologia.",
     photo: professor3Image.src,
   },
   {
     name: "Willibaldo Neto",
-    text: "Mestre e historiador. Ensina História da Igreja.",
+    text: "Mestre em Teologia, autor e historiador. Dá aula no módulo: História da Igreja.",
     photo: professor5Image.src,
   },
   {
@@ -68,12 +68,12 @@ export const professorsData = [
   },
   {
     name: "Tiago Garros",
-    text: "Mestre e músico. Dá aula de Fé e Ciência.",
+    text: "Doutor em Teologia e músico. Dá aula no módulo: Fé e Ciência.",
     photo: professor2Image.src,
   },
   {
     name: "Erlan Tostes",
-    text: "Teólogo, filósofo e autor. Ensina Panorama do Novo Testamento.",
+    text: "Teólogo, filósofo e autor. Dá aula no módulo: Panorama do Novo Testamento.",
     photo: professor10Image.src,
   },
 

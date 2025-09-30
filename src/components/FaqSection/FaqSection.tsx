@@ -63,8 +63,8 @@ O certificado é reconhecido pelo MEC?
 Posso estudar pelo celular?
         Sim. As aulas são compatíveis com celular, tablet e computador.
         Tive problemas com acesso. Como falo com o suporte?
-        Você pode nos chamar pelo WhatsApp [n número] ou e-mail [n e-mail] que ajudamos você
-        rapidamente.`,
+        Você pode nos chamar pelo WhatsApp +55 47 98895-8800 ou e-mail contato@bibotalk.com 
+       que ajudamos você rapidamente.`,
   },
   {
     question: "CONTEÚDO DETALHADO (EM BREVE NA EMENTA DO SITE)",
