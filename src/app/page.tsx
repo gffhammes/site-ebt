@@ -25,7 +25,8 @@ export default function Home() {
         <Stack gap={{ xs: 16, md: 24 }} sx={{ pb: 16 }}>
           <ModulesSection />
 
-          <ModulosSection />
+
+           <ModulosSection /> 
           <ProfessorsSection />
 
           <QuestionPills />
