@@ -6,8 +6,10 @@ import {
   Modal,
   Button,
   IconButton,
+  Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 interface Modulo {
   titulo: string;
@@ -139,105 +141,150 @@ export const ModulosSectionDesktop = () => {
   const [selected, setSelected] = useState<Modulo | null>(null);
 
   return (
-    <Box sx={{ py: 6, px: 4, display: { xs: "none", md: "block" } }}>
-      <Typography variant="h3" fontWeight="bold" textAlign="left" mb={4}>
-        Módulos
-      </Typography>
+    <Box
+      sx={{
+        py: 6,
+        px: 4,
+        display: { xs: "none", md: "block" },
+        maxWidth: "1100px",
+        mx: "auto",
+      }}
+    >
+      {/* TÍTULO COM FADE */}
+      <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+        <Typography
+          variant="h3"
+          fontWeight="bold"
+          textAlign="left"
+          mb={4}
+          sx={{
+            color: "black",
+            position: "relative",
+            zIndex: 1,
+            "&::before": {
+              content: '"Módulos"',
+              position: "absolute",
+              top: "-40%",
+              left: "0",
+              fontSize: "96px",
+              fontWeight: "bold",
+              color: "transparent",
+              WebkitTextStroke: "1px black",
+              opacity: 0.1,
+              zIndex: -2,
+            },
+          }}
+        >
+          Módulos
+        </Typography>
+      </motion.div>
 
-      {/* GRID estilo da imagem */}
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 2,
-          gridAutoFlow: "dense",
-        }}
-      >
-        {modulos.map((modulo, i) => (
-          <Box
-            key={i}
-            onClick={() => {
-              setSelected(modulo);
-              setOpen(true);
-            }}
-            sx={{
-              bgcolor: "#E85C0D",
-              color: "white",
-              borderRadius: 2,
-              p: 3,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              cursor: "pointer",
-              "&:hover": { bgcolor: "#c94d0a" },
-              ...getGridSpan(modulo.size),
-            }}
-          >
-            <Typography fontWeight="500">{modulo.titulo}</Typography>
-          </Box>
-        ))}
-      </Box>
+      {/* GRID COM FADE */}
+     <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 2,
+            gridAutoFlow: "dense",
+          }}
+        >
+          {modulos.map((modulo, i) => (
+            <Box
+              key={i}
+              onClick={() => {
+                setSelected(modulo);
+                setOpen(true);
+              }}
+              sx={{
+                bgcolor: "#E85C0D",
+                color: "white",
+                borderRadius: 2,
+                p: 3,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                cursor: "pointer",
+                "&:hover": { bgcolor: "#c94d0a" },
+                ...getGridSpan(modulo.size),
+              }}
+            >
+              <Typography fontWeight="500">{modulo.titulo}</Typography>
+            </Box>
+          ))}
+        </Box>
+      </motion.div>
 
       {/* MODAL */}
       <Modal open={open} onClose={() => setOpen(false)}>
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            bgcolor: "#E85C0D",
-            borderRadius: 3,
-            p: 4,
-            maxWidth: 600,
-            width: "90%",
-            color: "white",
-          }}
-        >
-          {/* BOTÃO X */}
-          <IconButton
-            onClick={() => setOpen(false)}
-            sx={{ position: "absolute", top: 8, right: 8, color: "white" }}
-          >
-            <CloseIcon />
-          </IconButton>
-
-          <Typography variant="h5" fontWeight="bold" mb={2} textAlign="center">
-            {selected?.titulo}
-          </Typography>
+        <Fade in={open} timeout={800}>
           <Box
             sx={{
-              bgcolor: "#F97316",
-              borderRadius: 2,
-              p: 3,
-              mb: 3,
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              bgcolor: "#E85C0D",
+              borderRadius: 3,
+              p: 4,
+              maxWidth: 600,
+              width: "90%",
+              color: "white",
+              outline: "none",
             }}
           >
-            <Typography>{selected?.descricao}</Typography>
+            {/* BOTÃO X */}
+            <IconButton
+              onClick={() => setOpen(false)}
+              sx={{ position: "absolute", top: 8, right: 8, color: "white" }}
+            >
+              <CloseIcon />
+            </IconButton>
+
+            <Typography variant="h5" fontWeight="bold" mb={2} textAlign="center">
+              {selected?.titulo}
+            </Typography>
+            <Box
+              sx={{
+                bgcolor: "#F97316",
+                borderRadius: 2,
+                p: 3,
+                mb: 3,
+              }}
+            >
+              <Typography>{selected?.descricao}</Typography>
+            </Box>
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: "white",
+                color: "#E85C0D",
+                fontWeight: "bold",
+                borderRadius: "20px",
+                px: 4,
+                display: "block",
+                mx: "auto",
+                "&:hover": { bgcolor: "#f5f5f5" },
+              }}
+              onClick={() => {
+                setOpen(false);
+                const planos = document.getElementById("planos");
+                if (planos) planos.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Inscreva-se já!
+            </Button>
           </Box>
-          <Button
-            variant="contained"
-            sx={{
-              bgcolor: "white",
-              color: "#E85C0D",
-              fontWeight: "bold",
-              borderRadius: "20px",
-              px: 4,
-              display: "block",
-              mx: "auto",
-              "&:hover": { bgcolor: "#f5f5f5" },
-            }}
-            onClick={() => {
-              setOpen(false);
-              // rola até a seção de Planos
-              const planos = document.getElementById("planos");
-              if (planos) planos.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Inscreva-se já!
-          </Button>
-        </Box>
+        </Fade>
       </Modal>
     </Box>
   );

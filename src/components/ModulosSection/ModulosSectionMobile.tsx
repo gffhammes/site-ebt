@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Box, Typography, Modal, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 interface Modulo {
   titulo: string;
@@ -46,10 +47,47 @@ export const ModulosSectionMobile = () => {
 
   return (
     <Box sx={{ py: 4, px: 2, display: { xs: "block", md: "none" } }}>
-      <Typography variant="h4" fontWeight="bold" textAlign="center" mb={3}>
-        Módulos
-      </Typography>
 
+      <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+        <Typography
+  variant="h3"
+  fontWeight="bold"
+  textAlign="left"
+  mb={4}
+  sx={{
+    color: "black",
+    position: "relative",
+    zIndex: 1,
+    "&::before": {
+      content: '"Módulos"', // texto maior em outline
+      position: "absolute",
+      top: "-40%", // ajusta a posição vertical
+      left: "0",
+      fontSize: "80px", // tamanho maior que o texto principal
+      fontWeight: "bold",
+      color: "transparent",
+      WebkitTextStroke: "1px black", // cria o contorno
+      opacity: 0.1, // deixa mais sutil
+      zIndex: -2,
+    
+    },
+    
+  }}
+>
+  Módulos
+</Typography>
+</motion.div>
+
+
+ <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
       <Box sx={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 2 }}>
         {visibleModulos.map((modulo, i) => {
           // Último módulo mostrar como retângulo
@@ -104,6 +142,7 @@ export const ModulosSectionMobile = () => {
           </Button>
         </Box>
       )}
+      </motion.div>
 
       {/* MODAL */}
       <Modal open={open} onClose={() => setOpen(false)}>
