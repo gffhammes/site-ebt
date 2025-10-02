@@ -27,6 +27,7 @@ const modulos: Modulo[] = [
   { titulo: "Hinos Cristológicos", descricao: "Sabia que alguns dos textos mais profundos sobre Jesus estão em forma de música? Este módulo mergulha em passagens como Filipenses 2 e Colossenses 1, que falam da grandeza de Cristo com poesia e reverência. Um estudo que une teologia, beleza e adoração." },
   { titulo: "O Novo Testamento e as Mulheres", descricao: "Será que a Bíblia silencia ou valoriza as mulheres? Este módulo olha de perto os textos do Novo Testamento que falam do papel das mulheres na igreja, na missão e na caminhada com Jesus. Um estudo que confronta estereótipos e abre espaço pra redescobrir a dignidade e o protagonismo feminino no plano de Deus." },
   { titulo: "Os Dez Mandamentos para Hoje", descricao: "Não matarás. Não adulterarás. Honra teu pai e tua mãe… Mas o que tudo isso tem a ver com a nossa vida hoje? Este módulo mostra que os Dez Mandamentos não são regras frias, mas um caminho de liberdade, amor e sabedoria. Um convite a redescobrir como a ética do Reino começa com um coração moldado por Deus." },
+  { titulo: "Hermenêutica", descricao: "Por que tantas pessoas leem a mesma Bíblia e chegam a conclusões diferentes? Como saber qual interpretação está correta? Neste módulo, você vai aprender os princípios da interpretação bíblica, entendendo contexto, gêneros literários e a intenção original do texto, para ler a Palavra com mais clareza e profundidade." },
 ];
 
 export const ModulosSectionMobile = () => {
@@ -91,7 +92,7 @@ export const ModulosSectionMobile = () => {
       <Box sx={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 2 }}>
         {visibleModulos.map((modulo, i) => {
           // Último módulo mostrar como retângulo
-          const isLast = i === visibleModulos.length - 1;
+          const isLast = i === visibleModulos.length;
           const isRect = i % 4 >= 2 || isLast;
           return (
             <Box

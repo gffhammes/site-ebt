@@ -79,7 +79,7 @@ export const professorsData = [
 
    {
     name: "Marcelo Berti",
-    text: "Teólogo, filósofo e autor. Ensina Panorama do Novo Testamento.",
+    text: "Pastor e teólogo. Mestre em teologia e pastor na Igreja Batista Fonte. Dá aula no módulo de Hermenêutica.",
     photo: professor11Image.src,
   },
 ];
