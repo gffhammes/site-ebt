@@ -112,13 +112,13 @@ const modulos: Modulo[] = [
     titulo: "O Novo Testamento e as Mulheres",
     descricao:
       "Será que a Bíblia silencia ou valoriza as mulheres? Este módulo olha de perto os textos do Novo Testamento que falam do papel das mulheres na igreja, na missão e na caminhada com Jesus. Um estudo que confronta estereótipos e abre espaço pra redescobrir a dignidade e o protagonismo feminino no plano de Deus.",
-    size: "medium",
+    size: "large",
   },
   {
     titulo: "Os Dez Mandamentos para Hoje",
     descricao:
       "Não matarás. Não adulterarás. Honra teu pai e tua mãe… Mas o que tudo isso tem a ver com a nossa vida hoje? Este módulo mostra que os Dez Mandamentos não são regras frias, mas um caminho de liberdade, amor e sabedoria. Um convite a redescobrir como a ética do Reino começa com um coração moldado por Deus.",
-    size: "medium",
+    size: "large",
   },
 
   {
@@ -131,9 +131,10 @@ const modulos: Modulo[] = [
 
 // traduz tamanho em grid spans
 const getGridSpan = (size: Modulo["size"]) => {
+  
   switch (size) {
     case "large":
-      return { gridColumn: "span 2", gridRow: "span 2" };
+      return { gridColumn: "span 2", gridRow: "span 1" };
     case "medium":
       return { gridColumn: "span 1", gridRow: "span 1" };
     case "small":
@@ -141,6 +142,7 @@ const getGridSpan = (size: Modulo["size"]) => {
     default:
       return { gridColumn: "span 1", gridRow: "span 1" };
   }
+
 };
 
 export const ModulosSectionDesktop = () => {
